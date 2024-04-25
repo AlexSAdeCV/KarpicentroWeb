@@ -134,3 +134,4 @@ C:\Github\Kapicentro\KarpicentroWeb\KarpicentroWeb\KarpicentroWeb\obj\Debug\net8
 C:\Github\Kapicentro\KarpicentroWeb\KarpicentroWeb\KarpicentroWeb\obj\Debug\net8.0\KarpicentroWeb.pdb
 C:\Github\Kapicentro\KarpicentroWeb\KarpicentroWeb\KarpicentroWeb\obj\Debug\net8.0\KarpicentroWeb.genruntimeconfig.cache
 C:\Github\Kapicentro\KarpicentroWeb\KarpicentroWeb\KarpicentroWeb\obj\Debug\net8.0\ref\KarpicentroWeb.dll
+C:\Github\Kapicentro\KarpicentroWeb\KarpicentroWeb\KarpicentroWeb\obj\Debug\net8.0\KarpicentroWeb.sourcelink.json

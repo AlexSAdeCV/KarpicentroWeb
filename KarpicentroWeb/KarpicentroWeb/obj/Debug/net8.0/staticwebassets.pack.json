@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\KarpicentroWeb.bundle.scp.css"
     },
     {
+      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Usuarios\\Alejandro.jpg",
+      "PackagePath": "staticwebassets\\Images\\Usuarios\\Alejandro.jpg"
+    },
+    {
+      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Usuarios\\Usuario.png",
+      "PackagePath": "staticwebassets\\Images\\Usuarios\\Usuario.png"
+    },
+    {
       "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\body.css",
       "PackagePath": "staticwebassets\\css\\body.css"
     },

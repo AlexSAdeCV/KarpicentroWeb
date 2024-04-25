@@ -9,6 +9,8 @@ namespace KarpicentroWeb.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly KarpicentroDB _contextDB;
         public static string _Nivel;
+        public static string _Imagen;
+        public static string _Nombre;
 
         public HomeController(ILogger<HomeController> logger, KarpicentroDB contextDB)
         {
@@ -21,6 +23,8 @@ namespace KarpicentroWeb.Controllers
             Initialize();
 
             ViewBag.Nivel = _Nivel;
+            ViewBag.FotoPerfil = _Imagen;
+            ViewBag.Nombre = _Nombre;
 
             return View();
         }
@@ -47,8 +51,41 @@ namespace KarpicentroWeb.Controllers
             if (login.Login())
             {
                 _Nivel = UsuarioModel.TipoUsuario;
+                _Imagen = UsuarioModel.DireccionImagen;
+                _Nombre = UsuarioModel.Nombre;
                 return RedirectToAction("Index");
             }
+
+            return View(Usuario);
+        }
+
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Register(Usuario Usuario, string Contrasena2)
+        {
+            UsuarioModel register = new UsuarioModel(_contextDB);
+
+            register.Correo = Usuario.Correo;
+            register.Contrasena = Usuario.Contrasena;
+            register.Contrasena2 = Contrasena2;
+            UsuarioModel.Nombre = Usuario.Nombre;
+
+            if (register.Register())
+            {
+                _Nivel = UsuarioModel.TipoUsuario;
+                _Imagen = UsuarioModel.DireccionImagen;
+                _Nombre = UsuarioModel.Nombre;
+                
+                if (register.Login())
+                    return RedirectToAction("Index");
+            }
+            else
+                ViewBag.Mensaje = UsuarioModel.Mensaje;
 
             return View(Usuario);
         }
@@ -63,6 +100,11 @@ namespace KarpicentroWeb.Controllers
         {
             _contextDB.Database.EnsureCreated();
 
+            if (_contextDB.Usuario.Any())
+            {
+                return;
+            }
+
             var insertardireccion = new Direccion[]
                 {
                     new Direccion() {Nombre = "Prueba", ApellidoPaterno = "Prueba", ApellidoMaterno = "Prueba", Calle = "Prueba", Colonia = "Prueba", CodigoPostal = "00000", Delegacion = "Prueba"}
@@ -70,7 +112,7 @@ namespace KarpicentroWeb.Controllers
 
             var insertarusuarios = new Usuario[]
                 {
-                    new Usuario() {Correo = "aserranoacosta841@gmail.com", Contrasena = "1234", TipoUsuario = "Admin", iddireccion = 1}
+                    new Usuario() {Correo = "aserranoacosta841@gmail.com", Contrasena = "1234", TipoUsuario = "Admin", iddireccion = 1, DireccionImagen = "../wwwroot/Images/Usuarios/Alejandro.jpg", Nombre = "Alejandro"}
                 };
 
             foreach (var u in insertardireccion)

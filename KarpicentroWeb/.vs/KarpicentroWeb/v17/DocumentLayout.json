@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ACE198AB-842E-41F9-974F-39E6015F7CDD}|KarpicentroWeb\\KarpicentroWeb.csproj|c:\\github\\kapicentro\\karpicentroweb\\karpicentroweb\\karpicentroweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ACE198AB-842E-41F9-974F-39E6015F7CDD}|KarpicentroWeb\\KarpicentroWeb.csproj|solutionrelative:karpicentroweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACE198AB-842E-41F9-974F-39E6015F7CDD}|KarpicentroWeb\\KarpicentroWeb.csproj|c:\\github\\kapicentro\\karpicentroweb\\karpicentroweb\\karpicentroweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ACE198AB-842E-41F9-974F-39E6015F7CDD}|KarpicentroWeb\\KarpicentroWeb.csproj|solutionrelative:karpicentroweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACE198AB-842E-41F9-974F-39E6015F7CDD}|KarpicentroWeb\\KarpicentroWeb.csproj|c:\\github\\kapicentro\\karpicentroweb\\karpicentroweb\\karpicentroweb\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ACE198AB-842E-41F9-974F-39E6015F7CDD}|KarpicentroWeb\\KarpicentroWeb.csproj|solutionrelative:karpicentroweb\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACE198AB-842E-41F9-974F-39E6015F7CDD}|KarpicentroWeb\\KarpicentroWeb.csproj|c:\\github\\kapicentro\\karpicentroweb\\karpicentroweb\\karpicentroweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACE198AB-842E-41F9-974F-39E6015F7CDD}|KarpicentroWeb\\KarpicentroWeb.csproj|solutionrelative:karpicentroweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACE198AB-842E-41F9-974F-39E6015F7CDD}|KarpicentroWeb\\KarpicentroWeb.csproj|c:\\github\\kapicentro\\karpicentroweb\\karpicentroweb\\karpicentroweb\\models\\usuariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACE198AB-842E-41F9-974F-39E6015F7CDD}|KarpicentroWeb\\KarpicentroWeb.csproj|solutionrelative:karpicentroweb\\models\\usuariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "KarpicentroWeb\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "KarpicentroWeb\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAAYAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-25T05:06:28.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\Views\\Home\\Login.cshtml",
+              "RelativeDocumentMoniker": "KarpicentroWeb\\Views\\Home\\Login.cshtml",
+              "ToolTip": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\Views\\Home\\Login.cshtml",
+              "RelativeToolTip": "KarpicentroWeb\\Views\\Home\\Login.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAgAAABaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-25T05:04:06.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "KarpicentroWeb\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "KarpicentroWeb\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-25T05:06:09.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UsuarioModel.cs",
+              "DocumentMoniker": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\Models\\UsuarioModel.cs",
+              "RelativeDocumentMoniker": "KarpicentroWeb\\Models\\UsuarioModel.cs",
+              "ToolTip": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\Models\\UsuarioModel.cs",
+              "RelativeToolTip": "KarpicentroWeb\\Models\\UsuarioModel.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAQwBUAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T04:57:27.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "KarpicentroWeb\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "KarpicentroWeb\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAA1wCEAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T04:56:11.508Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

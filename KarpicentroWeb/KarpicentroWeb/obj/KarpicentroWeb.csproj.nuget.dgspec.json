@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb.csproj": {}
+    "C:\\Users\\ricar\\Documents\\GitHub\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb.csproj": {}
   },
   "projects": {
-    "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb.csproj": {
+    "C:\\Users\\ricar\\Documents\\GitHub\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb.csproj",
+        "projectUniqueName": "C:\\Users\\ricar\\Documents\\GitHub\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb.csproj",
         "projectName": "KarpicentroWeb",
-        "projectPath": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb.csproj",
-        "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-        "outputPath": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\obj\\",
+        "projectPath": "C:\\Users\\ricar\\Documents\\GitHub\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb.csproj",
+        "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ricar\\Documents\\GitHub\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -75,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

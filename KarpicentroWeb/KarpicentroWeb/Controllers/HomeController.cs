@@ -1,6 +1,7 @@
 using KarpicentroWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Net;
 
 namespace KarpicentroWeb.Controllers
 {
@@ -8,9 +9,6 @@ namespace KarpicentroWeb.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly KarpicentroDB _contextDB;
-        public static string _Nivel;
-        public static string _Imagen;
-        public static string _Nombre;
 
         public HomeController(ILogger<HomeController> logger, KarpicentroDB contextDB)
         {
@@ -22,9 +20,21 @@ namespace KarpicentroWeb.Controllers
         {
             Initialize();
 
-            ViewBag.Nivel = _Nivel;
-            ViewBag.FotoPerfil = _Imagen;
-            ViewBag.Nombre = _Nombre;
+            var miCookie = HttpContext.Request.Cookies["MiCookie"];
+
+            if (miCookie != null)
+            {
+                List<Usuario> listaUsuarios = _contextDB.Usuario.ToList();
+                foreach (var user in listaUsuarios)
+                {
+                    if (miCookie == user.Correo)
+                    {
+                        ViewBag.Nombre = user.Nombre;
+                        ViewBag.Nivel = user.TipoUsuario;
+                        ViewBag.FotoPerfil = user.DireccionImagen;
+                    }
+                }
+            }
 
             return View();
         }
@@ -50,9 +60,12 @@ namespace KarpicentroWeb.Controllers
 
             if (login.Login())
             {
-                _Nivel = UsuarioModel.TipoUsuario;
-                _Imagen = UsuarioModel.DireccionImagen;
-                _Nombre = UsuarioModel.Nombre;
+                CookieOptions options = new CookieOptions();
+                options.Expires = DateTime.Now.AddDays(365);
+                options.IsEssential = true;
+                options.Path = "/";
+                HttpContext.Response.Cookies.Append("MiCookie", Usuario.Correo, options);
+
                 return RedirectToAction("Index");
             }
 
@@ -77,10 +90,12 @@ namespace KarpicentroWeb.Controllers
 
             if (register.Register())
             {
-                _Nivel = UsuarioModel.TipoUsuario;
-                _Imagen = UsuarioModel.DireccionImagen;
-                _Nombre = UsuarioModel.Nombre;
-                
+                CookieOptions options = new CookieOptions();
+                options.Expires = DateTime.Now.AddDays(365);
+                options.IsEssential = true;
+                options.Path = "/";
+                HttpContext.Response.Cookies.Append("MiCookie", Usuario.Correo, options);
+
                 if (register.Login())
                     return RedirectToAction("Index");
             }
@@ -88,6 +103,13 @@ namespace KarpicentroWeb.Controllers
                 ViewBag.Mensaje = UsuarioModel.Mensaje;
 
             return View(Usuario);
+        }
+
+        [HttpGet]
+        public IActionResult CerrarSesion()
+        {
+            HttpContext.Response.Cookies.Delete("MiCookie");
+            return RedirectToAction("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

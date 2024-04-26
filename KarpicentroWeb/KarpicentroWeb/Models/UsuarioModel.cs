@@ -60,11 +60,8 @@
                 {
                     var u = new Usuario[]
                         {
-                            new Usuario() {Correo = Correo, Contrasena = Contrasena, iddireccion = 1, TipoUsuario = "Cliente", Nombre = Nombre, DireccionImagen = "../Images/Usuarios/Usuarios.png"}
+                            new Usuario() {Correo = Correo, Contrasena = Contrasena, iddireccion = 1, TipoUsuario = "Cliente", Nombre = Nombre, DireccionImagen = "../Images/Usuarios/Usuario.png"}
                         };
-
-                    TipoUsuario = "Cliente";
-                    DireccionImagen = "../wwwroot/Images/Usuarios/Usuario.png";
 
                     foreach (var us in u)
                     {

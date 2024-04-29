@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.9.34723.18
+VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarpicentroWeb", "KarpicentroWeb\KarpicentroWeb.csproj", "{ACE198AB-842E-41F9-974F-39E6015F7CDD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarpicentroWeb", "KarpicentroWeb.csproj", "{0793088C-0A89-4B8E-8D87-3F516C04063C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ACE198AB-842E-41F9-974F-39E6015F7CDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ACE198AB-842E-41F9-974F-39E6015F7CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ACE198AB-842E-41F9-974F-39E6015F7CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ACE198AB-842E-41F9-974F-39E6015F7CDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0793088C-0A89-4B8E-8D87-3F516C04063C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0793088C-0A89-4B8E-8D87-3F516C04063C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0793088C-0A89-4B8E-8D87-3F516C04063C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0793088C-0A89-4B8E-8D87-3F516C04063C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A3E8AE96-7BBE-49F6-A1F4-31A3DD826826}
+		SolutionGuid = {7D7ABD1C-91D6-4D08-AE77-DE2C819D8F33}
 	EndGlobalSection
 EndGlobal

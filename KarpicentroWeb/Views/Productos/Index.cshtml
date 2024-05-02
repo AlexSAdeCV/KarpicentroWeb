@@ -1,0 +1,55 @@
+﻿@model IEnumerable<KarpicentroWeb.Models.Product>
+
+@{
+    if (ViewBag.Nivel == "Admin")
+    {
+        Layout = "_LayoutAdmin";
+    }
+    else if (ViewBag.Nivel == "Cliente")
+    {
+        Layout = "_LayoutUsers";
+    }
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid pt-5 pb-3">
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">PRODUCTOS</span></h2>
+        <div class="row px-xl-5">
+            @{
+                foreach (var p in Model)
+                {
+                    if (ViewBag.Tipo == p.Categories)
+                    {
+                        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                            <div class="product-item bg-light mb-4">
+                                <div class="product-img position-relative overflow-hidden">
+                                    <img class="img-fluid w-100" src="@p.Image" alt="@p.Name">
+                                    <div class="product-action">
+                                        <input name="Existencia" type="hidden" value="@p.Stock">
+                                        <a style="background-color: white;" href="@Url.Action("ProductDetails", "Productos", new { Existencia = p.Stock })"></a>
+                                        <a class="btn btn-outline-dark btn-square text-center" href="@Url.Action("ProductDetails", "Productos", new { valor = p.ID })"><i class="fa fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                                <div class="text-center py-4">
+                                    <a class="h6 text-decoration-none text-truncate" href="">@p.Name</a>
+                                    <div class="d-flex align-items-center justify-content-center mt-2">
+                                        <h5>$@p.SalePrice</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        </div>
+    </div>
+</body>

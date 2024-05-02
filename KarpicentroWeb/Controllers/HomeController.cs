@@ -79,13 +79,13 @@ namespace KarpicentroWeb.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(User user, string Contrasena2)
+        public IActionResult Register(User user, string Password2)
         {
             UserModel register = new UserModel(_contextDB);
 
             register.Email = user.Email;
             register.Password = user.Password;
-            register.Password2 = Contrasena2;
+            register.Password2 = Password2;
             UserModel.Name = user.Name;
 
             if (register.Register())
@@ -129,12 +129,24 @@ namespace KarpicentroWeb.Controllers
 
             var insertarusuarios = new User[]
                 {
-                    new User() {Email = "aserranoacosta841@gmail.com", Password = "1234", UserType = "Admin", Image = "../Images/Usuarios/Alejandro.jpg", Name = "Alejandro"}
+                    new User() {Email = "aserranoacosta841@gmail.com", Password = "1234", UserType = "Admin", Image = "../Images/Users/Alejandro.jpg", Name = "Alejandro"}
                 };
 
             var insertardireccion = new Directions[]
                 {
                     new Directions() {NameUser = "Prueba", Street = "Prueba", Neighborhood = "Prueba", ZipCode = "00000", Delegations = "Prueba", State = "Prueba", idUser = 1}
+                };
+
+            var insertarproveedor = new Supplier[]
+                {
+                    new Supplier() {NameSupplier = "Prueba", Active = 1, NameContact = "Prueba", Email = "example@gmail.com", idDirections = 1}
+                };
+
+            var insertarproductos = new Product[]
+                {
+                    new Product() { Name = "Sala orion", ProductFeatures = "Sala color gris", Description = "Bonita sala en color azul claro que le da un aspecto fresco a sus espacios, con sus acojinados de alta densidad y decorativos con motivos de palmeras.", PurchaseProduct = 1500, SalePrice = 7800, Width = 150, Height = 92, Depth = 92, Stock = 10, Categories = "Salas", Image = "../Images/Products/Sala.jpg", idSupplier = 1, Active = 1},
+                    new Product() { Name = "Cocina Ontaro", ProductFeatures = "Sala color chocolate", Description = "Bonita cocina en color chocolate con acabado rallado, especiero inferior y manijas plateadas", PurchaseProduct = 3000, SalePrice = 12800, Width = 90, Height = 92, Depth = 66, Stock = 22, Categories = "Cocinas", Image = "../Images/Products/cocina.jpg", idSupplier = 1, Active = 1},
+                    new Product() { Name = "Cabecera España", ProductFeatures = "Cabecera color gris", Description = "Bonita recámara con grabados transversales en abanico, burós en blanco con gris, con espacio inferior y manijas rectangular, que le dará un toque diferente a tus sueños.", PurchaseProduct = 600, SalePrice = 3400, Width = 8, Height = 2, Depth = 1, Stock = 18, Categories = "Recamaras", Image = "../Images/Products/Recamara.jpg", idSupplier = 1, Active = 1}
                 };
 
             foreach (var u in insertarusuarios)
@@ -144,6 +156,16 @@ namespace KarpicentroWeb.Controllers
 
             foreach (var u in insertardireccion)
                 _contextDB.Direction.Add(u);
+
+            _contextDB.SaveChanges();
+
+            foreach (var u in insertarproveedor)
+                _contextDB.Supplier.Add(u);
+
+            _contextDB.SaveChanges();
+
+            foreach (var u in insertarproductos)
+                _contextDB.Product.Add(u);
 
             _contextDB.SaveChanges();
         }

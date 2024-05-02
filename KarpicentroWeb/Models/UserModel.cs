@@ -60,7 +60,7 @@
                 {
                     var u = new User[]
                         {
-                            new User() {Email = Email, Password = Password, UserType = "Cliente", Name = Name, Image = "../Images/Usuarios/Usuario.png"}
+                            new User() {Email = Email, Password = Password, UserType = "Cliente", Name = Name, Image = "../Images/Users/Usuario.png"}
                         };
 
                     foreach (var us in u)

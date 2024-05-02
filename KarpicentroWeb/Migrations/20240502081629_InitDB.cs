@@ -56,7 +56,7 @@ namespace KarpicentroWeb.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Proveedores",
+                name: "Supplier",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
@@ -69,9 +69,9 @@ namespace KarpicentroWeb.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Proveedores", x => x.ID);
+                    table.PrimaryKey("PK_Supplier", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Proveedores_Direction_idDirections",
+                        name: "FK_Supplier_Direction_idDirections",
                         column: x => x.idDirections,
                         principalTable: "Direction",
                         principalColumn: "ID",
@@ -87,7 +87,12 @@ namespace KarpicentroWeb.Migrations
                     Active = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProductFeatures = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PurchaseProduct = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Width = table.Column<int>(type: "int", nullable: false),
+                    Height = table.Column<int>(type: "int", nullable: false),
+                    Depth = table.Column<int>(type: "int", nullable: false),
+                    Categories = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SalePrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Stock = table.Column<int>(type: "int", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -97,9 +102,9 @@ namespace KarpicentroWeb.Migrations
                 {
                     table.PrimaryKey("PK_Product", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Product_Proveedores_idSupplier",
+                        name: "FK_Product_Supplier_idSupplier",
                         column: x => x.idSupplier,
-                        principalTable: "Proveedores",
+                        principalTable: "Supplier",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -143,8 +148,8 @@ namespace KarpicentroWeb.Migrations
                 column: "idSupplier");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Proveedores_idDirections",
-                table: "Proveedores",
+                name: "IX_Supplier_idDirections",
+                table: "Supplier",
                 column: "idDirections");
         }
 
@@ -158,7 +163,7 @@ namespace KarpicentroWeb.Migrations
                 name: "Product");
 
             migrationBuilder.DropTable(
-                name: "Proveedores");
+                name: "Supplier");
 
             migrationBuilder.DropTable(
                 name: "Direction");

@@ -12,7 +12,7 @@ namespace KarpicentroWeb.Models
         public DbSet<CartBuys> Cart { get; set; }
         public DbSet<Directions> Direction { get; set; }
         public DbSet<Product> Product { get; set; }
-        public DbSet<Supplier> Proveedores { get; set; }
+        public DbSet<Supplier> Supplier { get; set; }
         public DbSet<User> User { get; set; }
     }
 }

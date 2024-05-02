@@ -1,0 +1,38 @@
+﻿<body>
+
+    <div class="wrapper text-center">
+
+        <form asp-controller="Home" asp-action="Login" method="post">
+            <h1>
+                Inicio de Sesión
+            </h1>
+            <div class="Username">
+                <input name="Email" type="email" class="form-control" id="floatingInput" placeholder="Correo" required />
+                <label>Introduce tu email</label>
+            </div>
+
+            <div class="contraseña">
+                <input name="Password" type="password" class="form-control" id="floatingInput" placeholder="Contraseña" required />
+                <label>Introduce tu contraseña</label>
+            </div>
+
+            <div class="recordar">
+                <label for="Remember">
+                    <!-- Corregido a label -->
+                    <input type="checkbox" id="Remember"> <!-- Corregido a id="Remember" -->
+                    <span>Recordarme</span> <!-- Cambiado a span -->
+                </label>
+                <a href="#">¿Has olvidado tu contraseña?</a> <!-- Agregado el signo de interrogación -->
+            </div>
+            <button type="submit" class="btn btn-primary bg-info btn1 w-100 btn btn-lg" style="margin-top: 15px;">Acceder</button> <!-- Cambiado a Iniciar Sesión -->
+            <div class="register">
+                <p>¿No tienes una cuenta? <a href="registro.html">Registrarse</a></p> <!-- Agregado el espacio después de "?", Registrarse con mayúscula -->
+            </div>
+        </form>
+    </div>
+    </section>
+
+</body>
+</html>
+
+

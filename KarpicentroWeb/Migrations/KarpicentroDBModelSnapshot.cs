@@ -103,6 +103,20 @@ namespace KarpicentroWeb.Migrations
                     b.Property<int>("Active")
                         .HasColumnType("int");
 
+                    b.Property<string>("Categories")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Depth")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Height")
+                        .HasColumnType("int");
+
                     b.Property<string>("Image")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -122,6 +136,9 @@ namespace KarpicentroWeb.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Stock")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Width")
                         .HasColumnType("int");
 
                     b.Property<int>("idSupplier")
@@ -164,7 +181,7 @@ namespace KarpicentroWeb.Migrations
 
                     b.HasIndex("idDirections");
 
-                    b.ToTable("Proveedores");
+                    b.ToTable("Supplier");
                 });
 
             modelBuilder.Entity("KarpicentroWeb.Models.User", b =>

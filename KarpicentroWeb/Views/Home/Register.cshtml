@@ -1,0 +1,63 @@
+﻿<body>
+
+    <div class="wrapper text-center">
+
+        <form asp-controller="Home" asp-action="Register" method="post" class="needs-validation" novalidate>
+            <h1>
+                Register
+            </h1>
+            <div class="mb-3">
+                <label for="validationCustom01" class="form-label">Correo</label>
+                <input type="text" class="form-control" placeholder="ejemplo@gmail.com" name="Email" id="validationCustom01" required>
+                <div class="invalid-feedback">
+                    Porfavor introduzca un correo valido
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="validationCustom02" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Contraseña" name="Password" id="validationCustom02" required>
+                <div class="invalid-feedback">
+                    Introduzca su contraseña
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="validationCustom03" class="form-label">Confirme su Contraseña</label>
+                <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Contraseña" name="Password2" id="validationCustom03" required>
+                <div class="invalid-feedback">
+                    Introduzca su confirmacion de su contraseña
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="validationCustom04" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Nombre" name="Name" id="validationCustom04" required>
+                <div class="invalid-feedback">
+                    Introduzca su nombre
+                </div>
+            </div>
+            <div class="col-12">
+                <input type="submit" class="btn btn-primary" name="Registrate" value="Registrate" />
+            </div>
+        </form>
+    </div>
+    <script>
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</body>

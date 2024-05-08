@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Q7STK3IWBc+WWdADFB74xi1no4Ahp9kfEGOjSRXR5Fg=",
+  "Hash": "EvUsbjpGUBDW6NxiZRXEa/X7HS91aRetsFirEBGwA3c=",
   "Source": "KarpicentroWeb",
   "BasePath": "_content/KarpicentroWeb",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\KarpicentroWeb.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\barra.css",
+      "SourceId": "KarpicentroWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\",
+      "BasePath": "_content/KarpicentroWeb",
+      "RelativePath": "css/barra.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\barra.css"
     },
     {
       "Identity": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\body.css",

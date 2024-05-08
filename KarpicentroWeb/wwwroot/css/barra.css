@@ -1,0 +1,93 @@
+﻿.header-menu nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+    .header-menu nav ul li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+        .header-menu nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        .header-menu nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+            .header-menu nav ul li a:hover {
+                color: #ccc;
+            }
+
+header {
+    margin-bottom: 1px;
+}
+
+/* Logo en el encabezado */
+.logo img {
+    max-width: 50px;
+    /* Ajusta el tamaño del logo según sea necesario */
+    padding-left: 25px;
+    text-align: right;
+    ;
+}
+
+.name {
+    padding: 12px;
+    color: #fff;
+}
+
+h1 {
+    font-size: 30px;
+    font-family: "Big Shoulders Text", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 383;
+    font-style: normal;
+}
+
+h2 {
+    font-size: 27px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+p {
+    font-size: 18px;
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #3E5F8A;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 65px;
+    margin: 0%;
+}
+
+.header-menu {
+    margin-left: auto;
+}
+
+.material-symbols-outlined {
+    color: white;
+    font-size: 70%; /* Increased font size for larger icons */
+    font-variation-settings: 'FILL' 0, 'wght' 200, /* Reduced weight for thinner lines */
+    'GRAD' 0, 'opsz' 24
+}
+td {
+    font-size: 15px;
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal
+}

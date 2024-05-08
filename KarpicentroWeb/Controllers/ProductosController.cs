@@ -1,5 +1,6 @@
 ﻿using KarpicentroWeb.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Drawing;
 
 namespace KarpicentroWeb.Controllers
 {
@@ -32,12 +33,20 @@ namespace KarpicentroWeb.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index(string valor)
+        public IActionResult ProductList(string valor)
         {
             ViewBag.Tipo = valor;
             List<Product> listaProductos = _contextDB.Product.ToList();
+            List<ProductInter> listainter = _contextDB.InterProd.ToList();
+
+            var viewmodel = new ProductViewModel
+            {
+                Products = listaProductos,
+                Inter = listainter
+            };
+
             Cookie();
-            return View(listaProductos);
+            return View(viewmodel);
         }
 
         [HttpGet]
@@ -45,9 +54,20 @@ namespace KarpicentroWeb.Controllers
         {
             ViewBag.ID = valor;
             var producto = _contextDB.Product.First(p => p.ID == valor);
-            ViewBag.Existencia = producto.Stock;
+            var stock = _contextDB.InterProd.First(p => p.ID == valor);
+            ViewBag.Existencia = stock.Stock;
+
+            List<Product> listaProductos = _contextDB.Product.ToList();
+            List<ProductInter> listainter = _contextDB.InterProd.ToList();
+
+            var viewmodel = new ProductViewModel
+            {
+                Products = listaProductos,
+                Inter = listainter
+            };
+
             Cookie();
-            return View(producto);
+            return View(viewmodel);
         }
     }
 }

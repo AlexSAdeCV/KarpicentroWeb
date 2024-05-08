@@ -1,4 +1,5 @@
 ﻿using KarpicentroWeb.Models;
+using KarpicentroWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Net;
@@ -129,12 +130,21 @@ namespace KarpicentroWeb.Controllers
 
             var insertarusuarios = new User[]
                 {
-                    new User() {Email = "aserranoacosta841@gmail.com", Password = "1234", UserType = "Admin", Image = "../Images/Users/Alejandro.jpg", Name = "Alejandro"}
+                    new User() {Email = "aserranoacosta841@gmail.com", Password = "1234", UserType = "Admin", Image = "../Images/Users/Alejandro.jpg", Name = "Alejandro"},
+                    new User() {Email = "ricardo_138@outlook.com", Password = "1234", UserType = "Admin", Image = "../Images/Usuarios/Rich.jpg", Name = "Rich"},
+                    new User() {Email = "a@gmail.com", Password = "1234", UserType = "Cliente", Image = "../Images/Usuarios/Usuario.jpg", Name = "A"}
                 };
 
             var insertardireccion = new Directions[]
                 {
-                    new Directions() {NameUser = "Prueba", Street = "Prueba", Neighborhood = "Prueba", ZipCode = "00000", Delegations = "Prueba", State = "Prueba", idUser = 1}
+                    new Directions() {NameUser = "Prueba", Street = "Prueba", Neighborhood = "Prueba", ZipCode = "00000", Delegations = "Prueba", State = "Prueba"}
+                };
+
+            var Insertarusdir = new UserDirections[]
+                {
+                    new UserDirections() { idDirections = 1, idUser = 1},
+                    new UserDirections() { idDirections = 1, idUser = 2},
+                    new UserDirections() { idDirections = 1, idUser = 3}
                 };
 
             var insertarproveedor = new Supplier[]
@@ -144,9 +154,31 @@ namespace KarpicentroWeb.Controllers
 
             var insertarproductos = new Product[]
                 {
-                    new Product() { Name = "Sala orion", ProductFeatures = "Sala color gris", Description = "Bonita sala en color azul claro que le da un aspecto fresco a sus espacios, con sus acojinados de alta densidad y decorativos con motivos de palmeras.", PurchaseProduct = 1500, SalePrice = 7800, Width = 150, Height = 92, Depth = 92, Stock = 10, Categories = "Salas", Image = "../Images/Products/Sala.jpg", idSupplier = 1, Active = 1},
-                    new Product() { Name = "Cocina Ontaro", ProductFeatures = "Sala color chocolate", Description = "Bonita cocina en color chocolate con acabado rallado, especiero inferior y manijas plateadas", PurchaseProduct = 3000, SalePrice = 12800, Width = 90, Height = 92, Depth = 66, Stock = 22, Categories = "Cocinas", Image = "../Images/Products/cocina.jpg", idSupplier = 1, Active = 1},
-                    new Product() { Name = "Cabecera España", ProductFeatures = "Cabecera color gris", Description = "Bonita recámara con grabados transversales en abanico, burós en blanco con gris, con espacio inferior y manijas rectangular, que le dará un toque diferente a tus sueños.", PurchaseProduct = 600, SalePrice = 3400, Width = 8, Height = 2, Depth = 1, Stock = 18, Categories = "Recamaras", Image = "../Images/Products/Recamara.jpg", idSupplier = 1, Active = 1}
+                    new Product() { Name = "Sala orion", ProductFeatures = "Sala color gris", Description = "Bonita sala en color azul claro que le da un aspecto fresco a sus espacios, con sus acojinados de alta densidad y decorativos con motivos de palmeras.", PurchasePrice = 1500, Width = 150, Height = 92, Depth = 92, Categories = "Salas", idSupplier = 1, Active = 1},
+                    new Product() { Name = "Cocina Ontaro", ProductFeatures = "Sala color chocolate", Description = "Bonita cocina en color chocolate con acabado rallado, especiero inferior y manijas plateadas", PurchasePrice = 3000, Width = 90, Height = 92, Depth = 66, Categories = "Cocinas", idSupplier = 1, Active = 1},
+                    new Product() { Name = "Cabecera España", ProductFeatures = "Cabecera color gris", Description = "Bonita recámara con grabados transversales en abanico, burós en blanco con gris, con espacio inferior y manijas rectangular, que le dará un toque diferente a tus sueños.", PurchasePrice = 600, Width = 8, Height = 2, Depth = 1, Categories = "Recamaras", idSupplier = 1, Active = 1}
+                };
+
+            var insertarcolores = new Colors[]
+                {
+                    new Colors() { Name = "Negro"},
+                    new Colors() { Name = "Azul"},
+                    new Colors() { Name = "Rojo"},
+                    new Colors() { Name = "Cafe"},
+                    new Colors() { Name = "Blanco"}
+                };
+
+            var insertarmateriales = new Materials[]
+                {
+                    new Materials() {Name = "Piel"},
+                    new Materials() { Name = "Madera"}
+                };
+
+            var insertarintermedia = new ProductInter[]
+                {
+                    new ProductInter() { idProducts = 1, idColors = 1, idMaterials = 1, Stock = 15, SalePrice = 2200, Image = "../Images/Products/Sala.jpg"},
+                    new ProductInter() { idProducts = 2, idColors = 4, idMaterials = 2, Stock = 15, SalePrice = 2200, Image = "../Images/Products/cocina.jpg"},
+                    new ProductInter() { idProducts = 3, idColors = 5, idMaterials = 2, Stock = 15, SalePrice = 2200, Image = "../Images/Products/Recamara.jpg"}
                 };
 
             foreach (var u in insertarusuarios)
@@ -159,6 +191,11 @@ namespace KarpicentroWeb.Controllers
 
             _contextDB.SaveChanges();
 
+            foreach (var u in Insertarusdir)
+                _contextDB.UseDir.Add(u);
+
+            _contextDB.SaveChanges();
+
             foreach (var u in insertarproveedor)
                 _contextDB.Supplier.Add(u);
 
@@ -166,6 +203,21 @@ namespace KarpicentroWeb.Controllers
 
             foreach (var u in insertarproductos)
                 _contextDB.Product.Add(u);
+
+            _contextDB.SaveChanges();
+
+            foreach (var u in insertarcolores)
+                _contextDB.Colors.Add(u);
+
+            _contextDB.SaveChanges();
+
+            foreach (var u in insertarmateriales)
+                _contextDB.Materials.Add(u);
+
+            _contextDB.SaveChanges();
+
+            foreach (var u in insertarintermedia)
+                _contextDB.InterProd.Add(u);
 
             _contextDB.SaveChanges();
         }

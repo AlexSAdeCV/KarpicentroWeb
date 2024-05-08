@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KarpicentroWeb.Migrations
 {
     [DbContext(typeof(KarpicentroDB))]
-    [Migration("20240502081629_InitDB")]
+    [Migration("20240508080353_InitDB")]
     partial class InitDB
     {
         /// <inheritdoc />
@@ -39,6 +39,9 @@ namespace KarpicentroWeb.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("IDOrder")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -48,11 +51,33 @@ namespace KarpicentroWeb.Migrations
                     b.Property<int>("idProduct")
                         .HasColumnType("int");
 
+                    b.Property<int>("idUser")
+                        .HasColumnType("int");
+
                     b.HasKey("ID");
 
                     b.HasIndex("idProduct");
 
+                    b.HasIndex("idUser");
+
                     b.ToTable("Cart");
+                });
+
+            modelBuilder.Entity("KarpicentroWeb.Models.Colors", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Colors");
                 });
 
             modelBuilder.Entity("KarpicentroWeb.Models.Directions", b =>
@@ -63,11 +88,14 @@ namespace KarpicentroWeb.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<int>("Active")
-                        .HasColumnType("int");
-
                     b.Property<string>("Delegations")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ExtNum")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IntNum")
+                        .HasColumnType("int");
 
                     b.Property<string>("NameUser")
                         .HasColumnType("nvarchar(max)");
@@ -85,14 +113,26 @@ namespace KarpicentroWeb.Migrations
                     b.Property<string>("ZipCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("idUser")
+                    b.HasKey("ID");
+
+                    b.ToTable("Direction");
+                });
+
+            modelBuilder.Entity("KarpicentroWeb.Models.Materials", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("idUser");
-
-                    b.ToTable("Direction");
+                    b.ToTable("Materials");
                 });
 
             modelBuilder.Entity("KarpicentroWeb.Models.Product", b =>
@@ -117,12 +157,11 @@ namespace KarpicentroWeb.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Height")
+                    b.Property<int>("Featured")
                         .HasColumnType("int");
 
-                    b.Property<string>("Image")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Height")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -132,14 +171,8 @@ namespace KarpicentroWeb.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("PurchaseProduct")
+                    b.Property<decimal>("PurchasePrice")
                         .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("SalePrice")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("Stock")
-                        .HasColumnType("int");
 
                     b.Property<int>("Width")
                         .HasColumnType("int");
@@ -152,6 +185,44 @@ namespace KarpicentroWeb.Migrations
                     b.HasIndex("idSupplier");
 
                     b.ToTable("Product");
+                });
+
+            modelBuilder.Entity("KarpicentroWeb.Models.ProductInter", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("SalePrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Stock")
+                        .HasColumnType("int");
+
+                    b.Property<int>("idColors")
+                        .HasColumnType("int");
+
+                    b.Property<int>("idMaterials")
+                        .HasColumnType("int");
+
+                    b.Property<int>("idProducts")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("idColors");
+
+                    b.HasIndex("idMaterials");
+
+                    b.HasIndex("idProducts");
+
+                    b.ToTable("InterProd");
                 });
 
             modelBuilder.Entity("KarpicentroWeb.Models.Supplier", b =>
@@ -223,6 +294,29 @@ namespace KarpicentroWeb.Migrations
                     b.ToTable("User");
                 });
 
+            modelBuilder.Entity("KarpicentroWeb.Models.UserDirections", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<int>("idDirections")
+                        .HasColumnType("int");
+
+                    b.Property<int>("idUser")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("idDirections");
+
+                    b.HasIndex("idUser");
+
+                    b.ToTable("UseDir");
+                });
+
             modelBuilder.Entity("KarpicentroWeb.Models.CartBuys", b =>
                 {
                     b.HasOne("KarpicentroWeb.Models.Product", "Products")
@@ -231,18 +325,15 @@ namespace KarpicentroWeb.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("KarpicentroWeb.Models.Directions", b =>
-                {
-                    b.HasOne("KarpicentroWeb.Models.User", "User")
+                    b.HasOne("KarpicentroWeb.Models.User", "Users")
                         .WithMany()
                         .HasForeignKey("idUser")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("User");
+                    b.Navigation("Products");
+
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("KarpicentroWeb.Models.Product", b =>
@@ -256,6 +347,33 @@ namespace KarpicentroWeb.Migrations
                     b.Navigation("Suppliers");
                 });
 
+            modelBuilder.Entity("KarpicentroWeb.Models.ProductInter", b =>
+                {
+                    b.HasOne("KarpicentroWeb.Models.Colors", "Colors")
+                        .WithMany()
+                        .HasForeignKey("idColors")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("KarpicentroWeb.Models.Materials", "Materials")
+                        .WithMany()
+                        .HasForeignKey("idMaterials")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("KarpicentroWeb.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("idProducts")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Colors");
+
+                    b.Navigation("Materials");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("KarpicentroWeb.Models.Supplier", b =>
                 {
                     b.HasOne("KarpicentroWeb.Models.Directions", "Directions")
@@ -265,6 +383,25 @@ namespace KarpicentroWeb.Migrations
                         .IsRequired();
 
                     b.Navigation("Directions");
+                });
+
+            modelBuilder.Entity("KarpicentroWeb.Models.UserDirections", b =>
+                {
+                    b.HasOne("KarpicentroWeb.Models.Directions", "Directions")
+                        .WithMany()
+                        .HasForeignKey("idDirections")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("KarpicentroWeb.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("idUser")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Directions");
+
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

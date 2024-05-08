@@ -12,14 +12,12 @@ namespace KarpicentroWeb.Models
         public string Name { get; set; }
         public string ProductFeatures { get; set; }
         public string Description { get; set; }
-        public decimal PurchaseProduct { get; set; }
+        public decimal PurchasePrice { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
         public int Depth { get; set; }
         public string Categories { get; set; }
-        public decimal SalePrice { get; set; }
-        public int Stock { get; set; }
-        public string Image { get; set; }
+        public int Featured { get; set; }
         public int idSupplier { get; set; }
 
         [ForeignKey("idSupplier")]

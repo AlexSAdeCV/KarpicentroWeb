@@ -14,5 +14,9 @@ namespace KarpicentroWeb.Models
         public DbSet<Product> Product { get; set; }
         public DbSet<Supplier> Supplier { get; set; }
         public DbSet<User> User { get; set; }
+        public DbSet<UserDirections> UseDir { get; set; }
+        public DbSet<Colors> Colors { get; set; }
+        public DbSet<Materials> Materials { get; set; }
+        public DbSet<ProductInter> InterProd { get; set; }
     }
 }

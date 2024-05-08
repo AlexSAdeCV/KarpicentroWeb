@@ -14,10 +14,7 @@ namespace KarpicentroWeb.Models
         public string? ZipCode { get; set; }
         public string? Delegations { get; set; }
         public string State { get; set; }
-        public int Active { get; set; }
-        public int idUser { get; set; }
-
-        [ForeignKey("idUser")]
-        public virtual User User { get; set; }
+        public int ExtNum { get; set; }
+        public int IntNum { get; set; }
     }
 }

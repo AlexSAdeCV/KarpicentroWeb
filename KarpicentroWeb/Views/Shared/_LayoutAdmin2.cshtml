@@ -47,17 +47,17 @@
                 <div class="collapse navbar-collapse  header-menu" id="navbarTogglerDemo01">
 
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item material-symbols-outlined">
-                            <a href="productos.html">Productos</a>
+                        <li class="nav-item">
+                            <a class="nav-link px-2 text-white" asp-action="Users" asp-controller="Admin">Usuarios</a>
                         </li>
-                        <li class="nav-item material-symbols-outlined">
-                            <a class="nav-item nav-link active" href="@Url.Action("ProductList", "Productos", new { valor = "Salas" })">Salas</a>
+                        <li class="nav-item">
+                            <a class="nav-link px-2 text-white" asp-action="Users" asp-controller="Admin">Almacen</a>
                         </li>
-                        <li class="nav-item material-symbols-outlined">
-                            <a class="nav-item nav-link active" href="@Url.Action("ProductList", "Productos", new { valor = "Cocinas" })">Cocinas</a>
+                        <li class="nav-item">
+                            <a class="nav-link px-2 text-white" asp-action="Users" asp-controller="Admin">Compras</a>
                         </li>
-                        <li class="nav-item material-symbols-outlined">
-                            <a class="nav-item nav-link active" href="@Url.Action("ProductList", "Productos", new { valor = "Recamaras" })">Recamaras</a>
+                        <li class="nav-item">
+                            <a class="nav-link px-2 text-white" asp-action="Users" asp-controller="Admin">Ventas</a>
                         </li>
                     </ul>
                     <div class="dropdown text-end" style="padding-left: 100px">

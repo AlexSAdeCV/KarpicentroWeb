@@ -1,4 +1,6 @@
-﻿namespace KarpicentroWeb.Models
+﻿using KarpicentroWeb.Models;
+
+namespace KarpicentroWeb.Models
 {
     public class UserModel
     {

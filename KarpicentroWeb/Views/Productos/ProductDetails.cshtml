@@ -1,4 +1,4 @@
-﻿@model KarpicentroWeb.Models.Product
+﻿@model KarpicentroWeb.Models.ProductViewModel
 
 @{
     if (ViewBag.Nivel == "Admin")
@@ -11,6 +11,11 @@
     }
 }
 
+<style>
+    body{
+        font-size: 25px
+    }
+</style>
 
 <body>
     <main>
@@ -18,9 +23,18 @@
             <div class="me-md-3 pt-3+ px-md-5 text-center text-white overflow-hidden">
                 <div class=" shadow-sm mx-auto" style="  background-size: cover; background-position: center;">
                     <div id="demo" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner" style="border-radius: 25px;">
-                            <img class="img-fluid w-100" src="@Model.Image" alt="@Model.Name">
-                        </div>
+                        @{
+                            foreach (var i in Model.Inter)
+                            {
+                                if (ViewBag.ID == i.idProducts)
+                                {
+                                    <div class="carousel-inner" style="border-radius: 25px;">
+                                        <img class="img-fluid w-100" src="@i.Image" alt="i.name" style="height: 350px">
+                                    </div>
+                                    break;
+                                }
+                            }
+                        }
 
                         <!-- Left and right controls/icons -->
                         <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
@@ -35,37 +49,97 @@
             <form method="post">
                 <div class="me-md-3 pt-3 px-3 pt-md-5 overflow-hidden">
                     <div class="mx-auto" style="width: 100%; height: auto;">
-                        <h1>@Html.DisplayFor(model => model.Name)</h1>
+                        @{
+                            foreach (var i in Model.Products)
+                            {
+                                if (ViewBag.ID == i.ID)
+                                {
+                                    <h1>@i.Name</h1>
+                                    break;
+                                }
+                            }
+                        }
                         <br>
-                        <h5>$@Html.DisplayFor(model => model.SalePrice) MXN</h5>  <p class="" style="color: rgb(9, 10, 10);">En Stock @Html.DisplayFor(model => model.Stock) pzas</p>
+                        @{
+                            foreach (var i in Model.Inter)
+                            {
+                                if (ViewBag.ID == i.idProducts)
+                                {
+                                    <h5>$@i.SalePrice MXN</h5>  <p class="" style="color: rgb(9, 10, 10);">En Stock @i.Stock pzas</p>
+                                    break;
+                                }
+                            }
+                        }
+
                         <h5>Descripción:</h5>
-                        <p class="" style="color: rgb(9, 10, 10);">@Html.DisplayFor(model => model.Description)</p>
+                        @{
+                            foreach (var i in Model.Products)
+                                if (ViewBag.ID == i.ID)
+                                {
+                                    <p class="" style="color: rgb(9, 10, 10);">@i.Description</p>
+                                    break;
+                                }
+                        }
                         <div class="row g-3">
                             <div class="col-sm-3">
-                                <input name="Precio" type="hidden" value="@Html.DisplayFor(model => model.SalePrice)" />
-                                <input name="id" type="hidden" value="@Html.DisplayFor(model => model.ID)">
+                                @{
+                                    foreach (var i in Model.Inter)
+                                        if (ViewBag.ID == i.ID)
+                                        {
+                                            <input name="Precio" type="hidden" value="@i.SalePrice)" />
+                                            break;
+                                        }
+                                }
+                                
+                                @{
+                                    foreach (var i in Model.Products)
+                                        if (ViewBag.ID == i.ID)
+                                        {
+                                            <input name="id" type="hidden" value="@i.ID">
+                                            break;
+                                        }
+                                }
+                                
                                 <br />
-                                <table class="table">
+                                <div class="table-responsive-xl">
+                                    <table class="table">
                                         <thead>
                                             <tr>
-                                                <th scope="col">Alto</th>
-                                                <th scope="col">Ancho</th>
-                                                <th scope="col">Largo</th>
+                                                <th class="w-50 p-3">Alto</th>
+                                                <th class="w-50 p-3">Ancho</th>
+                                                <th class="w-50 p-3">Largo</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>@Model.Height m</td>
-                                                <td>@Model.Width m</td>
-                                                <td>@Model.Depth m</td>
+                                                @{
+                                                    foreach (var i in Model.Products)
+                                                        if (ViewBag.ID == i.ID)
+                                                        {
+                                                            <td class="w-50">@i.Height m</td>
+                                                            <td>@i.Width m</td>
+                                                            <td>@i.Depth m</td>
+                                                            break;
+                                                        }
+                                                }
+                                                
                                             </tr>
                                         </tbody>
                                     </table>
+                                </div>
                                 @{
                                     if (ViewBag.Existencia > 0)
                                     {
-                                        <input name="Existencia" type="hidden" value="@Html.DisplayFor(model => model.Stock)">
-                                        <input name="IdProduc" type="hidden" value="@ViewBag.ProductoId">
+                                        foreach (var i in Model.Inter)
+                                        {
+                                            if (ViewBag.ID == i.idProducts)
+                                            {
+                                                <input name="Existencia" type="hidden" value="@i.Stock">
+                                                break;
+                                            }
+                                        }
+                                        
+                                        <input name="IdProduc" type="hidden" value="@ViewBag.ID">
                                         <button class="btn btn-primary text-white" asp-controller="Productos" asp-action="Productos">Confirmar</button>
                                         <p>@ViewBag.Mensaje</p>
                                     }

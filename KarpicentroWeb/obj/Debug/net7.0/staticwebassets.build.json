@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EvUsbjpGUBDW6NxiZRXEa/X7HS91aRetsFirEBGwA3c=",
+  "Hash": "lHvpyeLsF7DxVUpD+j8oGUp2CMKp00kjV3jUK1JIKOk=",
   "Source": "KarpicentroWeb",
   "BasePath": "_content/KarpicentroWeb",
   "Mode": "Default",
@@ -224,6 +224,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Users\\Alejandro.jpg"
+    },
+    {
+      "Identity": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Users\\Rich.jpg",
+      "SourceId": "KarpicentroWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\",
+      "BasePath": "_content/KarpicentroWeb",
+      "RelativePath": "Images/Users/Rich.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Users\\Rich.jpg"
     },
     {
       "Identity": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Users\\Usuario.png",

@@ -1,4 +1,6 @@
+using KarpicentroWeb.Helpers;
 using KarpicentroWeb.Models;
+using KarpicentroWeb.Providers;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<KarpicentroDB>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConexionSql")));
+builder.Services.AddSingleton<PathProvider>();
+builder.Services.AddSingleton<HelperUploadFiles>();
 
 var app = builder.Build();
 

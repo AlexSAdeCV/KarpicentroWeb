@@ -85,5 +85,16 @@ namespace KarpicentroWeb.Models
                 return false;
             }
         }
+
+        public void Edit(User user) 
+        {
+            _contextDB.User.Update(user);
+            _contextDB.SaveChanges();
+        }
+        public void Delete(User user)
+        {
+            _contextDB.User.Remove(user);
+            _contextDB.SaveChanges();
+        }
     }
 }

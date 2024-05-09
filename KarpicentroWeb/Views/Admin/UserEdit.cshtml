@@ -1,0 +1,58 @@
+﻿@model KarpicentroWeb.Models.User
+
+@{
+    Layout = "_LayoutAdmin2";
+}
+
+
+<body>
+    <main class="container">
+        <div class="m-3 rounded">
+            <form class="needs-validation bg-light p-4 rounded" style="max-width: 400px; margin: 0 auto;" novalidate method="post">
+                <div class="row justify-content-center mb-3">
+                    <div class="col-12">
+                        <input asp-for="ID" type="hidden" readonly class="form-control" required>
+                    </div>
+                    <div class="col-12">
+                        <input asp-for="Password" type="hidden" readonly class="form-control" required>
+                    </div>
+                    <div class="col-12">
+                        <label for="staticEmail" class="form-label">Email</label>
+                        <input asp-for="Email" readonly class="form-control" required>
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-3">
+                    <div class="col-auto">
+                        <label asp-for="Name" class="form-label">Nombre del Usuario</label>
+                        <input asp-for="Name" type="text" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Se requiere un nombre válido.
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-3">
+                    <div class="col-auto">
+                        <label asp-for="UserType" class="form-label">Nivel del Usuario</label>
+                        <select asp-for="UserType" name="UserType" id="UserType" class="form-select" aria-label="Default select example">
+                            <option value="" selected>Seleccione una opción</option>
+                            <option>Admin</option>
+                            <option>Cliente</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-3">
+                    <div class="col-auto">
+                        <label for="formFileMultiple" class="form-label">Seleccione las imagen del Usuario</label>
+                        <input name="Image" class="form-control" type="file" id="formFileMultiple" multiple>
+                    </div>
+                    <div class="invalid-feedback">
+                        Zip code required.
+                    </div>
+                </div>
+
+                <button asp-controller="Admin" asp-action="UserEdit" class="w-100 btn btn-primary btn-lg" type="submit">Guardar</button>
+            </form>
+        </div>
+    </main>
+</body>
+

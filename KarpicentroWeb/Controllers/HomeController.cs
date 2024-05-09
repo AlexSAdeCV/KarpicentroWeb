@@ -131,8 +131,8 @@ namespace KarpicentroWeb.Controllers
             var insertarusuarios = new User[]
                 {
                     new User() {Email = "aserranoacosta841@gmail.com", Password = "1234", UserType = "Admin", Image = "../Images/Users/Alejandro.jpg", Name = "Alejandro"},
-                    new User() {Email = "ricardo_138@outlook.com", Password = "1234", UserType = "Admin", Image = "../Images/Usuarios/Rich.jpg", Name = "Rich"},
-                    new User() {Email = "a@gmail.com", Password = "1234", UserType = "Cliente", Image = "../Images/Usuarios/Usuario.jpg", Name = "A"}
+                    new User() {Email = "ricardo_138@outlook.com", Password = "1234", UserType = "Admin", Image = "../Images/Users/Rich.jpg", Name = "Rich"},
+                    new User() {Email = "a@gmail.com", Password = "1234", UserType = "Cliente", Image = "../Images/Users/Usuario.png", Name = "A"}
                 };
 
             var insertardireccion = new Directions[]

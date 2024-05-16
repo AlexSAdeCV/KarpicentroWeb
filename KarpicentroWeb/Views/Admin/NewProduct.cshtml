@@ -1,0 +1,85 @@
+﻿@model IEnumerable<KarpicentroWeb.Models.Supplier>
+
+@{
+    Layout = "_LayoutAdmin2";
+}
+
+<body>
+    <main class="container">
+        <div class="my-3 p-3 bg-light rounded shadow-sm">
+            <form class="row g-3 needs-validation" novalidate method="post" enctype="multipart/form-data">
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Nombre del Producto</label>
+                    <input name="Name" type="text" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Caracteristicas</label>
+                    <input name="ProductFeatures" type="text" class="form-control" id="inputPassword4">
+                </div>
+                <div class="col-12">
+                    <label for="inputAddress" class="form-label">Descripcion</label>
+                    <textarea name="Description" type="text" class="form-control" id="inputAddress"></textarea>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputAddress2" class="form-label">Precio de Compra</label>
+                    <input name="PurchasePrice" type="number" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">Largo</label>
+                    <input name="Width" type="number" class="form-control" id="inputCity">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">Alto</label>
+                    <input name="Height" type="number" class="form-control" id="inputCity">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">Ancho</label>
+                    <input name="Depth" type="number" class="form-control" id="inputCity">
+                </div>
+                <div class="col-md-4">
+                    <label for="inputState" class="form-label">Proveedores</label>
+                    <select name="idSupplier" id="inputState" class="form-select">
+                        <option >Proveedor...</option>
+                        @{
+                            int i = 0;
+
+                            foreach (var p in Model)
+                            {
+                                i++;
+                                <option value="@i">@p.NameSupplier</option>
+                            }
+                        }
+                        <option>...</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="Categoria" class="form-label">Categorias</label>
+                    <select name="Categories" class="form-select" id="Categoria" required>
+                        <option value="">Seleccione una opcion...</option>
+                        <option>Salas</option>
+                        <option>Comedores</option>
+                        <option>Recamaras</option>
+                        <option>Cocinas</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Seleccione una categoria válida.
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="Categoria" class="form-label">Destacar Producto</label>
+                    <select name="Categoria" class="form-select" id="Categoria" required>
+                        <option value="">Seleccione una opcion...</option>
+                        <option value="1">Si</option>
+                        <option value="0">No</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Seleccione una categoria válida.
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button asp-action="NewProduct" asp-controller="Admin" formmethod="post">Crear Producto</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>

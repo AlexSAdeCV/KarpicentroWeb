@@ -12,7 +12,7 @@
 }
 
 <style>
-    body{
+    body {
         font-size: 25px
     }
 </style>
@@ -26,7 +26,7 @@
                         @{
                             foreach (var i in Model.Inter)
                             {
-                                if (ViewBag.ID == i.idProducts)
+                                if (ViewBag.IDproducto == i.idProducts)
                                 {
                                     <div class="carousel-inner" style="border-radius: 25px;">
                                         <img class="img-fluid w-100" src="@i.Image" alt="i.name" style="height: 350px">
@@ -52,7 +52,7 @@
                         @{
                             foreach (var i in Model.Products)
                             {
-                                if (ViewBag.ID == i.ID)
+                                if (ViewBag.IDproducto == i.ID)
                                 {
                                     <h1>@i.Name</h1>
                                     break;
@@ -63,7 +63,7 @@
                         @{
                             foreach (var i in Model.Inter)
                             {
-                                if (ViewBag.ID == i.idProducts)
+                                if (ViewBag.IDproducto == i.idProducts)
                                 {
                                     <h5>$@i.SalePrice MXN</h5>  <p class="" style="color: rgb(9, 10, 10);">En Stock @i.Stock pzas</p>
                                     break;
@@ -74,7 +74,7 @@
                         <h5>Descripción:</h5>
                         @{
                             foreach (var i in Model.Products)
-                                if (ViewBag.ID == i.ID)
+                                if (ViewBag.IDproducto == i.ID)
                                 {
                                     <p class="" style="color: rgb(9, 10, 10);">@i.Description</p>
                                     break;
@@ -84,22 +84,13 @@
                             <div class="col-sm-3">
                                 @{
                                     foreach (var i in Model.Inter)
-                                        if (ViewBag.ID == i.ID)
+                                        if (ViewBag.IDproducto == i.ID)
                                         {
                                             <input name="Precio" type="hidden" value="@i.SalePrice)" />
                                             break;
                                         }
                                 }
-                                
-                                @{
-                                    foreach (var i in Model.Products)
-                                        if (ViewBag.ID == i.ID)
-                                        {
-                                            <input name="id" type="hidden" value="@i.ID">
-                                            break;
-                                        }
-                                }
-                                
+
                                 <br />
                                 <div class="table-responsive-xl">
                                     <table class="table">
@@ -114,7 +105,7 @@
                                             <tr>
                                                 @{
                                                     foreach (var i in Model.Products)
-                                                        if (ViewBag.ID == i.ID)
+                                                        if (ViewBag.IDproducto == i.ID)
                                                         {
                                                             <td class="w-50">@i.Height m</td>
                                                             <td>@i.Width m</td>
@@ -122,25 +113,27 @@
                                                             break;
                                                         }
                                                 }
-                                                
+
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
+                                <h5>Cantidad: <input id="amountInput" name="Amount" type="number" value="1" max="@Model.Inter.FirstOrDefault()?.Stock"> </h5>
                                 @{
                                     if (ViewBag.Existencia > 0)
                                     {
                                         foreach (var i in Model.Inter)
                                         {
-                                            if (ViewBag.ID == i.idProducts)
+                                            if (ViewBag.IDproducto == i.idProducts)
                                             {
                                                 <input name="Existencia" type="hidden" value="@i.Stock">
+                                                <input name="Price" type="hidden" value="@Model.Inter.FirstOrDefault(i => i.idProducts == ViewBag.IDproducto)?.SalePrice" />
                                                 break;
                                             }
                                         }
-                                        
-                                        <input name="IdProduc" type="hidden" value="@ViewBag.ID">
-                                        <button class="btn btn-primary text-white" asp-controller="Productos" asp-action="Productos">Confirmar</button>
+                                        <input name="idprod" type="hidden" value="@ViewBag.IDproducto">
+                                        <input name="idProductInter" type="hidden" value="@Model.Inter.FirstOrDefault(c => c.idProducts == ViewBag.IDproducto).ID">
+                                        <button class="btn btn-primary text-white" asp-controller="Productos" asp-action="ProductDetails" method="post">Confirmar</button>
                                         <p>@ViewBag.Mensaje</p>
                                     }
                                 }
@@ -153,4 +146,21 @@
     </main>
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Obtener el elemento de entrada
+        var amountInput = document.getElementById('amountInput');
+
+        // Escuchar el evento de cambio en el campo de entrada
+        amountInput.addEventListener('change', function () {
+            // Obtener el valor actual y el valor máximo permitido
+            var currentValue = parseInt(amountInput.value);
+            var maxValue = parseInt(amountInput.max);
+
+            // Si el valor actual es mayor que el máximo permitido, establecer el valor máximo como el valor actual
+            if (currentValue > maxValue) {
+                amountInput.value = maxValue;
+            }
+        });
+    </script>
 </body>

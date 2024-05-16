@@ -60,6 +60,11 @@
                             <a class="nav-item nav-link active" href="@Url.Action("ProductList", "Productos", new { valor = "Recamaras" })">Recamaras</a>
                         </li>
                     </ul>
+
+                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                        <a asp-area="" asp-controller="Productos" asp-action="Cart"><i class="text-white fa-solid fa-cart-shopping"></i></a>
+                    </form>
+
                     <div class="dropdown text-end" style="padding-left: 100px">
                         <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="@ViewBag.FotoPerfil" alt="mdo" width="32" height="32" class="rounded-circle">

@@ -177,8 +177,16 @@ namespace KarpicentroWeb.Controllers
             var insertarintermedia = new ProductInter[]
                 {
                     new ProductInter() { idProducts = 1, idColors = 1, idMaterials = 1, Stock = 15, SalePrice = 2200, Image = "../Images/Products/Sala.jpg"},
-                    new ProductInter() { idProducts = 2, idColors = 4, idMaterials = 2, Stock = 15, SalePrice = 2200, Image = "../Images/Products/cocina.jpg"},
-                    new ProductInter() { idProducts = 3, idColors = 5, idMaterials = 2, Stock = 15, SalePrice = 2200, Image = "../Images/Products/Recamara.jpg"}
+                    new ProductInter() { idProducts = 2, idColors = 4, idMaterials = 2, Stock = 15, SalePrice = 4000, Image = "../Images/Products/cocina.jpg"},
+                    new ProductInter() { idProducts = 3, idColors = 5, idMaterials = 2, Stock = 15, SalePrice = 15000, Image = "../Images/Products/Recamara.jpg"}
+                };
+
+            // Venta = 2, Carrito = 1
+            var insertarventas = new CartBuys[]
+                {
+                    new CartBuys() {Price = 15000, Amount  = 5, Date = DateTime.Now, SwitchCartBuy = 2, Shipping = "Preparando tu producto", IDOrder = 1, idProductInter = 1, idUser = 1, iduserdir = 1},
+                    new CartBuys() {Price = 1500, Amount  = 3, Date = DateTime.Now, SwitchCartBuy = 2, Shipping = "Preparando tu producto", IDOrder = 2, idProductInter = 2, idUser = 2, iduserdir = 1},
+                    new CartBuys() {Price = 1700, Amount  = 1, Date = DateTime.Now, SwitchCartBuy = 2, Shipping = "Preparando tu producto", IDOrder = 2, idProductInter = 1, idUser = 2, iduserdir = 1}
                 };
 
             foreach (var u in insertarusuarios)
@@ -218,6 +226,11 @@ namespace KarpicentroWeb.Controllers
 
             foreach (var u in insertarintermedia)
                 _contextDB.InterProd.Add(u);
+
+            _contextDB.SaveChanges();
+
+            foreach (var u in insertarventas)
+                _contextDB.Cart.Add(u);
 
             _contextDB.SaveChanges();
         }

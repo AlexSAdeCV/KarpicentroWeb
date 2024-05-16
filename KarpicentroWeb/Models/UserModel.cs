@@ -1,4 +1,5 @@
 ﻿using KarpicentroWeb.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace KarpicentroWeb.Models
 {
@@ -65,11 +66,19 @@ namespace KarpicentroWeb.Models
                             new User() {Email = Email, Password = Password, UserType = "Cliente", Name = Name, Image = "../Images/Users/Usuario.png"}
                         };
 
-                    foreach (var us in u)
+                    try
                     {
-                        _contextDB.User.Add(us); 
+                        foreach (var us in u)
+                        {
+                            _contextDB.User.Add(us);
+                        }
+                        _contextDB.SaveChanges();
                     }
-                    _contextDB.SaveChanges();
+                    catch (Exception ex) 
+                    {
+                        Message = ex.Message;
+                        return false;
+                    }
 
                     return true;
                 }

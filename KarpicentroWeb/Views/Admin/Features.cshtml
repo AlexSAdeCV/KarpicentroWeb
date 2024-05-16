@@ -1,0 +1,61 @@
+﻿@model KarpicentroWeb.Models.ProductViewModel
+
+@{
+    Layout = "_LayoutAdmin2";
+}
+
+<body>
+    <main class="container">
+        <div class="my-3 p-3 bg-light rounded shadow-sm">
+            <div class="table-responsive">
+                <h1>Productos</h1>
+                <table class="table-hover table-sm table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Material</th>
+                            <th scope="col">Color</th>
+                            <th scope="col">Editar</th>
+                            <th scope="col"><a asp-action="AddFeatures" asp-controller="Admin" class="btn btn-primary text-white">Agregar Caracteristica</a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var p in Model.Inter)
+                        {
+                            if (ViewBag.ID == p.idProducts)
+                            {
+                                <tr>
+                                    <td>@p.Stock</td>
+                                    @{
+                                        foreach (var m in Model.Material)
+                                        {
+                                            if (p.idMaterials == m.ID)
+                                            {
+                                                <td>@m.Name</td>
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    @{
+                                        foreach (var m in Model.Color)
+                                        {
+                                            if (p.idColors == m.ID)
+                                            {
+                                                <td>@m.Name</td>
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    <td>@p.SalePrice</td>
+                                    <td>
+                                        <a href="@Url.Action("EditFeatures", "Admin", new { id = p.ID })" class="btn btn-primary text-white">Modificar Caracteristicas</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>

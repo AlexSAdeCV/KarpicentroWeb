@@ -1,0 +1,42 @@
+﻿@model IEnumerable<KarpicentroWeb.Models.CartBuys>
+
+@{
+    Layout = "_LayoutAdmin2";
+}
+
+<body>
+    <main class="container">
+        <div class="my-3 p-3 bg-light rounded shadow-sm">
+            <div class="table-responsive">
+                <h1>Productos</h1>
+                <table class="table-hover table-sm table table-striped">
+                    <thead>
+                        <tr>
+                            <td scope="col">ID</td>
+                            <td scope="col">Total</td>
+                            <td scope="col">Fecha</td>
+                            <td scope="col">Detalles del Envio</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            var groupedOrders = Model.Where(u => u.Shipping == "Tu paquete a sido entregado" && u.SwitchCartBuy == 2)
+                            .GroupBy(u => u.IDOrder)
+                            .Select(g => new { IDOrder = g.Key, TotalPrice = g.Sum(u => u.Price), FirstItem = g.First() });
+
+                            foreach (var order in groupedOrders)
+                            {
+                                <tr>
+                                    <td>@order.IDOrder</td>
+                                    <td>@order.TotalPrice</td>
+                                    <td>@order.FirstItem.Date</td>
+                                    <td>@order.FirstItem.Shipping</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>

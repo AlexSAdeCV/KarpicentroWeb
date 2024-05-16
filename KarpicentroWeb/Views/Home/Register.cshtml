@@ -1,63 +1,53 @@
-﻿<body>
+﻿@{
+    Layout = "_Layout";
+}
 
-    <div class="wrapper text-center">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@501&family=Big+Shoulders+Text:wght@383&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@306&display=swap" rel="stylesheet">
+    <link href="~/css/register.css" rel="stylesheet"/>
+</head>
 
-        <form asp-controller="Home" asp-action="Register" method="post" class="needs-validation" novalidate>
-            <h1>
-                Register
-            </h1>
-            <div class="mb-3">
-                <label for="validationCustom01" class="form-label">Correo</label>
-                <input type="text" class="form-control" placeholder="ejemplo@gmail.com" name="Email" id="validationCustom01" required>
-                <div class="invalid-feedback">
-                    Porfavor introduzca un correo valido
+<body>
+    <div class="container containerk">
+        <form class="form-horizontal" role="form" method="post">
+            <h2>Registrate!!</h2>
+            <div class="form-group">
+                <label for="firstName" class="col-sm-3 control-label">Nombre </label>
+                <div class="col-12">
+                    <input name="Name" type="text" id="firstName" placeholder="Full Name" class="form-control" autofocus>
+
                 </div>
             </div>
-            <div class="mb-3">
-                <label for="validationCustom02" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Contraseña" name="Password" id="validationCustom02" required>
-                <div class="invalid-feedback">
-                    Introduzca su contraseña
+            <div class="form-group">
+                <label for="email" class="col-sm-3 control-label">Email</label>
+                <div class="col-12">
+                    <input name="Email" type="email" id="email" placeholder="Email" class="form-control">
                 </div>
             </div>
-            <div class="mb-3">
-                <label for="validationCustom03" class="form-label">Confirme su Contraseña</label>
-                <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Contraseña" name="Password2" id="validationCustom03" required>
-                <div class="invalid-feedback">
-                    Introduzca su confirmacion de su contraseña
+            <div class="form-group">
+                <label for="password" class="col-sm-3 control-label">Contraseña</label>
+                <div class="col-12">
+                    <input name="Password" type="password" id="password" placeholder="Password" class="form-control">
                 </div>
             </div>
-            <div class="mb-3">
-                <label for="validationCustom04" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Nombre" name="Name" id="validationCustom04" required>
-                <div class="invalid-feedback">
-                    Introduzca su nombre
+            <div class="form-group">
+                <label for="password" class="col-sm-3 control-label">Confirmar Contraseña</label>
+                <div class="col-12">
+                    <input name="Password2" type="Password" id="password" placeholder="Password" class="form-control">
                 </div>
             </div>
-            <div class="col-12">
-                <input type="submit" class="btn btn-primary" name="Registrate" value="Registrate" />
+            <div class="form-group">
+                <div class="col-12 col-sm-offset-3">
+                    <button type="submit" class="btn btn-primary btn-block" asp-action="Register" asp-controller="Home">Register</button>
+                </div>
             </div>
+                <label class="col-12 control-label" style="text-align:center;">@ViewBag.Mensaje</label>
         </form>
     </div>
-    <script>
-        (function () {
-            'use strict'
-
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.querySelectorAll('.needs-validation')
-
-            // Loop over them and prevent submission
-            Array.prototype.slice.call(forms)
-                .forEach(function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (!form.checkValidity()) {
-                            event.preventDefault()
-                            event.stopPropagation()
-                        }
-
-                        form.classList.add('was-validated')
-                    }, false)
-                })
-        })()
-    </script>
 </body>

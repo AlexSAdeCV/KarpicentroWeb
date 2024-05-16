@@ -1,96 +1,134 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif; /* Cambiado a Arial con una alternativa de fuente */
-  }
-.wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 10px;
-    width: 100%; /* Cambiado a 100% */
-    max-width: 400px; /* Ancho máximo para el wrapper */
-    border-radius: 10px;
-    padding: 40px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.9);
-    margin: auto; /* Margen automático para centrarlo horizontalmente */
 }
-  
-  .form {
-    margin-bottom: 80px;
-    color: #333; /* Cambiado el color del texto */
-  }
-  
-  .Username,
-  .contraseña {
-    margin: 20px 0; /* Aumentado el margen */
-    position: relative; /* Añadido */
-  }
-  
-  .label {
+
+html {
+    scroll-behavior: smooth;
+}
+
+.cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* This will center the login box vertically on the page */
+}
+
+.wrapper {
+    display: flex; /* Cambiado a flex para centrar el contenido */
+    flex-direction: column; /* Alinear elementos verticalmente */
+    align-items: center; /* Centrar elementos horizontalmente */
+    border-radius: 10px;
+    background-color: #8abef5;
+    text-align: center;
+    padding: 20px;
+    width: 50%;
+    max-width: 400px;
+    margin-bottom: 100px;
+    margin-left: 380px;
+    margin-top: 100px;
+}
+
+h1 {
+    color: #f5f5f5;
+}
+
+.label {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 306;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    color: #f5f5f5;
+}
+
+.register {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 306;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    color: #f5f5f5;
+}
+
+.form {
+    width: 50%;
+    max-width: 100px;
+    margin-bottom: 200px;
+    color: #333;
+}
+
+.Username,
+.contraseña {
+    margin: 20px 0;
+    position: relative;
+}
+
+    .Username,
+    .contraseña .label {
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 306;
+        font-style: normal;
+        font-variation-settings: "slnt" 0;
+        color: #f5f5f5;
+    }
+
+    .contraseña label {
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 306;
+        font-style: normal;
+        font-variation-settings: "slnt" 0;
+        color: #f5f5f5;
+    }
+
+.label {
     position: absolute;
     top: 50%;
-    left: 10px; /* Alineado a la izquierda */
+    left: 10px;
     transform: translateY(-50%);
-    color: #666; /* Cambiado el color del texto */
-    font-size: 14px; /* Reducido el tamaño de fuente */
+    color: #666;
+    font-size: 14px;
     transition: 0.15s ease;
-  }
-  
-  .Username input,
-  .contraseña input {
-    width: calc(100% - 20px); /* Reducido el ancho del input para dar espacio al label */
+}
+
+.Username input,
+.contraseña input {
+    width: calc(100% - 20px);
     height: 40px;
-    background: #f5f5f5; /* Cambiado el color de fondo */
-    border: 1px solid #ccc; /* Cambiado el color del borde */
+    background: #f5f5f5;
+    border: 1px solid #ccc;
     outline: none;
     font-size: 16px;
-    color: #333; /* Cambiado el color del texto */
-    padding-left: 10px; /* Añadido espacio de relleno a la izquierda */
-  }
-  
-  /* Añadido */
-  .Username input:focus + .label,
-  .contraseña input:focus + .label,
-  .Username input:valid + .label,
-  .contraseña input:valid + .label {
-    top: 5px; /* Ajustado el posicionamiento */
-    left: 10px; /* Ajustado el posicionamiento */
-    font-size: 12px; /* Reducido el tamaño de fuente */
-  }
-  
-  .recordar {
-    display: flex; /* Cambiado a flex para alinear elementos */
-    align-items: center; /* Alineado verticalmente */
-    justify-content: center; /* Alineado horizontalmente */
-  }
-  
-  .recordar label {
-    margin-left: 5px; /* Añadido margen izquierdo para separar checkbox y texto */
-  }
-  
-  button {
+    color: #333;
+    padding-left: 10px;
+}
+
+    .Username input:focus + .label,
+    .contraseña input:focus + .label,
+    .Username input:valid + .label,
+    .contraseña input:valid + .label {
+        top: 5px;
+        left: 10px;
+        font-size: 12px;
+    }
+
+button {
     width: 100%;
     height: 40px;
-    background-color:  rgb(6, 36, 76); /* Color de fondo verde */
+    background-color: #4D82BC;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s; /* Transición suave de color */
-    
-  }
-  
-  button:hover {
-    background-color:  #1c568c; /* Cambio de color al pasar el ratón */
-  }
-  
-.form.Username{
-    
+    transition: background-color 0.3s;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 306;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
 }
-  
 
-
+    button:hover {
+        background-color: #1c568c;
+    }

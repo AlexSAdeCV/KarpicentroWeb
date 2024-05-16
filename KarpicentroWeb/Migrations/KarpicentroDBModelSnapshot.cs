@@ -42,18 +42,25 @@ namespace KarpicentroWeb.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("Shipping")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("SwitchCartBuy")
                         .HasColumnType("int");
 
-                    b.Property<int>("idProduct")
+                    b.Property<int>("idProductInter")
                         .HasColumnType("int");
 
                     b.Property<int>("idUser")
                         .HasColumnType("int");
 
+                    b.Property<int>("iduserdir")
+                        .HasColumnType("int");
+
                     b.HasKey("ID");
 
-                    b.HasIndex("idProduct");
+                    b.HasIndex("idProductInter");
 
                     b.HasIndex("idUser");
 
@@ -316,9 +323,9 @@ namespace KarpicentroWeb.Migrations
 
             modelBuilder.Entity("KarpicentroWeb.Models.CartBuys", b =>
                 {
-                    b.HasOne("KarpicentroWeb.Models.Product", "Products")
+                    b.HasOne("KarpicentroWeb.Models.ProductInter", "ProductInter")
                         .WithMany()
-                        .HasForeignKey("idProduct")
+                        .HasForeignKey("idProductInter")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -328,7 +335,7 @@ namespace KarpicentroWeb.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Products");
+                    b.Navigation("ProductInter");
 
                     b.Navigation("Users");
                 });

@@ -5,6 +5,26 @@
       "PackagePath": "staticwebassets\\KarpicentroWeb.bundle.scp.css"
     },
     {
+      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Products\\1_3_2_Brainiac.png",
+      "PackagePath": "staticwebassets\\Images\\Products\\1_3_2_Brainiac.png"
+    },
+    {
+      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Products\\1_3_2_superman4.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\1_3_2_superman4.jpg"
+    },
+    {
+      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Products\\1_5_1_Clark.png",
+      "PackagePath": "staticwebassets\\Images\\Products\\1_5_1_Clark.png"
+    },
+    {
+      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Products\\1_6_3_minecraft.png",
+      "PackagePath": "staticwebassets\\Images\\Products\\1_6_3_minecraft.png"
+    },
+    {
+      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Products\\4_1_3_Superman.png",
+      "PackagePath": "staticwebassets\\Images\\Products\\4_1_3_Superman.png"
+    },
+    {
       "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Products\\Recamara.jpg",
       "PackagePath": "staticwebassets\\Images\\Products\\Recamara.jpg"
     },
@@ -21,6 +41,10 @@
       "PackagePath": "staticwebassets\\Images\\Users\\Alejandro.jpg"
     },
     {
+      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Users\\AlejandroSuperman.png",
+      "PackagePath": "staticwebassets\\Images\\Users\\AlejandroSuperman.png"
+    },
+    {
       "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Users\\Rich.jpg",
       "PackagePath": "staticwebassets\\Images\\Users\\Rich.jpg"
     },
@@ -35,6 +59,10 @@
     {
       "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\body.css",
       "PackagePath": "staticwebassets\\css\\body.css"
+    },
+    {
+      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\register.css",
+      "PackagePath": "staticwebassets\\css\\register.css"
     },
     {
       "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\signin.css",

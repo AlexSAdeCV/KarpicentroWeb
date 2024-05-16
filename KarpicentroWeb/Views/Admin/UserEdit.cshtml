@@ -8,7 +8,7 @@
 <body>
     <main class="container">
         <div class="m-3 rounded">
-            <form class="needs-validation bg-light p-4 rounded" style="max-width: 400px; margin: 0 auto;" novalidate method="post">
+            <form class="needs-validation bg-light p-4 rounded" style="max-width: 400px; margin: 0 auto;" novalidate method="post" enctype="multipart/form-data">
                 <div class="row justify-content-center mb-3">
                     <div class="col-12">
                         <input asp-for="ID" type="hidden" readonly class="form-control" required>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="row justify-content-center mb-3">
                     <div class="col-auto">
-                        <label for="formFileMultiple" class="form-label">Seleccione las imagen del Usuario</label>
+                        <label asp-for="Image" for="formFileMultiple" class="form-label">Seleccione las imagen del Usuario</label>
                         <input name="Image" class="form-control" type="file" id="formFileMultiple" multiple>
                     </div>
                     <div class="invalid-feedback">

@@ -63,7 +63,7 @@
               "RelativeDocumentMoniker": "Views\\Productos\\Cart.cshtml",
               "ToolTip": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\Views\\Productos\\Cart.cshtml",
               "RelativeToolTip": "Views\\Productos\\Cart.cshtml",
-              "ViewState": "AQIAABoAAAAAAAAAAAAAwC0AAABQAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAABTAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-11T23:00:45.045Z",
               "IsPinned": true,
@@ -79,8 +79,7 @@
               "RelativeToolTip": "Controllers\\ProductosController.cs",
               "ViewState": "AQIAAEoAAAAAAAAAAAAqwFQAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T22:13:35.701Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-11T22:13:35.701Z"
             },
             {
               "$type": "Document",
@@ -92,8 +91,7 @@
               "RelativeToolTip": "Models\\CartBuys.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T04:11:19.26Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-13T04:11:19.26Z"
             },
             {
               "$type": "Document",
@@ -105,8 +103,7 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AQIAAKgAAAAAAAAAAAAkwLQAAAB0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T03:50:36.128Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-13T03:50:36.128Z"
             },
             {
               "$type": "Document",
@@ -115,8 +112,7 @@
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/KarpicentroWeb/True/SqlTable/dbo.Cart.sql",
               "ToolTip": "dbo.Cart [Datos]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-05-13T03:45:20.524Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-13T03:45:20.524Z"
             },
             {
               "$type": "Document",
@@ -128,8 +124,7 @@
               "RelativeToolTip": "Views\\Home\\Login.cshtml",
               "ViewState": "AQIAAAUAAAAAAAAAAAAgwA0AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-12T20:02:15.122Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-12T20:02:15.122Z"
             },
             {
               "$type": "Document",
@@ -141,8 +136,7 @@
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-13T02:15:06.928Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-13T02:15:06.928Z"
             },
             {
               "$type": "Document",
@@ -154,8 +148,7 @@
               "RelativeToolTip": "wwwroot\\css\\body.css",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-05-12T20:02:28.989Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-12T20:02:28.989Z"
             },
             {
               "$type": "Document",
@@ -167,8 +160,7 @@
               "RelativeToolTip": "Views\\Shared\\_LayoutAdmin.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAEAAAABSAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-11T22:57:39.967Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-11T22:57:39.967Z"
             },
             {
               "$type": "Document",
@@ -192,8 +184,7 @@
               "RelativeToolTip": "Views\\Productos\\ProductDetails.cshtml",
               "ViewState": "AQIAAD8AAAAAAAAAAAAAAFsAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-11T22:53:20.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-11T22:53:20.576Z"
             }
           ]
         }

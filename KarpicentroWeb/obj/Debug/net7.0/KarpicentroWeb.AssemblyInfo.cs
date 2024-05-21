@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KarpicentroWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4cd10b9f162676e59b1e54590d2fd11ccdb75de4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+812ed02ec2f1d6a4fc9205a6e17b932df35bfced")]
 [assembly: System.Reflection.AssemblyProductAttribute("KarpicentroWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KarpicentroWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -9,7 +9,7 @@ namespace KarpicentroWeb.Controllers
     {
         public readonly KarpicentroDB _contextDB;
         public static int ID { get; set; }
-        public static int IDProdInter {  get; set; }
+        public static int IDProdInter { get; set; }
         public static int IDProd { get; set; }
 
         public ProductosController(KarpicentroDB karpicentroDB)
@@ -79,71 +79,41 @@ namespace KarpicentroWeb.Controllers
         [HttpPost]
         public IActionResult ProductDetails(int idprod, CartBuys cartBuys, int Existencia, int idProductInter)
         {
-            if (Convert.ToInt32(Existencia) >= cartBuys.Amount)
+            Cookie();
+
+            cartBuys.idUser = ID;
+            cartBuys.SwitchCartBuy = 1;
+            cartBuys.Shipping = "";
+
+            int c = 0;
+
+            List<CartBuys> listacarr = _contextDB.Cart.ToList();
+
+            foreach (var i in listacarr)
             {
-                IDProdInter = idProductInter;
-                ViewBag.IDProdInter = IDProdInter;
-                IDProd = idprod;
-                var IDOrder = _contextDB.Cart.Max(o => o.IDOrder) + 1;
-                cartBuys.SwitchCartBuy = 1;
-                cartBuys.Shipping = ""; 
-
-                int c = 0;
-
-                Cookie();
-
-                var listacarrito = _contextDB.Cart.Where(u => u.IDOrder == IDOrder).ToList();
-
-                foreach (var ca in listacarrito)
+                if (i.idProductInter == cartBuys.idProductInter)
                 {
-                    if (cartBuys.idProductInter == ca.idProductInter)
-                    {
-                        cartBuys.Amount += ca.Amount;
-                        _contextDB.Cart.Remove(ca);
-                        _contextDB.SaveChanges();
-                        break;
-                    }
-                    c++;
-                }
-                if (listacarrito.Count == c)
-                {
-                    cartBuys.IDOrder = IDOrder;
-                    cartBuys.Price *= cartBuys.Amount;
-                    cartBuys.idProductInter = idProductInter;
-                    cartBuys.idUser = ID;
-                    _contextDB.Cart.Add(cartBuys);
+                    cartBuys.Amount += i.Amount;
+                    _contextDB.Cart.Remove(i);
                     _contextDB.SaveChanges();
                 }
-                else
-                {
-                    cartBuys.IDOrder = IDOrder;
-                    cartBuys.Price *= cartBuys.Amount;
-                    cartBuys.idProductInter = idProductInter;
-                    cartBuys.idUser = ID;
-                    _contextDB.Cart.Add(cartBuys);
-                    _contextDB.SaveChanges();
-                }
+                c++;
+            }
+            if (listacarr.Count == c)
+            {
+                cartBuys.Price = cartBuys.Price * cartBuys.Amount;
+                cartBuys.iduserdir = ID;
+                _contextDB.Cart.Add(cartBuys);
+                _contextDB.SaveChanges();
             }
             else
             {
-                ViewBag.IDproducto = idprod;
-                var producto = _contextDB.Product.First(p => p.ID == idprod);
-                var stock = _contextDB.InterProd.First(p => p.ID == idprod);
-                ViewBag.Existencia = stock.Stock;
-
-                var listaProductos = _contextDB.Product.ToList();
-                var listainter = _contextDB.InterProd.ToList();
-
-                var viewmodel = new ProductViewModel
-                {
-                    Products = listaProductos,
-                    Inter = listainter
-                };
-
-                return View(viewmodel);
+                cartBuys.Price = cartBuys.Price * cartBuys.Amount;
+                cartBuys.iduserdir = ID;
+                _contextDB.Cart.Add(cartBuys);
+                _contextDB.SaveChanges();
             }
 
-            Cookie();
             return RedirectToAction(nameof(Cart));
         }
 
@@ -153,15 +123,26 @@ namespace KarpicentroWeb.Controllers
             Cookie();
             var listacarrito = _contextDB.Cart.Where(u => u.SwitchCartBuy == 1 && u.idUser == ID).ToList();
             var listainter = _contextDB.InterProd.ToList();
+            var listaproducto = _contextDB.Product.ToList();
+            ViewBag.ID = ID;
 
-            ViewBag.Image = listainter.FirstOrDefault(i => i.ID == IDProd).Image;
-            ViewBag.Products = _contextDB.Product.FirstOrDefault(i => i.ID == IDProd);
-            ViewBag.Products = _contextDB.Product.FirstOrDefault(i => i.ID == IDProd);
-            ViewBag.Button = listacarrito.Count;
+            var viewmodel = new ProductViewModel
+            {
+                Cart = listacarrito,
+                Inter = listainter,
+                Products = listaproducto
+            };
 
-            Cookie();
+            return View(viewmodel);
+        }
 
-            return View(listacarrito);
+        [HttpGet]
+        public IActionResult DeleteCart(int idinter)
+        {
+            var cartprod = _contextDB.Cart.FirstOrDefault(p => p.idProductInter == idinter);
+            _contextDB.Cart.Remove(cartprod);
+            _contextDB.SaveChanges();
+            return RedirectToAction(nameof(Cart));
         }
     }
 }

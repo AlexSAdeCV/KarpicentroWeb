@@ -1,4 +1,4 @@
-﻿@model IEnumerable<KarpicentroWeb.Models.CartBuys>
+﻿@model KarpicentroWeb.Models.ProductViewModel
 
 @{
     if (ViewBag.Nivel == "Admin")
@@ -9,6 +9,11 @@
     {
         Layout = "_LayoutUsers";
     }
+
+    int totalItems = Model.Cart.Count(c => c.idUser == ViewBag.ID);
+    decimal totalPrice = Model.Cart.Where(c => c.idUser == ViewBag.ID).Sum(c => c.Price);
+    decimal shippingCost = 500.00m;
+    decimal totalToPay = totalPrice + shippingCost;
 }
 
 <head>
@@ -17,6 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@501&family=Big+Shoulders+Text:wght@383&family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 </head>
 
 <section class="h-100 h-custom" style="background-color:  rgb(6, 36, 76);">
@@ -30,26 +36,51 @@
                                 <div class="p-5">
                                     <div class="d-flex justify-content-between align-items-center mb-5">
                                         <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
-                                        <h6 id="item-count" class="mb-0 text-muted">3 Articulos</h6>
+                                        <h6 id="item-count" class="mb-0 text-muted">@totalItems Artículos</h6>
                                     </div>
                                     <hr class="my-4">
 
                                     @{
-                                        int i = 0;
-
-                                        foreach (var c in Model)
+                                        foreach (var c in Model.Cart)
                                         {
                                             if (c.idUser == ViewBag.ID)
                                             {
-                                                foreach (var p in ViewBag.Products)
+                                                foreach (var p in Model.Inter)
                                                 {
-                                                    if (p.ID == ViewBag.Products)
+                                                    if (p.ID == c.idProductInter)
+                                                    {
+                                                        <div class="row mb-4 d-flex justify-content-between align-items-center">
+                                                            <div class="col-md-2 col-lg-2 col-xl-2">
+                                                                <img src="@p.Image" class="img-fluid rounded-3" alt="Product Image">
+                                                            </div>
+                                                            @foreach (var k in Model.Products)
+                                                            {
+                                                                if (p.idProducts == k.ID)
+                                                                {
+                                                                    <div class="col-md-3 col-lg-3 col-xl-3">
+                                                                        <p class="text-muted">@k.Categories</p>
+                                                                        <p class="text-black mb-0">@k.Name</p>
+                                                                    </div>
+                                                                }
+                                                            }
+                                                            <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                                                                <label lass="form-control form-control-sm">Cantidad: @c.Amount</label>
+                                                            </div>
+                                                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                                                <p class="mb-0"><label class="price-label">$ @c.Price</label></p>
+                                                            </div>
+                                                            <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                                                <form asp-controller="Productos" asp-action="DeleteCart" method="get">
+                                                                    <input type="hidden" name="idinter" value="@p.ID" />
+                                                                    <button type="submit" class="text-muted"><i class="fas fa-times"></i></button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    }
                                                 }
                                             }
                                         }
-
                                     }
-
 
                                     <hr class="my-4">
 
@@ -68,25 +99,22 @@
                                     <hr class="my-4">
 
                                     <div class="d-flex justify-content-between mb-4">
-                                        <h5 class="text-uppercase">Articulos <span id="item-count-value">3</span></h5>
-                                        <h5 id="total-price">$ 1712.00 mxn</h5>
+                                        <h5 class="text-uppercase">Artículos <span id="item-count-value">@totalItems</span></h5>
+                                        <h5 id="total-price">$ @totalPrice mxn</h5>
                                     </div>
 
-                                    <h5 class="text-uppercase mb-3">Prceio de envio</h5>
+                                    <h5 class="text-uppercase mb-3">Precio de envío</h5>
 
                                     <div class="mb-4 pb-2">
-                                        Precio de envio: $500
+                                        Precio de envío: $500
                                     </div>
-
-
 
                                     <div class="d-flex justify-content-between mb-4">
                                         <h5 class="text-uppercase">Total a pagar</h5>
-                                        <h5 id="total-to-pay">$ 1712.00 mxn</h5>
+                                        <h5 id="total-to-pay">$ @totalToPay mxn</h5>
                                     </div>
 
-                                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block btn-lg"
-                                            data-mdb-ripple-color="dark">
+                                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">
                                         Realizar pedido
                                     </button>
 

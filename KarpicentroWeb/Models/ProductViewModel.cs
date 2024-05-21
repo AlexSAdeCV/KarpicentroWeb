@@ -10,6 +10,7 @@ namespace KarpicentroWeb.Models
         public IEnumerable<Colors> Color { get; set; }
         public IEnumerable<Materials> Material { get; set; }
         public IEnumerable<Supplier> Suppliers { get; set; }
+        public IEnumerable<CartBuys> Cart { get; set; }
         public ProductInter pinter { get; set; }
     }
 }

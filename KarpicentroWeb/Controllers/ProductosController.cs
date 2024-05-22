@@ -91,13 +91,16 @@ namespace KarpicentroWeb.Controllers
 
             foreach (var i in listacarr)
             {
-                if (i.idProductInter == cartBuys.idProductInter)
+                if (i.idUser == ID)
                 {
-                    cartBuys.Amount += i.Amount;
-                    _contextDB.Cart.Remove(i);
-                    _contextDB.SaveChanges();
+                    if (i.idProductInter == cartBuys.idProductInter)
+                    {
+                        cartBuys.Amount += i.Amount;
+                        _contextDB.Cart.Remove(i);
+                        _contextDB.SaveChanges();
+                    }
+                    c++;
                 }
-                c++;
             }
             if (listacarr.Count == c)
             {

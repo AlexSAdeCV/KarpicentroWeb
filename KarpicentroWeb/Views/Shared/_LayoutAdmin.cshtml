@@ -38,46 +38,37 @@
 
 </style> *@
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light header-content">
+    <header class="header-content" >
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse  header-menu" id="navbarTogglerDemo01">
-
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item material-symbols-outlined">
-                            <a href="productos.html">Productos</a>
-                        </li>
-                        <li class="nav-item material-symbols-outlined">
-                            <a class="nav-item nav-link active" href="@Url.Action("ProductList", "Productos", new { valor = "Salas" })">Salas</a>
-                        </li>
-                        <li class="nav-item material-symbols-outlined">
-                            <a class="nav-item nav-link active" href="@Url.Action("ProductList", "Productos", new { valor = "Cocinas" })">Cocinas</a>
-                        </li>
-                        <li class="nav-item material-symbols-outlined">
-                            <a class="nav-item nav-link active" href="@Url.Action("ProductList", "Productos", new { valor = "Recamaras" })">Recamaras</a>
-                        </li>
-                    </ul>
-
-                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                        <a asp-area="" asp-controller="Productos" asp-action="Cart"><i class="text-white fa-solid fa-cart-shopping"></i></a>
-                    </form>
-
-                    <div class="dropdown text-end" style="padding-left: 100px">
-                        <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="@ViewBag.FotoPerfil" alt="mdo" width="32" height="32" class="rounded-circle">
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" asp-controller="Usuario" asp-action="Inicio">@ViewBag.Nombre</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" asp-controller="Admin" asp-action="Welcome">Administracion</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="CerrarSesion"><i class="fa-solid fa-right-to-bracket"></i>  Cerrar Sesión</a></li>
-
-                        </ul>
+                <div class="header-menu">
+                    <div class="logo">
+                        <img src="~/Images/Logo.png" alt="Karpicentro">
                     </div>
+                    <div class="name">
+                        <a asp-action="Index" asp-controller="Home" class="nombre-logo">Karpicentro</a>
+                    </div>
+                    <nav>
+                        <ul style="margin-left: 390px;">
+                            <li><a asp-controller="Productos" asp-action="Cart"><i class="material-symbols-outlined" style="font-size: 35px;">shopping_cart</i></a></li>
+                            <li><a asp-controller="Productos" asp-action="Cart"><i class="material-symbols-outlined" style="font-size: 35px;">store</i></a></li>
+                            <li class="dropdown">
+                                <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" aria-expanded="false">
+                                    <img src="@ViewBag.FotoPerfil" alt="mdo" width="32" height="32" class="rounded-circle">
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-controller="Usuario" asp-action="Inicio">@ViewBag.Nombre</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="Welcome">Administracion</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="CerrarSesion"><i class="fa-solid fa-right-to-bracket"></i> Cerrar Sesión</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </nav>

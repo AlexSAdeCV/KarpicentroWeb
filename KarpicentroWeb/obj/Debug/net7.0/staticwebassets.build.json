@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "i8w345NfA8ZsiWhMiiZvrZdXcrbRZdyd2aC/9xzSae4=",
+  "Hash": "gpmHEvNIb0G+C+iMl+Pe2SOAhWgaGuasKCO9arUlAJw=",
   "Source": "KarpicentroWeb",
   "BasePath": "_content/KarpicentroWeb",
   "Mode": "Default",
@@ -167,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Logo.png",
+      "SourceId": "KarpicentroWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\",
+      "BasePath": "_content/KarpicentroWeb",
+      "RelativePath": "Images/Logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Logo.png"
     },
     {
       "Identity": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Products\\1_3_2_Brainiac.png",

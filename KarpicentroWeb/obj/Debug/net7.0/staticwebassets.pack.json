@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\KarpicentroWeb.bundle.scp.css"
     },
     {
+      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Logo.png",
+      "PackagePath": "staticwebassets\\Images\\Logo.png"
+    },
+    {
       "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Products\\1_3_2_Brainiac.png",
       "PackagePath": "staticwebassets\\Images\\Products\\1_3_2_Brainiac.png"
     },

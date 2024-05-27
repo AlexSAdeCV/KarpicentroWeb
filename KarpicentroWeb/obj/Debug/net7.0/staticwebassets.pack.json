@@ -57,6 +57,14 @@
       "PackagePath": "staticwebassets\\Images\\Users\\Usuario.png"
     },
     {
+      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\Detalles.css",
+      "PackagePath": "staticwebassets\\css\\Detalles.css"
+    },
+    {
+      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\Products.css",
+      "PackagePath": "staticwebassets\\css\\Products.css"
+    },
+    {
       "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\barra.css",
       "PackagePath": "staticwebassets\\css\\barra.css"
     },

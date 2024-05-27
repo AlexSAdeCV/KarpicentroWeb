@@ -1,0 +1,107 @@
+﻿@model KarpicentroWeb.Models.ProductViewModel
+
+@{
+    if (ViewBag.Nivel == "Admin")
+    {
+        Layout = "_LayoutAdmin";
+    }
+    else if (ViewBag.Nivel == "Cliente")
+    {
+        Layout = "_LayoutUsers";
+    }
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/Products.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Overlock+SC&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Ropa+Sans:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@501&family=Big+Shoulders+Text:wght@383&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Overlock+SC&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Ropa+Sans:ital@0;1&display=swap" rel="stylesheet">
+    <title>Catalogo Salas</title>
+    <style>
+        /* Estilos para los botones de filtro */
+        .filtro {
+            margin-bottom: 0;
+            text-align: center;
+            justify-content: center;
+            margin-top: 20px;
+            margin-inline: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+            .filtro a {
+                padding: 0px 20px;
+                margin: 0 5px;
+                font-size: 16px;
+                display: flex;
+                flex-direction: column;
+                color: #0e0e0e;
+                text-decoration: none;
+                text-align: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                font-family: "Ropa Sans", sans-serif;
+                font-weight: 300;
+                font-style: normal;
+                font-size: 25px;
+            }
+
+                .filtro a:hover {
+                    background-color: rgb(42, 95, 164);
+                    color: white;
+                }
+
+        .producto a {
+            border-radius: 10px;
+            background-color: rgb(42, 95, 164);
+            ;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="filtro">
+        <a href="@Url.Action("ProductList", "Productos", new { valor = "Salas" })">Salas</a>
+        <a href="@Url.Action("ProductList", "Productos", new { valor = "Cocinas" })">Cocinas</a>
+        <a href="@Url.Action("ProductList", "Productos", new { valor = "Recamaras" })">Recámaras</a>
+
+    </div>
+    <hr>
+    <section id="catalogo">
+
+        @{
+            foreach (var p in Model.Products)
+            {
+                foreach (var f in Model.Inter)
+                {
+                    if (p.ID == f.idProducts)
+                    {
+                        <div class="producto">
+                            <img src="@f.Image" alt="Producto 1">
+                            <h1>@p.Name</h1>
+                            <p> @f.SalePrice</p>
+                            <input name="Existencia" type="hidden" value="@f.Stock">
+                            <a style="background-color: white;" href="@Url.Action("ProductDetails", "Productos", new { Existencia = f.Stock })"></a>
+                            <a href="@Url.Action("ProductDetails", "Productos", new { valor = p.ID })" class="btn-mas-info">Más Info</a>
+
+                        </div>
+                        break;
+                    }
+                }
+                // if (ViewBag.Tipo == p.Categories)
+                // {
+                    
+                // }
+            }
+        }
+    </section>
+</body>

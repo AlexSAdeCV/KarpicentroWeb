@@ -102,6 +102,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXFByb2R1Y3RMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Productos/Products.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXFByb2R1Y3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

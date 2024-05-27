@@ -38,6 +38,22 @@ namespace KarpicentroWeb.Controllers
             }
         }
 
+        public IActionResult Products()
+        {
+            List<Product> listaProductos = _contextDB.Product.ToList();
+            List<ProductInter> listainter = _contextDB.InterProd.ToList();
+
+            var viewmodel = new ProductViewModel
+            {
+                Products = listaProductos,
+                Inter = listainter
+            };
+
+            Cookie();
+            return View(viewmodel);
+            return View();
+        }
+
         [HttpGet]
         public IActionResult ProductList(string valor)
         {

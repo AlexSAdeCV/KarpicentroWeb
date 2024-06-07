@@ -49,33 +49,36 @@
                                                 {
                                                     if (p.ID == c.idProductInter)
                                                     {
-                                                        <div class="row mb-4 d-flex justify-content-between align-items-center">
-                                                            <div class="col-md-2 col-lg-2 col-xl-2">
-                                                                <img src="@p.Image" class="img-fluid rounded-3" alt="Product Image">
-                                                            </div>
-                                                            @foreach (var k in Model.Products)
-                                                            {
-                                                                if (p.idProducts == k.ID)
+                                                        if (c.SwitchCartBuy == 1)
+                                                        {
+                                                            <div class="row mb-4 d-flex justify-content-between align-items-center">
+                                                                <div class="col-md-2 col-lg-2 col-xl-2">
+                                                                    <img src="@p.Image" class="img-fluid rounded-3" alt="Product Image">
+                                                                </div>
+                                                                @foreach (var k in Model.Products)
                                                                 {
-                                                                    <div class="col-md-3 col-lg-3 col-xl-3">
-                                                                        <p class="text-muted">@k.Categories</p>
-                                                                        <p class="text-black mb-0">@k.Name</p>
-                                                                    </div>
+                                                                    if (p.idProducts == k.ID)
+                                                                    {
+                                                                        <div class="col-md-3 col-lg-3 col-xl-3">
+                                                                            <p class="text-muted">@k.Categories</p>
+                                                                            <p class="text-black mb-0">@k.Name</p>
+                                                                        </div>
+                                                                    }
                                                                 }
-                                                            }
-                                                            <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                                                <label lass="form-control form-control-sm">Cantidad: @c.Amount</label>
+                                                                <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                                                                    <label lass="form-control form-control-sm">Cantidad: @c.Amount</label>
+                                                                </div>
+                                                                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                                                    <p class="mb-0"><label class="price-label">$ @c.Price</label></p>
+                                                                </div>
+                                                                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                                                    <form asp-controller="Productos" asp-action="DeleteCart" method="get">
+                                                                        <input type="hidden" name="idinter" value="@p.ID" />
+                                                                        <button type="submit" class="text-muted"><i class="fas fa-times"></i></button>
+                                                                    </form>
+                                                                </div>
                                                             </div>
-                                                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                                                <p class="mb-0"><label class="price-label">$ @c.Price</label></p>
-                                                            </div>
-                                                            <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                                                <form asp-controller="Productos" asp-action="DeleteCart" method="get">
-                                                                    <input type="hidden" name="idinter" value="@p.ID" />
-                                                                    <button type="submit" class="text-muted"><i class="fas fa-times"></i></button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
+                                                        }
                                                     }
                                                 }
                                             }
@@ -114,10 +117,11 @@
                                         <h5 id="total-to-pay">$ @totalToPay mxn</h5>
                                     </div>
 
-                                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">
-                                        Realizar pedido
-                                    </button>
-
+                                    <form method="get">
+                                        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark" asp-action="Checkout" asp-controller="Boughts">
+                                            Pasar al checkout
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

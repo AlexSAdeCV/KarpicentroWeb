@@ -1,0 +1,81 @@
+﻿@model KarpicentroWeb.Models.Directions
+
+@{
+    Layout = "_LayoutUsers2";
+}
+
+<head>
+    <link href="~/css/Checkout.css" rel="stylesheet" />
+    <style>
+        .center-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Full height */
+        }
+
+        .card-registration {
+            width: 100%; /* Full width of the container */
+            max-width: 800px; /* Maximum width for the card */
+            margin: auto; /* Center the card */
+        }
+
+        dl.row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        dt, dd {
+            width: 45%;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<main class="container center-content">
+    <div class="my-3 p-3 bg-light rounded shadow-sm">
+        <form asp-controller="User" asp-action="DeleteDirections" method="post">
+            <section class="h-100 h-custom" style="background-color: rgb(6, 36, 76);">
+                <div class="container py-5 h-100">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-12">
+                            <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                                <div class="card-body p-0">
+                                    <div class="row g-0">
+                                        <div class="col-lg-16">
+                                            <div class="p-5">
+                                                <div class="my-3 p-3 bg-light rounded">
+                                                    <dl class="row">
+                                                        <dt class="col-sm-2">Nombre</dt>
+                                                        <dd class="col-sm-10">@Html.DisplayFor(model => model.NameUser)</dd>
+                                                        <dt class="col-sm-2">Calle</dt>
+                                                        <dd class="col-sm-10">@Html.DisplayFor(model => model.Street)</dd>
+                                                        <dt class="col-sm-2">Numero Exterior</dt>
+                                                        <dd class="col-sm-10">@Html.DisplayFor(model => model.ExtNum)</dd>
+                                                        <dt class="col-sm-2">Numero Interior</dt>
+                                                        <dd class="col-sm-10">@Html.DisplayFor(model => model.IntNum)</dd>
+                                                        <dt class="col-sm-2">Delegacion</dt>
+                                                        <dd class="col-sm-10">@Html.DisplayFor(model => model.Delegations)</dd>
+                                                        <dt class="col-sm-2">Colonia</dt>
+                                                        <dd class="col-sm-10">@Html.DisplayFor(model => model.Neighborhood)</dd>
+                                                        <dt class="col-sm-2">CP</dt>
+                                                        <dd class="col-sm-10">@Html.DisplayFor(model => model.ZipCode)</dd>
+                                                    </dl>
+                                                </div>
+                                                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-block btn-lg btn-danger" data-mdb-ripple-color="red">
+                                                    Borrar Direccion
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </div>
+</main>

@@ -1,0 +1,22 @@
+﻿.table {
+    width: 100%;
+    border-collapse: collapse;
+    justify-content: space-around;
+    border-spacing: 15px 10px;
+}
+
+.th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.th {
+    background-color: #f2f2f2;
+    justify-content: space-between;
+}
+
+.t {
+    padding-left: 20px;
+}

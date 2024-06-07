@@ -1,0 +1,60 @@
+﻿@model IEnumerable<KarpicentroWeb.Models.Directions>
+
+@{
+    Layout = "_LayoutUsers2";
+}
+
+<body>
+    <main class="container">
+        <div class="my-3 p-3 bg-light rounded shadow-sm">
+            <div class="table-responsive">
+                <h1>Productos</h1>
+                <table class="table-hover table-sm table table-striped">
+                    <thead>
+                        <tr>
+                            <td scope="col">Nombre</td>
+                            <td scope="col">Calle</td>
+                            <td scope="col">Colonia</td>
+                            <td scope="col">CP</td>
+                            <td scope="col">Delegacion</td>
+                            <td scope="col">Estado</td>
+                            <td scope="col">Numero Exterior</td>
+                            <td scope="col">Numero Interior</td>
+                            <td scope="col"><a asp-action="NewDirections" asp-controller="User" class="btn btn-primary text-white">Nueva Direccion</a></td>
+                        </tr>
+                    </thead>
+                    @{
+                        foreach (var i in ViewBag.userdir)
+                        {
+                            foreach (var u in Model)
+                            {
+                                if (i.idDirections == u.ID)
+                                {
+                                    if (u.ID != 1)
+                                    {
+                                        <tbody>
+                                            <tr>
+                                                <td>@u.NameUser</td>
+                                                <td>@u.Street</td>
+                                                <td>@u.Neighborhood</td>
+                                                <td>@u.ZipCode</td>
+                                                <td>@u.Delegations</td>
+                                                <td>@u.State</td>
+                                                <td>@u.ExtNum</td>
+                                                <td>@u.IntNum</td>
+                                                <td>
+                                                    <a asp-action="EditDirections" asp-controller="User" asp-route-id="@u.ID" class="btn btn-primary text-white">Editar</a>
+                                                    <a asp-action="DeleteDirections" asp-controller="User" asp-route-id="@u.ID" class="btn btn-primary text-white">Eliminar</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    }
+                                }
+                            }
+                        }
+                    }
+                </table>
+            </div>
+        </div>
+    </main>
+</body>

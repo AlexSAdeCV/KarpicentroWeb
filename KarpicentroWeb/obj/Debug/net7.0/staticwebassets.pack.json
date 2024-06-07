@@ -57,8 +57,24 @@
       "PackagePath": "staticwebassets\\Images\\Users\\Usuario.png"
     },
     {
+      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\Admin.css",
+      "PackagePath": "staticwebassets\\css\\Admin.css"
+    },
+    {
+      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\Checkout.css",
+      "PackagePath": "staticwebassets\\css\\Checkout.css"
+    },
+    {
       "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\Detalles.css",
       "PackagePath": "staticwebassets\\css\\Detalles.css"
+    },
+    {
+      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\Index.css",
+      "PackagePath": "staticwebassets\\css\\Index.css"
+    },
+    {
+      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\Producto.css",
+      "PackagePath": "staticwebassets\\css\\Producto.css"
     },
     {
       "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\Products.css",

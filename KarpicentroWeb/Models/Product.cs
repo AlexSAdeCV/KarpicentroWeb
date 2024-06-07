@@ -18,6 +18,7 @@ namespace KarpicentroWeb.Models
         public int Depth { get; set; }
         public string Categories { get; set; }
         public int Featured { get; set; }
+        public DateTime Date { get; set; }
         public int idSupplier { get; set; }
 
         [ForeignKey("idSupplier")]

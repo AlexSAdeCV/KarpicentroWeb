@@ -1,0 +1,59 @@
+﻿@model KarpicentroWeb.Models.Directions
+
+@{
+    Layout = "_LayoutUsers2";
+}
+
+<head>
+    <link href="~/css/Checkout.css" rel="stylesheet" />
+</head>
+
+<main class="container">
+    <div class="my-3 p-3 bg-light rounded shadow-sm">
+        <form asp-controller="User" asp-action="EditDirections" method="post">
+            <section class="h-100 h-custom" style="background-color:  rgb(6, 36, 76);">
+                <div class="container py-5 h-100">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-12">
+                            <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                                <div class="card-body p-0">
+                                    <div class="row g-0">
+                                        <div class="col-lg-16">
+                                            <div class="p-5">
+                                                <div class="container1">
+                                                    <div class="row">
+                                                        <label asp-for="@Model.ExtNum">Numero Exterior:</label>
+                                                        <input asp-for="@Model.ExtNum" type="number" name="ExtNum" required>
+                                                        <label asp-for="@Model.IntNum">Numero Interior:</label>
+                                                        <input asp-for="@Model.IntNum" type="number" name="IntNum" required>
+                                                        <label asp-for="@Model.State">Estado:</label>
+                                                        <input asp-for="@Model.State" type="text" name="state" required>
+                                                        <label asp-for="@Model.Neighborhood">Colonia:</label>
+                                                        <input asp-for="@Model.Neighborhood" type="text" id="colonia" name="Neighborhood" required>
+                                                    </div>
+                                                    <div class="row2">
+                                                        <label asp-for="@Model.NameUser">Nombre:</label>
+                                                        <input asp-for="@Model.NameUser" type="text" id="nombre" name="NameUser" required>
+                                                        <label asp-for="@Model.Street">Calle:</label>
+                                                        <input asp-for="@Model.Street" type="text" id="direccion" name="Street" required>
+                                                        <label asp-for="@Model.ZipCode">Codigo Postal:</label>
+                                                        <input asp-for="@Model.ZipCode" type="text" id="codigo_postal" name="ZipCode" required>
+                                                        <label asp-for="@Model.Delegations">Delegacion:</label>
+                                                        <input asp-for="@Model.Delegations" type="text" id="delegacion" name="Delegations" required>
+                                                    </div>
+                                                </div>
+                                                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">
+                                                    Modificar Direccion
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </div>
+</main>

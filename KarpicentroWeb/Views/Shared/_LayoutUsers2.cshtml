@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Karpicentro</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/KarpicentroWeb.styles.css" asp-append-version="true" />
+    <link href="~/css/barra.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/7f625253aa.js" crossorigin="anonymous" asp-append-version="true"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@501&family=Big+Shoulders+Text:wght@383&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@501&family=Big+Shoulders+Text:wght@383&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+@* <style>
+    .iconos{
+        font-size: 25px;
+    }
+    .navitem{
+        padding-top: 20px
+    }
+
+    .header-menu nav ul li a:hover {
+        color: #ccc;
+    }
+
+    .header-menu nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+</style> *@
+<body>
+    <header class="header-content">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="header-menu">
+                    <div class="logo">
+                        <img src="~/Images/Logo.png" alt="Karpicentro">
+                    </div>
+                    <div class="name">
+                        <a asp-action="Index" asp-controller="Home" class="nombre-logo">Karpicentro</a>
+                    </div>
+                    <nav>
+                        <ul style="margin-left: 190px;">
+                            <li><i class="material-symbols-outlined">Box</i></li>
+                            <li><a asp-action="Boughts" asp-controller="User">Compras</a></li>
+                            <li><i class="material-symbols-outlined">Map</i></li>
+                            <li><a asp-action="Directions" asp-controller="User">Direcciones</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" aria-expanded="false">
+                                    <img src="@ViewBag.FotoPerfil" alt="mdo" width="32" height="32" class="rounded-circle">
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-controller="User" asp-action="Welcome">@ViewBag.Nombre</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    @if (ViewBag.Nivel == "Admin")
+                                    {
+                                        <li><a class="dropdown-item" asp-controller="Admin" asp-action="Welcome">Administracion</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                    }
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="CerrarSesion"><i class="fa-solid fa-right-to-bracket"></i> Cerrar Sesión</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

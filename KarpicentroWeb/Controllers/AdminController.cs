@@ -19,11 +19,6 @@ namespace KarpicentroWeb.Controllers
             _contextDB = contextDB;
             this._helperUpload = helperUpload;
         }
-        public IActionResult Welcome()
-        {
-            Cookie();
-            return View();
-        }
 
         public void Cookie()
         {
@@ -36,12 +31,19 @@ namespace KarpicentroWeb.Controllers
                 {
                     if (miCookie == user.Email)
                     {
+                        ViewBag.ID = user.ID;
                         ViewBag.Nombre = user.Name;
                         ViewBag.Nivel = user.UserType;
                         ViewBag.FotoPerfil = user.Image;
                     }
                 }
             }
+        }
+
+        public IActionResult Welcome()
+        {
+            Cookie();
+            return View();
         }
 
         [HttpGet]
@@ -277,6 +279,7 @@ namespace KarpicentroWeb.Controllers
         [HttpGet]
         public IActionResult ShippingDetails(int id, int idord, string Shipping, int idudir)
         {
+            Cookie();
             var user = _contextDB.User.FirstOrDefault(u => u.ID == id);
             var Udir = _contextDB.UseDir.FirstOrDefault(u => u.ID == idudir);
 

@@ -1,0 +1,60 @@
+﻿@{
+    if (ViewBag.Nivel == "Admin")
+    {
+        Layout = "_LayoutAdmin";
+    }
+    else if (ViewBag.Nivel == "Cliente")
+    {
+        Layout = "_LayoutUsers";
+    }
+}
+
+<head>
+    <link href="~/css/Checkout.css" rel="stylesheet" />
+</head>
+
+<form asp-controller="Boughts" asp-action="AgregarDireccion" method="post">
+    <section class="h-100 h-custom" style="background-color:  rgb(6, 36, 76);">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12">
+                    <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                        <div class="card-body p-0">
+                            <div class="row g-0">
+                                <div class="col-lg-16">
+                                    <div class="p-5">
+                                        <div class="container1">
+                                            <div class="row">
+                                                <label for="apellido">Numero Exterior:</label>
+                                                <input type="number" id="apellido" name="ExtNum" required>
+                                                <label for="telefono">Numero Interior:</label>
+                                                <input type="number" id="telefono" name="IntNum" required>
+                                                <label for="estado">Estado:</label>
+                                                <input type="text" id="estado" name="State" required>
+                                                <label for="colonia">Colonia:</label>
+                                                <input type="text" id="colonia" name="Neighborhood" required>
+                                            </div>
+                                            <div class="row2">
+                                                <label for="nombre">Nombre:</label>
+                                                <input type="text" id="nombre" name="NameUser" required>
+                                                <label for="direccion">Calle:</label>
+                                                <input type="text" id="direccion" name="Street" required>
+                                                <label for="codigo_postal">Codigo Postal:</label>
+                                                <input type="text" id="codigo_postal" name="ZipCode" required>
+                                                <label for="delegacion">Delegacion:</label>
+                                                <input type="text" id="delegacion" name="Delegations" required>
+                                            </div>
+                                        </div>
+                                        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">
+                                            Agregar Direccion
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>

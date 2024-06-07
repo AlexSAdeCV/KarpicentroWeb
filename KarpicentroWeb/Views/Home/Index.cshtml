@@ -1,4 +1,6 @@
-﻿@{
+﻿@model KarpicentroWeb.Models.ProductViewModel
+
+@{
     if (ViewBag.Nivel == "Admin")
     {
         Layout = "_LayoutAdmin";
@@ -9,7 +11,110 @@
     }
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<head>
+    <link href="~/css/Index.css" rel="stylesheet"/>
+</head>
+
+<section id="hero">
+    <h2>Llena tu casa <br>sin vaciar los bolsillos!</h2>
+</section>
+<div class="omi"><h1 style="text-align: center;">Ultimos Productos Agregados</h1></div>
+
+
+<div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="card-wrapper container-sm d-flex  justify-content-around">
+                @{
+                    int i = 0;
+                    foreach (var p in Model.Products)
+                    {
+                        foreach (var f in Model.Inter)
+                        {
+                            if (p.ID == f.idProducts)
+                            {
+                                <div class="card" style="width: 18rem;">
+                                    <img src="@f.Image" alt="Mueble 1">
+                                    <div class="info">
+                                        <h2>@p.Name</h2>
+                                        <p>Precio: $@f.SalePrice mxn</p>
+                                        <input name="Existencia" type="hidden" value="@f.Stock">
+                                        <a style="background-color: white;" href="@Url.Action("ProductDetails", "Productos", new { Existencia = f.Stock })"></a>
+                                        <a href="@Url.Action("ProductDetails", "Productos", new { valor = p.ID })" class="btn-mas-info">Más Info</a>
+                                    </div>
+                                </div>
+                                i++;
+                            }
+                        }
+
+                        if (i == 3)
+                        {
+                            break;
+                        }
+                    }
+                }
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <div class="om">
+        <h1> Nuestros productos estrella</h1>
+    </div>
+    <section class="muebles">
+
+        @{
+            foreach (var p in Model.Products)
+            {
+                foreach (var f in Model.Inter)
+                {
+                    if (p.ID == f.idProducts)
+                    {
+                        if (p.Featured == 1)
+                        {
+                            <div class="card">
+                                <img src="@f.Image" alt="Mueble 1">
+                                <div class="info">
+                                    <h2>@p.Name</h2>
+                                    <p>Precio: $@f.SalePrice mxn</p>
+                                    <input name="Existencia" type="hidden" value="@f.Stock">
+                                    <a style="background-color: white;" href="@Url.Action("ProductDetails", "Productos", new { Existencia = f.Stock })"></a>
+                                    <a href="@Url.Action("ProductDetails", "Productos", new { valor = p.ID })" class="btn-mas-info">Más Info</a>
+                                </div>
+                            </div>
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    </section>
 </div>
+
+<section id="about">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-img">
+                <img src="~/Images/Logo.png" alt="Sobre Nosotros" width="50%">
+            </div>
+            <div class="about-text">
+                <br>
+                <h1>¡Bienvenido a Karpicentro!</h1>
+                <p>En Karpicentro, nos dedicamos con todo nuestro corazón a ofrecerte una experiencia única al adquirir muebles para embellecer tu hogar. Somos más que una simple tienda, somos tu cómplice en la creación de espacios llenos de amor y confort.</p>
+                <p>Nuestro compromiso es brindarte muebles de alta calidad, diseñados con pasión y cuidado en cada detalle. Desde elegantes sofás hasta prácticas mesas de centro, nuestra amplia gama de productos está diseñada para adaptarse a tus gustos y necesidades.</p>
+                <p>Además, en Karpicentro nos preocupamos por la satisfacción de nuestros clientes, por lo que ofrecemos un servicio personalizado y atención amorosa en cada paso del proceso de compra. Queremos que te sientas como en casa desde el momento en que entras por nuestras puertas.</p>
+                <p>¡Ven a Karpicentro y déjanos ser parte de la historia de amor entre tú y tus muebles! Te esperamos con los brazos abiertos y el corazón lleno de cariño.</p>
+            </div>
+        </div>
+    </div>
+    <br>
+</section>
+

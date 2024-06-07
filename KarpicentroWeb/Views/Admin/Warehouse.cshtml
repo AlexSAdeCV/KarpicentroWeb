@@ -1,7 +1,10 @@
 ﻿@model IEnumerable<KarpicentroWeb.Models.Product>
 
 @{
-    Layout = "_LayoutAdmin2";
+    if (ViewBag.Nivel == "Admin")
+    {
+        Layout = "_LayoutAdmin2";
+    }
 }
 
 <body>

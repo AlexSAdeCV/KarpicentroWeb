@@ -154,6 +154,9 @@ namespace KarpicentroWeb.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("Depth")
                         .HasColumnType("int");
 

@@ -19,23 +19,89 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 @* <style>
-    .iconos{
-        font-size: 25px;
-    }
-    .navitem{
-        padding-top: 20px
+    body {
+        background-color: #f5f5f5;
     }
 
-    .header-menu nav ul li a:hover {
-        color: #ccc;
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    .header-menu nav ul li a {
-        color: #fff;
+    th, td {
+        border-bottom: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        font-weight: bold;
+        text-transform: uppercase;
+        border-bottom: 2px solid #3E5F8A;
+    }
+
+    td {
+        font-size: 14px;
+    }
+
+    .description {
+        max-width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .actions {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+        .actions img {
+            margin-right: 10px;
+            width: 24px;
+            height: 24px;
+        }
+
+        .actions button {
+            background-color: #3E5F8A;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: opacity 0.3s ease;
+        }
+
+            .actions button:last-child {
+                background-color: #e74c3c;
+                margin-right: 0;
+            }
+
+            .actions button:hover {
+                opacity: 0.8;
+            }
+
+    .create-product {
+        display: inline-block;
+        margin-bottom: 20px;
+        background-color: #3E5F8A;
+        color: white;
+        padding: 10px 20px;
         text-decoration: none;
-        transition: color 0.3s ease;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
     }
 
+        .create-product:hover {
+            background-color: #2d4f73;
+        }
 </style> *@
 <body>
     <header class="header-content">
@@ -66,7 +132,7 @@
                                     <img src="@ViewBag.FotoPerfil" alt="mdo" width="32" height="32" class="rounded-circle">
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" asp-controller="Usuario" asp-action="Inicio">@ViewBag.Nombre</a></li>
+                                    <li><a class="dropdown-item" asp-controller="User" asp-action="Welcome">@ViewBag.Nombre</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" asp-controller="Admin" asp-action="Welcome">Administracion</a></li>
                                     <li><hr class="dropdown-divider"></li>

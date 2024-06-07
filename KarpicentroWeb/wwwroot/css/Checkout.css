@@ -1,0 +1,101 @@
+﻿.container1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .container1 input {
+        background-color: #f2f2f2;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 12px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+        .container1 input[type="submit"] {
+            background-color: #3E5F8A;
+            color: white;
+            cursor: pointer;
+        }
+
+            .container1 input[type="submit"]:hover {
+                background-color: #2c4667;
+            }
+
+.row {
+    flex: 1;
+    text-align: left;
+    margin-right: 30px;
+}
+
+.row2 {
+    flex: 1;
+    text-align: right;
+    margin-right: 30px;
+    margin-inline: 30px; /* Utiliza margin-inline en lugar de margin-right para ajustar el margen horizontal */
+}
+
+
+.container3 {
+    display: flex;
+    align-items: center; /* Centra los elementos horizontalmente */
+}
+
+    .container3 input {
+        background-color: #f2f2f2;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 12px;
+        margin-bottom: 10px;
+        width: 250px;
+        box-sizing: border-box;
+    }
+
+        .container3 input[type="submit"] {
+            background-color: #3E5F8A;
+            color: white;
+            cursor: pointer;
+        }
+
+            .container3 input[type="submit"]:hover {
+                background-color: #2c4667;
+            }
+
+.circulo {
+    flex: 1;
+    text-align: left; /* Alinea la información de contacto a la izquierda */
+}
+
+    .circulo p {
+        font-weight: bold; /* Negrita para el título */
+        margin-bottom: 10px; /* Espacio debajo del título */
+    }
+
+    .circulo div {
+        margin-bottom: 4px; /* Espacio entre las opciones */
+    }
+
+    .circulo input[type="radio"] {
+        margin-inline-start: 50px;
+    }
+
+    .circulo label {
+        display: inline-flex; /* Los elementos se alinean en línea */
+        align-items: center; /* Alineación vertical */
+        cursor: pointer; /* Cambia el cursor al pasar por encima */
+    }
+
+.tarjeta {
+    flex: 1;
+    text-align: center; /* Centra el formulario */
+    margin-right: 90px; /* Ajusta el margen derecho */
+    margin-left: 0; /* Ajusta el margen izquierdo */
+    width: 50%; /* Ancho del formulario */
+}
+
+.info {
+    flex: 1;
+    text-align: right; /* Alinea el formulario a la derecha */
+    margin-right: 10px; /* Ajusta el margen derecho */
+}

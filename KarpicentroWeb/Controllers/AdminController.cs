@@ -215,10 +215,19 @@ namespace KarpicentroWeb.Controllers
             ProductModel productoModel = new ProductModel(_contextDB);
             productInter.idProducts = idpro;
 
-            string nombreImagen = +productInter.idProducts + "_" + productInter.idColors + "_" + productInter.idMaterials + "_" + Image.FileName;
-            await this._helperUpload.UploadFilesAsync(Image, nombreImagen, Folders.Products);
+            if (Image != null)
+            {
+                string nombreImagen = +productInter.idProducts + "_" + productInter.idColors + "_" + productInter.idMaterials + "_" + Image.FileName;
+                await this._helperUpload.UploadFilesAsync(Image, nombreImagen, Folders.Products);
 
-            productInter.Image = "../Images/Products/" + nombreImagen;
+                productInter.Image = "../Images/Products/" + nombreImagen;
+            }
+            else
+            {
+                ViewBag.Mensaje = "Seleccione una imagen para el producto";
+                return View();
+            }
+
             productoModel.AddFeatures(productInter);
             return RedirectToAction("Warehouse");
         }

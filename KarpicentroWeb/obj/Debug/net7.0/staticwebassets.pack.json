@@ -1,343 +1,403 @@
 {
   "Files": [
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\KarpicentroWeb.bundle.scp.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\KarpicentroWeb.bundle.scp.css",
       "PackagePath": "staticwebassets\\KarpicentroWeb.bundle.scp.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Logo.png",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Logo.png",
       "PackagePath": "staticwebassets\\Images\\Logo.png"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Products\\1_3_2_Brainiac.png",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Presentacion\\1.png",
+      "PackagePath": "staticwebassets\\Images\\Presentacion\\1.png"
+    },
+    {
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Presentacion\\Captura2.PNG",
+      "PackagePath": "staticwebassets\\Images\\Presentacion\\Captura2.PNG"
+    },
+    {
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Presentacion\\Captura3.PNG",
+      "PackagePath": "staticwebassets\\Images\\Presentacion\\Captura3.PNG"
+    },
+    {
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Presentacion\\Captura4.PNG",
+      "PackagePath": "staticwebassets\\Images\\Presentacion\\Captura4.PNG"
+    },
+    {
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Presentacion\\Captura5.PNG",
+      "PackagePath": "staticwebassets\\Images\\Presentacion\\Captura5.PNG"
+    },
+    {
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Presentacion\\Captura6.PNG",
+      "PackagePath": "staticwebassets\\Images\\Presentacion\\Captura6.PNG"
+    },
+    {
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Presentacion\\Captura7.PNG",
+      "PackagePath": "staticwebassets\\Images\\Presentacion\\Captura7.PNG"
+    },
+    {
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Presentacion\\Captura8.PNG",
+      "PackagePath": "staticwebassets\\Images\\Presentacion\\Captura8.PNG"
+    },
+    {
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Presentacion\\Captura9.PNG",
+      "PackagePath": "staticwebassets\\Images\\Presentacion\\Captura9.PNG"
+    },
+    {
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Presentacion\\Logo K.png",
+      "PackagePath": "staticwebassets\\Images\\Presentacion\\Logo K.png"
+    },
+    {
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Presentacion\\a1.PNG",
+      "PackagePath": "staticwebassets\\Images\\Presentacion\\a1.PNG"
+    },
+    {
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Presentacion\\a2.PNG",
+      "PackagePath": "staticwebassets\\Images\\Presentacion\\a2.PNG"
+    },
+    {
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Presentacion\\a3.PNG",
+      "PackagePath": "staticwebassets\\Images\\Presentacion\\a3.PNG"
+    },
+    {
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Presentacion\\a4.PNG",
+      "PackagePath": "staticwebassets\\Images\\Presentacion\\a4.PNG"
+    },
+    {
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Presentacion\\a5.PNG",
+      "PackagePath": "staticwebassets\\Images\\Presentacion\\a5.PNG"
+    },
+    {
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Products\\1_3_2_Brainiac.png",
       "PackagePath": "staticwebassets\\Images\\Products\\1_3_2_Brainiac.png"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Products\\1_3_2_superman4.jpg",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Products\\1_3_2_superman4.jpg",
       "PackagePath": "staticwebassets\\Images\\Products\\1_3_2_superman4.jpg"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Products\\1_5_1_Clark.png",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Products\\1_5_1_Clark.png",
       "PackagePath": "staticwebassets\\Images\\Products\\1_5_1_Clark.png"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Products\\1_6_3_minecraft.png",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Products\\1_6_3_minecraft.png",
       "PackagePath": "staticwebassets\\Images\\Products\\1_6_3_minecraft.png"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Products\\4_1_3_Superman.png",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Products\\4_1_3_Superman.png",
       "PackagePath": "staticwebassets\\Images\\Products\\4_1_3_Superman.png"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Products\\Recamara.jpg",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Products\\Recamara.jpg",
       "PackagePath": "staticwebassets\\Images\\Products\\Recamara.jpg"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Products\\cocina.jpg",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Products\\cocina.jpg",
       "PackagePath": "staticwebassets\\Images\\Products\\cocina.jpg"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Products\\sala.jpg",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Products\\sala.jpg",
       "PackagePath": "staticwebassets\\Images\\Products\\sala.jpg"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Users\\Alejandro.jpg",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Users\\Alejandro.jpg",
       "PackagePath": "staticwebassets\\Images\\Users\\Alejandro.jpg"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Users\\AlejandroSuperman.png",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Users\\AlejandroSuperman.png",
       "PackagePath": "staticwebassets\\Images\\Users\\AlejandroSuperman.png"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Users\\Rich.jpg",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Users\\Rich.jpg",
       "PackagePath": "staticwebassets\\Images\\Users\\Rich.jpg"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\Images\\Users\\Usuario.png",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\Images\\Users\\Usuario.png",
       "PackagePath": "staticwebassets\\Images\\Users\\Usuario.png"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\Admin.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\css\\Admin.css",
       "PackagePath": "staticwebassets\\css\\Admin.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\Checkout.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\css\\Checkout.css",
       "PackagePath": "staticwebassets\\css\\Checkout.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\Detalles.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\css\\Detalles.css",
       "PackagePath": "staticwebassets\\css\\Detalles.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\Index.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\css\\Index.css",
       "PackagePath": "staticwebassets\\css\\Index.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\Producto.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\css\\Producto.css",
       "PackagePath": "staticwebassets\\css\\Producto.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\Products.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\css\\Products.css",
       "PackagePath": "staticwebassets\\css\\Products.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\barra.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\css\\barra.css",
       "PackagePath": "staticwebassets\\css\\barra.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\body.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\css\\body.css",
       "PackagePath": "staticwebassets\\css\\body.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\register.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\css\\register.css",
       "PackagePath": "staticwebassets\\css\\register.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\signin.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\css\\signin.css",
       "PackagePath": "staticwebassets\\css\\signin.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\css\\site.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\favicon.ico",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\js\\bootstrap.bundle.min.js",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\js\\site.js",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

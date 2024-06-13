@@ -3461,24 +3461,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\CECyT 13 RFM\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\alexa\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\KarpicentroWeb.csproj",
+      "projectUniqueName": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb.csproj",
       "projectName": "KarpicentroWeb",
-      "projectPath": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\KarpicentroWeb.csproj",
-      "packagesPath": "C:\\Users\\CECyT 13 RFM\\.nuget\\packages\\",
-      "outputPath": "G:\\KarpicentroWeb-main\\KarpicentroWeb\\obj\\",
+      "projectPath": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\KarpicentroWeb.csproj",
+      "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
+      "outputPath": "C:\\Github\\Kapicentro\\KarpicentroWeb\\KarpicentroWeb\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\CECyT 13 RFM\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3486,7 +3481,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3499,6 +3493,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3535,7 +3534,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
       }
     }
   }

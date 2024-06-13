@@ -41,6 +41,8 @@ namespace KarpicentroWeb.Controllers
             return View();
         }
 
+        
+
         [HttpGet]
         public IActionResult Boughts()
         {

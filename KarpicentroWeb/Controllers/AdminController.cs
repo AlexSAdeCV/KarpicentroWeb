@@ -331,5 +331,55 @@ namespace KarpicentroWeb.Controllers
 
             return View(listaventas);
         }
+
+        public IActionResult Charts()
+        {
+            Cookie();
+
+            var coloresMasVendidos = (from cv in _contextDB.Cart
+                                      join pci in _contextDB.InterProd on cv.idProductInter equals pci.ID
+                                      join pc in _contextDB.Colors on pci.idColors equals pc.ID
+                                      group cv by pc.Name into g
+                                      select new
+                                      {
+                                          Color = g.Key,
+                                          CantidadVendida = g.Sum(cv => cv.Amount)
+                                      })
+                             .OrderByDescending(g => g.CantidadVendida)
+                             .ToList();
+
+            var materialesMasComprados = (from cv in _contextDB.Cart
+                                               join pci in _contextDB.InterProd on cv.idProductInter equals pci.ID
+                                               join pa in _contextDB.Materials on pci.idMaterials equals pa.ID
+                                               group cv by pa.Name into g
+                                               select new
+                                               {
+                                                   Materiales = g.Key,
+                                                   CantidadComprada = g.Sum(cv => cv.Amount)
+                                               })
+                                               .OrderByDescending(g => g.CantidadComprada)
+                                               .ToList();
+
+            var productosMasComprados = (from cv in _contextDB.Cart
+                                         join pci in _contextDB.InterProd on cv.idProductInter equals pci.ID
+                                         join p in _contextDB.Product on pci.idProducts equals p.ID
+                                         group cv by p.Name into g
+                                         select new
+                                         {
+                                             Producto = g.Key,
+                                             CantidadComprada = g.Sum(cv => cv.Amount)
+                                         })
+                                         .OrderByDescending(g => g.CantidadComprada)
+                                         .ToList();
+
+            ViewBag.Colores = coloresMasVendidos.Select(c => c.Color).ToList();
+            ViewBag.CantidadesColores = coloresMasVendidos.Select(c => c.CantidadVendida).ToList();
+            ViewBag.Materiales = materialesMasComprados.Select(a => a.Materiales).ToList();
+            ViewBag.CantidadesMateriales = materialesMasComprados.Select(a => a.CantidadComprada).ToList();
+            ViewBag.Productos = productosMasComprados.Select(p => p.Producto).ToList();
+            ViewBag.CantidadesProductos = productosMasComprados.Select(p => p.CantidadComprada).ToList();
+
+            return View();
+        }
     }
 }

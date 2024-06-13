@@ -1,0 +1,95 @@
+﻿@{
+    ViewData["Title"] = "Datos de Ventas";
+    var colores = ViewBag.Colores as List<string>;
+    var cantidadesColores = ViewBag.CantidadesColores as List<int>;
+    var Materiales = ViewBag.Materiales as List<string>;
+    var cantidadesMateriales = ViewBag.CantidadesMateriales as List<int>;
+    var productos = ViewBag.Productos as List<string>;
+    var cantidadesProductos = ViewBag.CantidadesProductos as List<int>;
+    Layout = "_LayoutAdmin2";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+            .chart-container canvas {
+                width: 100% !important;
+                height: 300px !important;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>@ViewData["Title"]</h2>
+        <div class="chart-container">
+            <canvas id="coloresMasVendidosChart"></canvas>
+            <canvas id="MaterialesMasCompradosChart"></canvas>
+            <canvas id="productosMasCompradosChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var dataColores = {
+                labels: @Html.Raw(Json.Serialize(colores)),
+                datasets: [{
+                    label: 'Cantidad Vendida',
+                    data: @Html.Raw(Json.Serialize(cantidadesColores)),
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            };
+
+            var dataMateriales = {
+                labels: @Html.Raw(Json.Serialize(Materiales)),
+                datasets: [{
+                    label: 'Cantidad Comprada',
+                    data: @Html.Raw(Json.Serialize(cantidadesMateriales)),
+                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    borderWidth: 1
+                }]
+            };
+
+            var dataProductos = {
+                labels: @Html.Raw(Json.Serialize(productos)),
+                datasets: [{
+                    label: 'Cantidad Comprada',
+                    data: @Html.Raw(Json.Serialize(cantidadesProductos)),
+                    backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                    borderColor: 'rgba(255, 159, 64, 1)',
+                    borderWidth: 1
+                }]
+            };
+
+            var options = {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            };
+
+            var ctxColores = document.getElementById('coloresMasVendidosChart').getContext('2d');
+            var ctxMateriales = document.getElementById('MaterialesMasCompradosChart').getContext('2d');
+            var ctxProductos = document.getElementById('productosMasCompradosChart').getContext('2d');
+
+            new Chart(ctxColores, { type: 'bar', data: dataColores, options: options });
+            new Chart(ctxMateriales, { type: 'bar', data: dataMateriales, options: options });
+            new Chart(ctxProductos, { type: 'bar', data: dataProductos, options: options });
+        });
+    </script>
+</body>
+</html>

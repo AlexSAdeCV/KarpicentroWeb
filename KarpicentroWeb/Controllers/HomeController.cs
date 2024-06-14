@@ -1,5 +1,4 @@
 ﻿using KarpicentroWeb.Models;
-using KarpicentroWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Net;
@@ -37,13 +36,17 @@ namespace KarpicentroWeb.Controllers
                 }
             }
 
-            var inter = _contextDB.InterProd.ToList();
-            var producto = _contextDB.Product.OrderByDescending(c => c.Date).ToList();
+            var inter = _contextDB.InterProd.OrderByDescending(c => c.Date).ToList();
+            var producto = _contextDB.Product.ToList();
+            var color = _contextDB.Colors.ToList();
+            var material = _contextDB.Materials.ToList();
 
             var model = new ProductViewModel
             {
                 Inter = inter,
-                Products = producto
+                Products = producto,
+                Color = color,
+                Material = material
             };
 
             return View(model);
@@ -169,9 +172,9 @@ namespace KarpicentroWeb.Controllers
 
             var insertarproductos = new Product[]
                 {
-                    new Product() { Name = "Sala orion", ProductFeatures = "Sala color gris", Description = "Bonita sala en color azul claro que le da un aspecto fresco a sus espacios, con sus acojinados de alta densidad y decorativos con motivos de palmeras.", PurchasePrice = 1500, Width = 150, Height = 92, Depth = 92, Categories = "Salas", idSupplier = 1, Active = 1, Featured = 1, Date = new DateTime(2024, 6, 4, 15, 30, 0)},
-                    new Product() { Name = "Cocina Ontaro", ProductFeatures = "Sala color chocolate", Description = "Bonita cocina en color chocolate con acabado rallado, especiero inferior y manijas plateadas", PurchasePrice = 3000, Width = 90, Height = 92, Depth = 66, Categories = "Cocinas", idSupplier = 1, Active = 1, Featured = 1, Date = new DateTime(2024, 6, 4, 15, 30, 0)},
-                    new Product() { Name = "Cabecera España", ProductFeatures = "Cabecera color gris", Description = "Bonita recámara con grabados transversales en abanico, burós en blanco con gris, con espacio inferior y manijas rectangular, que le dará un toque diferente a tus sueños.", PurchasePrice = 600, Width = 8, Height = 2, Depth = 1, Categories = "Recamaras", idSupplier = 1, Active = 1, Featured = 0, Date = new DateTime(2024, 6,1, 15, 30, 0)}
+                    new Product() { Name = "Sala orion", ProductFeatures = "Sala color gris", Description = "Bonita sala en color azul claro que le da un aspecto fresco a sus espacios, con sus acojinados de alta densidad y decorativos con motivos de palmeras.", PurchasePrice = 1500, Width = 150, Height = 92, Depth = 92, Categories = "Salas", idSupplier = 1, Active = 1, Featured = 1},
+                    new Product() { Name = "Cocina Ontaro", ProductFeatures = "Sala color chocolate", Description = "Bonita cocina en color chocolate con acabado rallado, especiero inferior y manijas plateadas", PurchasePrice = 3000, Width = 90, Height = 92, Depth = 66, Categories = "Cocinas", idSupplier = 1, Active = 1, Featured = 1},
+                    new Product() { Name = "Cabecera España", ProductFeatures = "Cabecera color gris", Description = "Bonita recámara con grabados transversales en abanico, burós en blanco con gris, con espacio inferior y manijas rectangular, que le dará un toque diferente a tus sueños.", PurchasePrice = 600, Width = 8, Height = 2, Depth = 1, Categories = "Recamaras", idSupplier = 1, Active = 1, Featured = 0}
                 };
 
             var insertarcolores = new Colors[]
@@ -191,17 +194,17 @@ namespace KarpicentroWeb.Controllers
 
             var insertarintermedia = new ProductInter[]
                 {
-                    new ProductInter() { idProducts = 1, idColors = 1, idMaterials = 1, Stock = 15, SalePrice = 2200, Image = "../Images/Products/Sala.jpg"},
-                    new ProductInter() { idProducts = 2, idColors = 4, idMaterials = 2, Stock = 15, SalePrice = 4000, Image = "../Images/Products/cocina.jpg"},
-                    new ProductInter() { idProducts = 3, idColors = 5, idMaterials = 2, Stock = 15, SalePrice = 15000, Image = "../Images/Products/Recamara.jpg"}
+                    new ProductInter() { idProducts = 1, idColors = 1, idMaterials = 1, Stock = 15, SalePrice = 2200, Image = "../Images/Products/Sala.jpg",Date = new DateTime(2024, 6, 13, 15, 30, 0)},
+                    new ProductInter() { idProducts = 2, idColors = 4, idMaterials = 2, Stock = 15, SalePrice = 4000, Image = "../Images/Products/cocina.jpg", Date = new DateTime(2024, 6, 4, 15, 30, 0)},
+                    new ProductInter() { idProducts = 3, idColors = 5, idMaterials = 2, Stock = 15, SalePrice = 15000, Image = "../Images/Products/Recamara.jpg", Date = new DateTime(2024, 6, 14, 15, 30, 0)}
                 };
 
             // Venta = 2, Carrito = 1
             var insertarventas = new CartBuys[]
                 {
-                    new CartBuys() {Price = 15000, Amount  = 5, Date = DateTime.Now, SwitchCartBuy = 2, Shipping = "Preparando tu producto", IDOrder = 1, idProductInter = 1, idUser = 1, iduserdir = 1},
-                    new CartBuys() {Price = 1500, Amount  = 3, Date = DateTime.Now, SwitchCartBuy = 2, Shipping = "Preparando tu producto", IDOrder = 2, idProductInter = 2, idUser = 2, iduserdir = 1},
-                    new CartBuys() {Price = 1700, Amount  = 1, Date = DateTime.Now, SwitchCartBuy = 2, Shipping = "Preparando tu producto", IDOrder = 2, idProductInter = 1, idUser = 2, iduserdir = 1}
+                    new CartBuys() {Price = 15000, Amount  = 5, Date = new DateTime(2024, 6, 13, 15, 30, 0), SwitchCartBuy = 2, Shipping = "Preparando tu producto", IDOrder = 1, idProductInter = 1, idUser = 1, iduserdir = 1},
+                    new CartBuys() {Price = 1500, Amount  = 3, Date = new DateTime(2024, 5, 8, 15, 30, 0), SwitchCartBuy = 2, Shipping = "Preparando tu producto", IDOrder = 2, idProductInter = 2, idUser = 2, iduserdir = 1},
+                    new CartBuys() {Price = 1700, Amount  = 1, Date = new DateTime(2024, 2, 3, 15, 30, 0), SwitchCartBuy = 2, Shipping = "Preparando tu producto", IDOrder = 2, idProductInter = 1, idUser = 2, iduserdir = 1}
                 };
 
             foreach (var u in insertarusuarios)

@@ -27,6 +27,12 @@
             _contextDB.SaveChanges();
         }
 
+        public void DeleteFeatures(ProductInter productInter)
+        {
+            _contextDB.InterProd.Remove(productInter);
+            _contextDB.SaveChanges();
+        }
+
         public void AddColor(Colors colors)
         {
             _contextDB.Colors.Add(colors);
@@ -36,6 +42,12 @@
         public void AddMaterial(Materials materials)
         {
             _contextDB.Materials.Add(materials);
+            _contextDB.SaveChanges();
+        }
+
+        public void AddSupplier(Supplier supplier)
+        {
+            _contextDB.Supplier.Add(supplier);
             _contextDB.SaveChanges();
         }
     }

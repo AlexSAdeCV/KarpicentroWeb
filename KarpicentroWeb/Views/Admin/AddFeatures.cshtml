@@ -4,29 +4,57 @@
     Layout = "_LayoutAdmin2";
 }
 
+<style>
+    .autenticado {
+        text-align: center;
+        padding: 20px;
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+</style>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#combobox1').on("change", function () {
+                var valor = $(this).val();
+                var idprod = '@ViewBag.idprod';
+                $.ajax({
+                    type: 'GET',
+                    url: '/api/Values/ValorCombos',
+                    data: { valor: valor, idprod: idprod },
+                    success: function (response) {
+                        var data = response;
+                        var combobox2 = $('#combobox2');
+                        combobox2.empty();
+                        $.each(data, function (index, item) {
+                            combobox2.append($('<option>', {
+                                value: item.value,
+                                text: item.text
+                            }));
+                        });
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
 <body>
     <main class="container">
         <div class="my-3 p-3 bg-light rounded shadow-sm">
             <form class="row g-3 needs-validation" novalidate method="post" enctype="multipart/form-data">
                 <div class="col-md-4">
-                    <label for="inputState" class="form-label">Proveedores</label>
-                    <select name="idColors" id="inputState" class="form-select">
-                        <option>Colores...</option>
-                        @{
-                            int i = 0;
-
-                            foreach (var p in Model.Color)
-                            {
-                                i++;
-                                <option value="@i">@p.Name</option>
-                            }
-                        }
-                        <option>...</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label for="inputState" class="form-label">Proveedores</label>
-                    <select name="idMaterials" id="inputState" class="form-select">
+                    <label for="inputState" class="form-label">Materiales</label>
+                    <select name="idMaterials" id="combobox1" class="form-select">
                         <option>Materiales...</option>
                         @{
                             int j = 0;
@@ -41,12 +69,28 @@
                     </select>
                 </div>
                 <div class="col-md-4">
+                    <label for="inputState" class="form-label">Colores</label>
+                    <select name="idColors" id="combobox2" class="form-select">
+                        <option>Colores...</option>
+                        @{
+                            int i = 0;
+
+                            foreach (var p in Model.Color)
+                            {
+                                i++;
+                                <option value="@i">@p.Name</option>
+                            }
+                        }
+                        <option>...</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
                     <label for="inputAddress2" class="form-label">Precio de Venta</label>
-                    <input name="SalePrice" type="number" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                    <input name="SalePrice" type="number" class="form-control" id="inputAddress2" placeholder="$">
                 </div>
                 <div class="col-md-4">
                     <label for="inputAddress2" class="form-label">Stock</label>
-                    <input name="Stock" type="number" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                    <input name="Stock" type="number" class="form-control" id="inputAddress2" placeholder="$">
                 </div>
                 <div class="col-md-4">
                     <div class="col-auto">
@@ -54,6 +98,16 @@
                         <input name="Image" class="form-control" type="file" id="formFileMultiple" multiple>
                     </div>
                 </div>
+
+                @if (ViewBag.Mensaje != null)
+                {
+                    <div class="card-body">
+                        <div class="autenticado">
+                            <p>@ViewBag.Mensaje</p>
+                        </div>
+                    </div>
+                }
+
                 <button asp-action="AddFeatures" asp-controller="Admin" formmethod="post" class="w-100 btn btn-primary btn-lg">Crear Producto</button>
             </form>
         </div>

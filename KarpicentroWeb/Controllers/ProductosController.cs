@@ -36,6 +36,8 @@ namespace KarpicentroWeb.Controllers
                     }
                 }
             }
+
+            ViewBag.Cookie = miCookie;
         }
 
         public IActionResult Products()
@@ -51,7 +53,6 @@ namespace KarpicentroWeb.Controllers
 
             Cookie();
             return View(viewmodel);
-            return View();
         }
 
         [HttpGet]
@@ -74,18 +75,22 @@ namespace KarpicentroWeb.Controllers
         [HttpGet]
         public IActionResult ProductDetails(int valor)
         {
-            ViewBag.IDproducto = valor;
+            ViewBag.idproducto = valor;
             var producto = _contextDB.Product.First(p => p.ID == valor);
             var stock = _contextDB.InterProd.First(p => p.ID == valor);
             ViewBag.Existencia = stock.Stock;
 
             List<Product> listaProductos = _contextDB.Product.ToList();
             List<ProductInter> listainter = _contextDB.InterProd.ToList();
+            List<Colors> listacolores = _contextDB.Colors.ToList();
+            List<Materials> listamateriales = _contextDB.Materials.ToList();
 
             var viewmodel = new ProductViewModel
             {
                 Products = listaProductos,
-                Inter = listainter
+                Inter = listainter,
+                Color = listacolores,
+                Material = listamateriales
             };
 
             Cookie();
@@ -97,7 +102,7 @@ namespace KarpicentroWeb.Controllers
         {
             Cookie();
 
-            cartBuys.idUser = ID;
+            cartBuys.idUser = ID;   
             cartBuys.SwitchCartBuy = 1;
             cartBuys.Shipping = "";
 
@@ -111,9 +116,12 @@ namespace KarpicentroWeb.Controllers
                 {
                     if (i.idProductInter == cartBuys.idProductInter)
                     {
-                        cartBuys.Amount += i.Amount;
-                        _contextDB.Cart.Remove(i);
-                        _contextDB.SaveChanges();
+                        if (i.SwitchCartBuy == 1)
+                        {
+                            cartBuys.Amount += i.Amount;
+                            _contextDB.Cart.Remove(i);
+                            _contextDB.SaveChanges();
+                        }
                     }
                     c++;
                 }

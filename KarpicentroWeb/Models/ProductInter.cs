@@ -14,6 +14,7 @@ namespace KarpicentroWeb.Models
         public int Stock { get; set; }
         public decimal SalePrice { get; set; }
         public string Image { get; set; }
+        public DateTime Date { get; set; }
 
         [ForeignKey("idProducts")]
         public virtual Product Product { get; set; }

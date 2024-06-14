@@ -29,10 +29,11 @@
         }
     </style>
 
-    <script src="https://www.paypal.com/sdk/js?client-id=AW4julfWyT8n_rkT84jgilOrAJen8dpxeX98mbBK4-GjJGvv_WENeNlDpuSqLWsEWyg8A4oBBl2eoL99&currency=MXN"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AW4julfWyT8n_rkT84jgilOrAJen8dpxeX98mbBK4-GjJGvv_WENeNlDpuSqLWsEWyg8A4oBBl2eoL99&currency=MXN&disable-funding=credit,card"></script>
     <script>
         paypal.Buttons({
             style: {
+                layout: 'vertical',
                 shape: 'pill',
                 label: 'pay'
             },
@@ -41,7 +42,7 @@
                     purchase_units: [{
                         amount: {
                             value: @totalToPay
-                                }
+                        }
                     }]
                 });
 
@@ -88,123 +89,125 @@
     </script>
 </head>
 
-<section class="h-100 h-custom" style="background-color:  rgb(6, 36, 76);">
-    <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-12">
-                <div class="card card-registration card-registration-2" style="border-radius: 15px;">
-                    <div class="card-body p-0">
-                        <div class="row g-0">
-                            <div class="col-lg-8">
-                                <div class="p-5">
-                                    <div class="d-flex justify-content-between align-items-center mb-5">
-                                        <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
-                                        <h6 id="item-count" class="mb-0 text-muted">3 Articulos</h6>
-                                    </div>
-                                    <hr class="my-4">
+<body style="background-color:  rgb(6, 36, 76);">
+    <section class="h-100 h-custom">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12">
+                    <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                        <div class="card-body p-0">
+                            <div class="row g-0">
+                                <div class="col-lg-8">
+                                    <div class="p-5">
+                                        <div class="d-flex justify-content-between align-items-center mb-5">
+                                            <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
+                                            <h6 id="item-count" class="mb-0 text-muted">3 Articulos</h6>
+                                        </div>
+                                        <hr class="my-4">
 
-                                    @{
-                                        foreach (var d in ViewBag.InterDir)
-                                        {
-                                            foreach (var i in ViewBag.Direcciones)
+                                        @{
+                                            foreach (var d in ViewBag.InterDir)
                                             {
-                                                if (d.idDirections == i.ID)
+                                                foreach (var i in ViewBag.Direcciones)
                                                 {
-                                                    if (i.ID != 1)
+                                                    if (d.idDirections == i.ID)
                                                     {
-                                                        <div class="bg-white form-check" style="border-radius: 25px;">
-                                                            <label for="@i.ID">
-                                                                <input type="hidden" id="Id" name="Id" value="@i.ID" />
-                                                                <input type="checkbox" class="direccion-checkbox" id="@i.ID" value="@i.ID" />
-                                                                <h5>C.P @i.ZipCode</h5>
-                                                                <p>@i.NameUser</p>
-                                                                <p>@i.Street @i.ExtNum @i.IntNum</p>
-                                                            </label>
-                                                        </div>
-                                                        <p></p>
+                                                        if (i.ID != 1)
+                                                        {
+                                                            <div class="bg-white form-check" style="border-radius: 25px;">
+                                                                <label for="@i.ID">
+                                                                    <input type="hidden" id="Id" name="Id" value="@i.ID" />
+                                                                    <input type="checkbox" class="direccion-checkbox" id="@i.ID" value="@i.ID" />
+                                                                    <h5>C.P @i.ZipCode</h5>
+                                                                    <p>@i.NameUser</p>
+                                                                    <p>@i.Street @i.ExtNum @i.IntNum</p>
+                                                                </label>
+                                                            </div>
+                                                            <p></p>
+                                                        }
                                                     }
                                                 }
                                             }
                                         }
-                                    }
 
-                                    <div class="pt-5">
-                                        <h6 class="mb-0">
-                                            <a asp-action="AgregarDireccion" asp-controller="Boughts" class="text-body">
-                                                <i class="fas fa-add me-2"></i>Agregar una direccion
-                                            </a>
-                                        </h6>
-                                    </div>
+                                        <div class="pt-5">
+                                            <h6 class="mb-0">
+                                                <a asp-action="AgregarDireccion" asp-controller="Boughts" class="text-body">
+                                                    <i class="fas fa-add me-2"></i>Agregar una direccion
+                                                </a>
+                                            </h6>
+                                        </div>
 
-                                    <div class="pt-5">
-                                        <h6 class="mb-0">
-                                            <a asp-action="Index" asp-controller="Home" class="text-body">
-                                                <i class="fas fa-long-arrow-alt-left me-2"></i>Regresar a la tienda
-                                            </a>
-                                        </h6>
+                                        <div class="pt-5">
+                                            <h6 class="mb-0">
+                                                <a asp-action="Products" asp-controller="Productos" class="text-body">
+                                                    <i class="fas fa-long-arrow-alt-left me-2"></i>Volver a la tienda
+                                                </a>
+                                            </h6>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4 bg-grey">
-                                <div class="p-5">
-                                    <h1 class="fw-bold mb-5 mt-2 pt-1">Resumen</h1>
-                                    <hr class="my-4">
+                                <div class="col-lg-4 bg-grey">
+                                    <div class="p-5">
+                                        <h1 class="fw-bold mb-5 mt-2 pt-1">Resumen</h1>
+                                        <hr class="my-4">
 
-                                    <div class="d-flex justify-content-between mb-4">
-                                        <h5 style="display: inline-block;" class="text-uppercase">Articulos <span id="item-count-value">@totalItems</span></h5>
-                                        <h5 id="total-price">$ @totalPrice mxn</h5>
-                                    </div>
+                                        <div class="d-flex justify-content-between mb-4">
+                                            <h5 style="display: inline-block;" class="text-uppercase">Articulos <span id="item-count-value">@totalItems</span></h5>
+                                            <h5 id="total-price">$ @totalPrice mxn</h5>
+                                        </div>
 
-                                    <ul style="list-style: none;">
-                                        @{
-                                            foreach (var c in Model.Cart)
-                                            {
-                                                if (c.idUser == ViewBag.ID)
+                                        <ul style="list-style: none;">
+                                            @{
+                                                foreach (var c in Model.Cart)
                                                 {
-                                                    foreach (var i in Model.Inter)
+                                                    if (c.idUser == ViewBag.ID)
                                                     {
-                                                        if (i.ID == c.idProductInter)
+                                                        foreach (var i in Model.Inter)
                                                         {
-                                                            foreach (var p in Model.Products)
+                                                            if (i.ID == c.idProductInter)
                                                             {
-                                                                if (p.ID == i.idProducts)
+                                                                foreach (var p in Model.Products)
                                                                 {
-                                                                    <li>@p.Name Cantidad: @c.Amount</li>
-                                                                    break;
+                                                                    if (p.ID == i.idProducts)
+                                                                    {
+                                                                        <li>@p.Name Cantidad: @c.Amount</li>
+                                                                        break;
+                                                                    }
                                                                 }
                                                             }
                                                         }
                                                     }
                                                 }
                                             }
-                                        }
-                                    </ul>
+                                        </ul>
 
-                                    <hr />
+                                        <hr />
 
-                                    <h5 class="text-uppercase mb-3">Precio de envio</h5>
+                                        <h5 class="text-uppercase mb-3">Precio de envio</h5>
 
-                                    <div class="mb-4 pb-2">
-                                        Precio de envio: $500
-                                    </div>
+                                        <div class="mb-4 pb-2">
+                                            Precio de envio: $500
+                                        </div>
 
-                                    <div class="d-flex justify-content-between mb-4">
-                                        <h5 class="text-uppercase">Total a pagar</h5>
-                                        <h5 id="total-to-pay">$ @totalToPay mxn</h5>
-                                    </div>
+                                        <div class="d-flex justify-content-between mb-4">
+                                            <h5 class="text-uppercase">Total a pagar</h5>
+                                            <h5 id="total-to-pay">$ @totalToPay mxn</h5>
+                                        </div>
 
-                                    <input type="hidden" id="selectedAddressId" name="selectedAddressId" />
+                                        <input type="hidden" id="selectedAddressId" name="selectedAddressId" />
 
-                                    <div id="paypal-button-container-wrapper">
-                                        <div class="container3">
-                                            <div class="circulo">
-                                                <div class="custom-control custom-radio" style="padding-right: 30px">
-                                                    <div id="paypal-button-container"></div>
+                                        <div id="paypal-button-container-wrapper">
+                                            <div class="container3">
+                                                <div class="circulo">
+                                                    <div class="custom-control custom-radio" style="padding-right: 30px">
+                                                        <div id="paypal-button-container"></div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -212,5 +215,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</body>

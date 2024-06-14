@@ -1,0 +1,62 @@
+﻿@model KarpicentroWeb.Models.ProductViewModel
+
+@{
+    Layout = "_LayoutAdmin2";
+}
+
+<body>
+    <main class="container">
+        <div class="my-3 p-3 bg-light rounded shadow-sm">
+            <form class="row g-3 needs-validation" novalidate method="post" enctype="multipart/form-data">
+                <div class="col-md-4">
+                    <label asp-for="@Model.pinter.idColors" for="inputState" class="form-label">Colores</label>
+                    <select asp-for="@Model.pinter.idColors" name="idColors" id="inputState" class="form-select">
+                        <option>Colores...</option>
+                        @{
+                            int i = 0;
+
+                            foreach (var p in Model.Color)
+                            {
+                                i++;
+                                <option value="@i">@p.Name</option>
+                            }
+                        }
+                        <option>...</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="@Model.pinter.idMaterials" for="inputState" class="form-label">Materiales</label>
+                    <select asp-for="@Model.pinter.idMaterials" name="idMaterials" id="inputState" class="form-select">
+                        <option>Materiales...</option>
+                        @{
+                            int j = 0;
+
+                            foreach (var p in Model.Material)
+                            {
+                                j++;
+                                <option value="@j">@p.Name</option>
+                            }
+                        }
+                        <option>...</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="@Model.pinter.SalePrice" for="inputAddress2" class="form-label">Precio de Venta</label>
+                    <input asp-for="@Model.pinter.SalePrice" name="SalePrice" type="number" class="form-control" id="inputAddress2" readonly>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="@Model.pinter.Stock" for="inputAddress2" class="form-label">Stock</label>
+                    <input asp-for="@Model.pinter.Stock" name="Stock" type="number" class="form-control" id="inputAddress2" readonly>
+                </div>
+                <div class="col-md-4">
+                    <div class="col-auto">
+                        <label for="formFileMultiple" class="form-label">Seleccione las imagen del Producto</label>
+                        <input name="Image" class="form-control" type="file" id="formFileMultiple" multiple>
+                    </div>
+                </div>
+
+                <button asp-action="DeleteFeatures" asp-controller="Admin" formmethod="post" class="w-100 btn btn-primary btn-lg">Modificar Producto</button>
+            </form>
+        </div>
+    </main>
+</body>

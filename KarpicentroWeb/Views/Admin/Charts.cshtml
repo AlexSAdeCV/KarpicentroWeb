@@ -2,10 +2,27 @@
     ViewData["Title"] = "Datos de Ventas";
     var colores = ViewBag.Colores as List<string>;
     var cantidadesColores = ViewBag.CantidadesColores as List<int>;
-    var Materiales = ViewBag.Materiales as List<string>;
+    var materiales = ViewBag.Materiales as List<string>;
     var cantidadesMateriales = ViewBag.CantidadesMateriales as List<int>;
     var productos = ViewBag.Productos as List<string>;
     var cantidadesProductos = ViewBag.CantidadesProductos as List<int>;
+
+    var states = ViewBag.States as List<string>;
+    var countsStates = ViewBag.CountsStates as List<int>;
+    var delegations = ViewBag.Delegations as List<string>;
+    var countsDelegations = ViewBag.CountsDelegations as List<int>;
+    var extIntNumbers = ViewBag.ExtIntNumbers as List<dynamic>;
+
+    var productNames = ViewBag.ProductPrices as List<string>;
+    var salePrices = ViewBag.SalePrices as List<decimal>;
+    var colorNames = ViewBag.Colors as List<string>;
+    var totalStock = ViewBag.TotalStock as List<int>;
+
+    var days = ViewBag.Days as List<string>;
+    var ventasPorDia = ViewBag.VentasPorDia as List<int>;
+    var promedioVentaMeses = ViewBag.PromedioVentaMeses as List<string>;
+    var promediosVenta = ViewBag.PromediosVenta as List<decimal>;
+
     Layout = "_LayoutAdmin2";
 }
 
@@ -33,9 +50,52 @@
     <div class="container">
         <h2>@ViewData["Title"]</h2>
         <div class="chart-container">
-            <canvas id="coloresMasVendidosChart"></canvas>
-            <canvas id="MaterialesMasCompradosChart"></canvas>
-            <canvas id="productosMasCompradosChart"></canvas>
+            <div>
+                <h3>Colores Más Vendidos</h3>
+                <canvas id="coloresMasVendidosChart"></canvas>
+            </div>
+            <div>
+                <h3>Materiales Más Comprados</h3>
+                <canvas id="materialesMasCompradosChart"></canvas>
+            </div>
+            <div>
+                <h3>Productos Más Comprados</h3>
+                <canvas id="productosMasCompradosChart"></canvas>
+            </div>
+        </div>
+        <div class="chart-container">
+            <div>
+                <h3>Número de Direcciones por Estado</h3>
+                <canvas id="directionsByStateChart"></canvas>
+            </div>
+            <div>
+                <h3>Porcentaje de Usuarios por Delegación</h3>
+                <canvas id="usersByDelegationChart"></canvas>
+            </div>
+            <div>
+                <h3>Dispersión de Números Exteriores e Interiores</h3>
+                <canvas id="extIntNumbersChart"></canvas>
+            </div>
+        </div>
+        <div class="chart-container">
+            <div>
+                <h3>Precio de Venta por Producto</h3>
+                <canvas id="salePriceByProductChart"></canvas>
+            </div>
+            <div>
+                <h3>Stock Total por Color</h3>
+                <canvas id="totalStockByColorChart"></canvas>
+            </div>
+        </div>
+        <div class="chart-container">
+            <div>
+                <h3>Días con Más Ventas en el Mes</h3>
+                <canvas id="ventasPorDiaChart"></canvas>
+            </div>
+            <div>
+                <h3>Promedio de Venta General por Mes</h3>
+                <canvas id="promedioVentaChart"></canvas>
+            </div>
         </div>
     </div>
 
@@ -53,7 +113,7 @@
             };
 
             var dataMateriales = {
-                labels: @Html.Raw(Json.Serialize(Materiales)),
+                labels: @Html.Raw(Json.Serialize(materiales)),
                 datasets: [{
                     label: 'Cantidad Comprada',
                     data: @Html.Raw(Json.Serialize(cantidadesMateriales)),
@@ -74,6 +134,96 @@
                 }]
             };
 
+            var dataStates = {
+                labels: @Html.Raw(Json.Serialize(states)),
+                datasets: [{
+                    label: 'Número de Direcciones',
+                    data: @Html.Raw(Json.Serialize(countsStates)),
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            };
+
+            var dataDelegations = {
+                labels: @Html.Raw(Json.Serialize(delegations)),
+                datasets: [{
+                    label: 'Número de Usuarios',
+                    data: @Html.Raw(Json.Serialize(countsDelegations)),
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            };
+
+            var dataExtIntNumbers = {
+                datasets: [{
+                    label: 'Números Exteriores e Interiores',
+                    data: @Html.Raw(Json.Serialize(extIntNumbers)),
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            };
+
+            var dataSalePrices = {
+                labels: @Html.Raw(Json.Serialize(productNames)),
+                datasets: [{
+                    label: 'Precio de Venta',
+                    data: @Html.Raw(Json.Serialize(salePrices)),
+                    backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                    borderColor: 'rgba(255, 206, 86, 1)',
+                    borderWidth: 1
+                }]
+            };
+
+            var dataTotalStock = {
+                labels: @Html.Raw(Json.Serialize(colorNames)),
+                datasets: [{
+                    label: 'Stock Total',
+                    data: @Html.Raw(Json.Serialize(totalStock)),
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            };
+
+            var dataVentasPorDia = {
+                labels: @Html.Raw(Json.Serialize(days)),
+                datasets: [{
+                    label: 'Cantidad de Ventas',
+                    data: @Html.Raw(Json.Serialize(ventasPorDia)),
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            };
+
+            var dataPromedioVenta = {
+                labels: @Html.Raw(Json.Serialize(promedioVentaMeses)),
+                datasets: [{
+                    label: 'Promedio de Venta',
+                    data: @Html.Raw(Json.Serialize(promediosVenta)),
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            };
+
             var options = {
                 scales: {
                     y: {
@@ -83,12 +233,26 @@
             };
 
             var ctxColores = document.getElementById('coloresMasVendidosChart').getContext('2d');
-            var ctxMateriales = document.getElementById('MaterialesMasCompradosChart').getContext('2d');
+            var ctxMateriales = document.getElementById('materialesMasCompradosChart').getContext('2d');
             var ctxProductos = document.getElementById('productosMasCompradosChart').getContext('2d');
+            var ctxStates = document.getElementById('directionsByStateChart').getContext('2d');
+            var ctxDelegations = document.getElementById('usersByDelegationChart').getContext('2d');
+            var ctxExtIntNumbers = document.getElementById('extIntNumbersChart').getContext('2d');
+            var ctxSalePrices = document.getElementById('salePriceByProductChart').getContext('2d');
+            var ctxTotalStock = document.getElementById('totalStockByColorChart').getContext('2d');
+            var ctxVentasPorDia = document.getElementById('ventasPorDiaChart').getContext('2d');
+            var ctxPromedioVenta = document.getElementById('promedioVentaChart').getContext('2d');
 
             new Chart(ctxColores, { type: 'bar', data: dataColores, options: options });
             new Chart(ctxMateriales, { type: 'bar', data: dataMateriales, options: options });
             new Chart(ctxProductos, { type: 'bar', data: dataProductos, options: options });
+            new Chart(ctxStates, { type: 'bar', data: dataStates, options: options });
+            new Chart(ctxDelegations, { type: 'pie', data: dataDelegations });
+            new Chart(ctxExtIntNumbers, { type: 'scatter', data: dataExtIntNumbers, options: options });
+            new Chart(ctxSalePrices, { type: 'bar', data: dataSalePrices, options: options });
+            new Chart(ctxTotalStock, { type: 'bar', data: dataTotalStock, options: options });
+            new Chart(ctxVentasPorDia, { type: 'bar', data: dataVentasPorDia, options: options });
+            new Chart(ctxPromedioVenta, { type: 'line', data: dataPromedioVenta, options: options });
         });
     </script>
 </body>

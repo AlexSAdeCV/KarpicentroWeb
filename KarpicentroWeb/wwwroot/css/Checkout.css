@@ -99,3 +99,13 @@
     text-align: right; /* Alinea el formulario a la derecha */
     margin-right: 10px; /* Ajusta el margen derecho */
 }
+
+.delegacion {
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    width: 250px;
+    box-sizing: border-box;
+}

@@ -169,9 +169,30 @@ namespace KarpicentroWeb.Controllers
         }
 
         [HttpGet]
+        public IActionResult NewSupplier()
+        {
+            Cookie();
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult NewSupplier(Supplier supplier)
+        {
+            Cookie();
+
+            supplier.idDirections = 1;
+
+            var productmodel = new ProductModel(_contextDB);
+
+            productmodel.AddSupplier(supplier);
+
+            return View();
+        }
+
+        [HttpGet]
         public IActionResult Features(int id, string nombre, string categorias)
         {
-            List<ProductInter> listproductoInter = _contextDB.InterProd.ToList();
+            List<ProductInter> listproductoInter = _contextDB.InterProd.Where(i => i.idProducts == id).ToList();
             List<Colors> listproductoColor = _contextDB.Colors.ToList();
             List<Materials> listproductoMateriales = _contextDB.Materials.ToList();
 
@@ -205,6 +226,8 @@ namespace KarpicentroWeb.Controllers
                 Material = listproductoMateriales
             };
 
+            ViewBag.idprod = idpro;
+
             Cookie();
             return View(viewmodel);
         }
@@ -225,8 +248,24 @@ namespace KarpicentroWeb.Controllers
             else
             {
                 ViewBag.Mensaje = "Seleccione una imagen para el producto";
-                return View();
+                List<ProductInter> listproductoInter = _contextDB.InterProd.ToList();
+                List<Colors> listproductoColor = _contextDB.Colors.ToList();
+                List<Materials> listproductoMateriales = _contextDB.Materials.ToList();
+
+                var viewmodel = new ProductViewModel
+                {
+                    Inter = listproductoInter,
+                    Color = listproductoColor,
+                    Material = listproductoMateriales
+                };
+
+                ViewBag.idprod = idpro;
+
+                Cookie();
+                return View(viewmodel);
             }
+
+            productInter.Date = DateTime.Now;
 
             productoModel.AddFeatures(productInter);
             return RedirectToAction("Warehouse");
@@ -272,6 +311,37 @@ namespace KarpicentroWeb.Controllers
             }
 
             productoModel.EditFeatures(productInter);
+            return RedirectToAction("Warehouse");
+        }
+
+        [HttpGet]
+        public IActionResult DeleteFeatures(int id)
+        {
+            var productoInter = _contextDB.InterProd.FirstOrDefault(i => i.ID == id);
+            List<Colors> listproductoColor = _contextDB.Colors.ToList();
+            List<Materials> listproductoMateriales = _contextDB.Materials.ToList();
+
+            var viewmodel = new ProductViewModel
+            {
+                pinter = productoInter,
+                Color = listproductoColor,
+                Material = listproductoMateriales
+
+            };
+
+            PfImage = productoInter.Image;
+
+            Cookie();
+            return View(viewmodel);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteFeatures(ProductInter productInter)
+        {
+            ProductModel productoModel = new ProductModel(_contextDB);
+
+            productoModel.DeleteFeatures(productInter);
+
             return RedirectToAction("Warehouse");
         }
 
@@ -358,16 +428,16 @@ namespace KarpicentroWeb.Controllers
                              .ToList();
 
             var materialesMasComprados = (from cv in _contextDB.Cart
-                                               join pci in _contextDB.InterProd on cv.idProductInter equals pci.ID
-                                               join pa in _contextDB.Materials on pci.idMaterials equals pa.ID
-                                               group cv by pa.Name into g
-                                               select new
-                                               {
-                                                   Materiales = g.Key,
-                                                   CantidadComprada = g.Sum(cv => cv.Amount)
-                                               })
-                                               .OrderByDescending(g => g.CantidadComprada)
-                                               .ToList();
+                                          join pci in _contextDB.InterProd on cv.idProductInter equals pci.ID
+                                          join pa in _contextDB.Materials on pci.idMaterials equals pa.ID
+                                          group cv by pa.Name into g
+                                          select new
+                                          {
+                                              Materiales = g.Key,
+                                              CantidadComprada = g.Sum(cv => cv.Amount)
+                                          })
+                                          .OrderByDescending(g => g.CantidadComprada)
+                                          .ToList();
 
             var productosMasComprados = (from cv in _contextDB.Cart
                                          join pci in _contextDB.InterProd on cv.idProductInter equals pci.ID
@@ -381,6 +451,49 @@ namespace KarpicentroWeb.Controllers
                                          .OrderByDescending(g => g.CantidadComprada)
                                          .ToList();
 
+            var directions = _contextDB.Direction.Skip(1).ToList(); // Omite el primer registro
+            var stateGroups = directions.GroupBy(d => d.State).Select(g => new { State = g.Key, Count = g.Count() }).ToList();
+            var delegationGroups = directions.GroupBy(d => d.Delegations).Select(g => new { Delegations = g.Key, Count = g.Count() }).ToList();
+            var extIntNumbers = directions.Select(d => new { ExtNum = d.ExtNum, IntNum = d.IntNum }).ToList();
+
+            var productPrices = (from pi in _contextDB.InterProd
+                                 join p in _contextDB.Product on pi.idProducts equals p.ID
+                                 select new
+                                 {
+                                     ProductName = p.Name,
+                                     SalePrice = pi.SalePrice
+                                 }).ToList();
+
+            var stockByColor = (from pi in _contextDB.InterProd
+                                join c in _contextDB.Colors on pi.idColors equals c.ID
+                                group pi by c.Name into g
+                                select new
+                                {
+                                    Color = g.Key,
+                                    TotalStock = g.Sum(pi => pi.Stock)
+                                }).ToList();
+
+            var ventasPorDia = (from cb in _contextDB.Cart
+                                group cb by cb.Date.Date into g
+                                select new
+                                {
+                                    Fecha = g.Key,
+                                    CantidadVentas = g.Count()
+                                })
+                                .OrderByDescending(g => g.CantidadVentas)
+                                .ToList();
+
+            var cartBuys = _contextDB.Cart.ToList(); // Carga los datos en memoria
+            var promedioVentaPorMes = (from cb in cartBuys
+                                       group cb by new { cb.Date.Year, cb.Date.Month } into g
+                                       select new
+                                       {
+                                           Mes = new DateTime(g.Key.Year, g.Key.Month, 1),
+                                           PromedioVenta = g.Average(x => x.Price * x.Amount)
+                                       })
+                                       .OrderBy(g => g.Mes)
+                                       .ToList();
+
             ViewBag.Colores = coloresMasVendidos.Select(c => c.Color).ToList();
             ViewBag.CantidadesColores = coloresMasVendidos.Select(c => c.CantidadVendida).ToList();
             ViewBag.Materiales = materialesMasComprados.Select(a => a.Materiales).ToList();
@@ -388,7 +501,24 @@ namespace KarpicentroWeb.Controllers
             ViewBag.Productos = productosMasComprados.Select(p => p.Producto).ToList();
             ViewBag.CantidadesProductos = productosMasComprados.Select(p => p.CantidadComprada).ToList();
 
+            ViewBag.States = stateGroups.Select(s => s.State).ToList();
+            ViewBag.CountsStates = stateGroups.Select(s => s.Count).ToList();
+            ViewBag.Delegations = delegationGroups.Select(d => d.Delegations).ToList();
+            ViewBag.CountsDelegations = delegationGroups.Select(d => d.Count).ToList();
+            ViewBag.ExtIntNumbers = extIntNumbers;
+
+            ViewBag.ProductPrices = productPrices.Select(p => p.ProductName).ToList();
+            ViewBag.SalePrices = productPrices.Select(p => p.SalePrice).ToList();
+            ViewBag.Colors = stockByColor.Select(c => c.Color).ToList();
+            ViewBag.TotalStock = stockByColor.Select(c => c.TotalStock).ToList();
+
+            ViewBag.Days = ventasPorDia.Select(v => v.Fecha.ToString("yyyy-MM-dd")).ToList();
+            ViewBag.VentasPorDia = ventasPorDia.Select(v => v.CantidadVentas).ToList();
+            ViewBag.PromedioVentaMeses = promedioVentaPorMes.Select(p => p.Mes.ToString("yyyy-MM")).ToList();
+            ViewBag.PromediosVenta = promedioVentaPorMes.Select(p => p.PromedioVenta).ToList();
+
             return View();
         }
+
     }
 }

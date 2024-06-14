@@ -9,6 +9,8 @@
     {
         Layout = "_LayoutUsers";
     }
+
+    var materialsinrepetir = new HashSet<int>();
 }
 
 <head>
@@ -25,6 +27,96 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Overlock+SC&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Ropa+Sans:ital@0;1&display=swap" rel="stylesheet">
 
     <title>Detalles</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            let maxQuantity = 1;
+            let productInterId = null;
+            let imageUrl = '';
+            let price = 0;
+
+            $('#combobox1').on("change", function () {
+                var valor = $(this).val();
+                var idprod = '@ViewBag.idproducto';
+                $.ajax({
+                    type: 'GET',
+                    url: '/api/Values/DetalleCombos',
+                    data: { valor: valor, idprod: idprod },
+                    success: function (response) {
+                        var data = response.items;
+                        imageUrl = response.imageUrl;
+                        var combobox2 = $('#combobox2');
+                        combobox2.empty();
+                        combobox2.append($('<option>', {
+                            value: "",
+                            text: "Colores..."
+                        }));
+                        $.each(data, function (index, item) {
+                            combobox2.append($('<option>', {
+                                value: item.value,
+                                text: item.text,
+                                'data-max-quantity': item.maxQuantity,
+                                'data-product-inter-id': item.productInterId,
+                                'data-price': item.price  // Añadir el precio como data attribute
+                            }));
+                        });
+
+                        if (imageUrl) {
+                            $('#product-image').attr('src', imageUrl);
+                            // Update hidden input with image URL
+                            $('input[name="RutaImagen"]').val(imageUrl);
+                        }
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            });
+
+            $('#combobox2').on("change", function () {
+                var selectedOption = $(this).find('option:selected');
+                maxQuantity = selectedOption.data('max-quantity') || 1;
+                productInterId = selectedOption.data('product-inter-id') || null;
+                price = selectedOption.data('price') || 0;
+                var quantityInput = $('input[name="Cantidad"]');
+                quantityInput.val(1);
+
+                $('#stock').text('Stock: ' + maxQuantity);
+
+                // Update hidden input with productInterId
+                $('input[name="idProductInter"]').val(productInterId);
+                // Update the price display
+                $('input[name="Total"]').val(price);
+                $('.product-price').text(price.toFixed(2));  // Actualizar la visualización del precio
+                $('input[name="Price"]').val(price.toFixed(2));
+            });
+
+            $('.btn-minus').click(function () {
+                var quantityInput = $(this).closest('.quantity').find('input[name="Cantidad"]');
+                var currentValue = parseInt(quantityInput.val());
+                if (currentValue > 1) {
+                    quantityInput.val(currentValue - 1);
+                }
+            });
+
+            $('.btn-plus').click(function () {
+                var quantityInput = $(this).closest('.quantity').find('input[name="Cantidad"]');
+                var currentValue = parseInt(quantityInput.val());
+                if (currentValue < maxQuantity) {
+                    quantityInput.val(currentValue + 1);
+                }
+            });
+
+            // Initialize stock display for categories without storage
+            if (!$('#combobox2').length) {
+                $('#stock').text('Stock: ' + maxQuantity);
+            }
+        });
+
+
+
+    </script>
 </head>
 
 <style>
@@ -34,6 +126,16 @@
 
     html {
         scroll-behavior: smooth;
+    }
+
+    .autenticado {
+        text-align: center;
+        padding: 20px;
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+        border-radius: 5px;
+        margin-bottom: 20px;
     }
 </style>
 
@@ -50,7 +152,7 @@
                                     if (ViewBag.IDproducto == i.idProducts)
                                     {
                                         <a class="rounded-4" target="_blank" data-type="image" href="https://http2.mlstatic.com/D_NQ_NP_611357-MLU71495380687_092023-O.webp">
-                                            <img id="main-image" style="max-width: 600px; max-height: 600px; margin: auto;" class="rounded-4 fit" src="@i.Image" />
+                                            <img id="product-image" style="max-width: 600px; max-height: 600px; margin: auto;" class="rounded-4 fit" src="@i.Image" />
                                         </a>
                                         break;
                                     }
@@ -76,8 +178,8 @@
                                 if (ViewBag.IDproducto == i.idProducts)
                                 {
                                     <div class="d-flex mb-4">
-                                        <p class="h5 me-4 mb-0">$@i.SalePrice</p>
-                                        <p class="h5 me-4 mb-0">Cantidad: @i.Stock</p>
+                                        <p class="h5 me-4 mb-0 product-price">$@i.SalePrice</p>
+                                        <p class="h5 me-4 mb-0" id="stock">Cantidad: @i.Stock</p>
                                     </div>
                                     break;
                                 }
@@ -111,11 +213,28 @@
                                 </ul>
                             </div>
                             <div class="me-5">
-                                <label class="form-label" for="select-color">Color:</label>
-                                <select class="form-select" id="select-color" onchange="cambiarImagenes()">
-                                    <option value="1">azul</option>
-                                    <option value="2">verde</option>
-                                    <option value="3">rosa</option>
+                                <label class="form-label" for="select-color">Materiales:</label>
+                                <select class="form-select" id="combobox1" onchange="cambiarImagenes()" name="Materiales">
+                                    <option value="">Materiales...</option>
+                                    @foreach (var f in Model.Inter)
+                                    {
+                                        if (f.idProducts == ViewBag.IDproducto)
+                                        {
+                                            foreach (var m in Model.Material)
+                                            {
+                                                if (f.idMaterials == m.ID && materialsinrepetir.Add(m.ID))
+                                                {
+                                                    <option value="@m.ID">@m.Name</option>
+                                                }
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="me-5">
+                                <label class="form-label" for="select-color">Colores:</label>
+                                <select name="Almacenamiento" class="form-select" id="combobox2" required style="width: 100%; max-width: 400px;">
+                                    <option value="">Colores...</option>
                                 </select>
                             </div>
                             <div>
@@ -125,25 +244,37 @@
                         </div>
                         <br />
                         @{
-                            if (ViewBag.Existencia > 0)
+                            if (ViewBag.Cookie != null)
                             {
-                                foreach (var i in Model.Inter)
+                                if (ViewBag.Existencia > 0)
                                 {
-                                    if (ViewBag.IDproducto == i.idProducts)
+                                    foreach (var i in Model.Inter)
                                     {
-                                        <input name="Existencia" type="hidden" value="@i.Stock">
-                                        <input name="Price" type="hidden" value="@Model.Inter.FirstOrDefault(i => i.idProducts == ViewBag.IDproducto)?.SalePrice" />
-                                        break;
+                                        if (ViewBag.IDproducto == i.idProducts)
+                                        {
+                                            <input name="Existencia" type="hidden" value="@i.Stock">
+                                            <input name="Price" type="hidden" value="@Model.Inter.FirstOrDefault(i => i.idProducts == ViewBag.IDproducto)?.SalePrice" />
+                                            break;
+                                        }
                                     }
+                                    <div class="d-flex justify-content-center mt-3">
+                                        <input name="idprod" type="hidden" value="@ViewBag.IDproducto">
+                                        <input name="idProductInter" type="hidden" value="@Model.Inter.FirstOrDefault(c => c.idProducts == ViewBag.IDproducto)?.ID">
+                                        <!-- Reducir el margen superior -->
+                                        <button class="btn btn-primary text-white" asp-controller="Productos" asp-action="ProductDetails">Confirmar</button>
+                                    </div>
+                                    <div class="d-flex justify-content-center mt-2">
+                                        <p>@ViewBag.Mensaje</p>
+                                    </div>
                                 }
-                                <div class="d-flex justify-content-center mt-3">
-                                    <input name="idprod" type="hidden" value="@ViewBag.IDproducto">
-                                    <input name="idProductInter" type="hidden" value="@Model.Inter.FirstOrDefault(c => c.idProducts == ViewBag.IDproducto)?.ID">
-                                    <!-- Reducir el margen superior -->
-                                    <button class="btn btn-primary text-white" asp-controller="Productos" asp-action="ProductDetails">Confirmar</button>
-                                </div>
-                                <div class="d-flex justify-content-center mt-2">
-                                    <p>@ViewBag.Mensaje</p>
+
+                            }
+                            else
+                            {
+                                <div class="card-body">
+                                    <div class="autenticado">
+                                        <p>Por favor, <a asp-controller="Home" asp-action="Login">inicia sesión</a> o <a asp-controller="Home" asp-action="Register">regístrate</a> para poder agregar al carrito.</p>
+                                    </div>
                                 </div>
                             }
                         }

@@ -105,11 +105,8 @@
 </style> *@
 <body>
     <header class="header-content">
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light d-flex flex-column flex-md-row justify-content-between">
             <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="header-menu">
                     <div class="logo">
                         <img src="~/Images/Logo.png" alt="Karpicentro">
@@ -152,6 +149,10 @@
             @RenderBody()
         </main>
     </div>
+
+    <footer>
+        <p style="color: white; text-align: center; background-color: #3E5F8A;">&copy; 2023 Karpicentro. Todos los derechos reservados.</p>
+    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

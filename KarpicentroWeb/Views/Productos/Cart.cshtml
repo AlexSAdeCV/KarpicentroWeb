@@ -23,105 +23,229 @@
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@501&family=Big+Shoulders+Text:wght@383&family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
+    <style>
+        .autenticado {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('.numeric').on("change", function () {
+                var valor = $(this).val();
+                var parentElement = $(this).closest('.product-container'); // Cambia '.product-container' al contenedor apropiado
+                var idprodInter = parentElement.find('input[name="idprodInter"]').val(); // Obtener el ID del producto inter
+                var carritoId = parentElement.find('input[name="carritoId"]').val(); // Obtener el ID del carrito
+                var $this = $(this); // Almacenar $(this) en una variable
+
+                $.ajax({
+                    type: 'GET',
+                    url: '/api/Values/CambioCantidad',
+                    data: { valor: valor, idprodInter: idprodInter, carritoId: carritoId },
+                    success: function (response) {
+                        // Actualizar el total de la fila
+                        var price = parseFloat($this.closest('.product-container').find('.price-label').text().replace('$', ''));
+                        var total = valor * price;
+                        $this.closest('.product-container').find('.total-cell').text(total.toFixed(2)).data('total', total);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            });
+
+            $('#combobox2').on("change", function () {
+                var selectedOption = $(this).find('option:selected');
+                var maxQuantity = selectedOption.data('max-quantity') || 1;
+                var productInterId = selectedOption.data('product-inter-id') || null;
+                var price = selectedOption.data('price') || 0;
+                var quantityInput = $('input[name="Cantidad"]');
+                quantityInput.val(1);
+
+                $('#stock').text('Stock: ' + maxQuantity);
+
+                // Update hidden input with productInterId
+                $('input[name="idproductointer"]').val(productInterId);
+                // Update the price display
+                $('input[name="Total"]').val(price);
+                $('.product-price').text(price.toFixed(2));  // Actualizar la visualización del precio
+            });
+
+            $('.btn-minus, .btn-plus').click(function () {
+                var isIncrement = $(this).hasClass('btn-plus');
+                var parentElement = $(this).closest('.product-container'); // Cambia '.product-container' al contenedor apropiado
+                var productInterId = parentElement.find('input[name="idprodInter"]').val(); // Obtener el ID del producto inter
+                var carritoId = parentElement.find('input[name="carritoId"]').val(); // Obtener el ID del carrito
+                var quantityInput = $('input[data-product-inter-id="' + productInterId + '"]');
+                var currentValue = parseInt(quantityInput.val());
+
+                $.ajax({
+                    type: 'GET',
+                    url: '/api/Combos/GetMaxQuantity',
+                    data: { productInterId: productInterId, carritoId: carritoId }, // Enviar el ID del producto inter y el ID del carrito
+                    success: function (response) {
+                        var maxQuantity = response.maxQuantity;
+
+                        if (isIncrement && currentValue < maxQuantity) {
+                            currentValue++;
+                            quantityInput.val(currentValue);
+                        } else if (!isIncrement && currentValue > 1) {
+                            currentValue--;
+                            quantityInput.val(currentValue);
+                        }
+
+                        var price = parseFloat(quantityInput.closest('.product-container').find('.price-label').text().replace('$', ''));
+                        var total = currentValue * price;
+                        quantityInput.closest('.product-container').find('.total-cell').text(total.toFixed(2)).data('total', total);
+
+                        updateTotals();
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            });
+
+            // Initial call to set totals on page load
+            updateTotals();
+        });
+    </script>
+
 </head>
 
-<section class="h-100 h-custom" style="background-color:  rgb(6, 36, 76);">
-    <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-12">
-                <div class="card card-registration card-registration-2" style="border-radius: 15px;">
-                    <div class="card-body p-0">
-                        <div class="row g-0">
-                            <div class="col-lg-8">
-                                <div class="p-5">
-                                    <div class="d-flex justify-content-between align-items-center mb-5">
-                                        <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
-                                        <h6 id="item-count" class="mb-0 text-muted">@totalItems Artículos</h6>
-                                    </div>
-                                    <hr class="my-4">
+<body style="background-color:  rgb(6, 36, 76);">
+    <section class="h-100 h-custom">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12">
+                    <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                        <div class="card-body p-0">
+                            <div class="row g-0">
+                                <div class="col-lg-8">
+                                    <div class="p-5">
+                                        <div class="d-flex justify-content-between align-items-center mb-5">
+                                            <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
+                                            <h6 id="item-count" class="mb-0 text-muted">@totalItems Artículos</h6>
+                                        </div>
+                                        <hr class="my-4">
 
-                                    @{
-                                        foreach (var c in Model.Cart)
-                                        {
-                                            if (c.idUser == ViewBag.ID)
+                                        @{
+                                            foreach (var c in Model.Cart)
                                             {
-                                                foreach (var p in Model.Inter)
+                                                if (c.idUser == ViewBag.ID)
                                                 {
-                                                    if (p.ID == c.idProductInter)
+                                                    foreach (var p in Model.Inter)
                                                     {
-                                                        if (c.SwitchCartBuy == 1)
+                                                        if (p.ID == c.idProductInter)
                                                         {
-                                                            <div class="row mb-4 d-flex justify-content-between align-items-center">
-                                                                <div class="col-md-2 col-lg-2 col-xl-2">
-                                                                    <img src="@p.Image" class="img-fluid rounded-3" alt="Product Image">
-                                                                </div>
-                                                                @foreach (var k in Model.Products)
-                                                                {
-                                                                    if (p.idProducts == k.ID)
+                                                            if (c.SwitchCartBuy == 1)
+                                                            {
+                                                                <div class="product-container mb-4 d-flex justify-content-between align-items-center">
+                                                                    <input type="hidden" name="idprodInter" value="@p.ID" />
+                                                                    <input type="hidden" name="carritoId" value="@c.ID" />
+                                                                    <div class="col-md-2 col-lg-2 col-xl-2">
+                                                                        <img src="@p.Image" class="img-fluid rounded-3" alt="Product Image">
+                                                                    </div>
+                                                                    @foreach (var k in Model.Products)
                                                                     {
-                                                                        <div class="col-md-3 col-lg-3 col-xl-3">
-                                                                            <p class="text-muted">@k.Categories</p>
-                                                                            <p class="text-black mb-0">@k.Name</p>
-                                                                        </div>
+                                                                        if (p.idProducts == k.ID)
+                                                                        {
+                                                                            <div class="col-md-3 col-lg-3 col-xl-3">
+                                                                                <p class="text-muted">@k.Categories</p>
+                                                                                <p class="text-black mb-0">@k.Name</p>
+                                                                            </div>
+                                                                        }
                                                                     }
-                                                                }
-                                                                <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                                                    <label lass="form-control form-control-sm">Cantidad: @c.Amount</label>
+                                                                    <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                                                                        <input type="number"
+                                                                               class="form-control form-control-sm bg-secondary border-0 text-center numeric"
+                                                                               value="@c.Amount" data-product-inter-id="@p.ID"  max="@Model.Inter.FirstOrDefault(i => i.ID == p.ID)?.Stock">
+                                                                    </div>
+                                                                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                                                        <p class="mb-0"><label class="price-label">$ @c.Price</label></p>
+                                                                    </div>
+                                                                    <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                                                        <form asp-controller="Productos" asp-action="DeleteCart" method="get">
+                                                                            <input type="hidden" name="idinter" value="@p.ID" />
+                                                                            <button type="submit" class="text-muted"><i class="fas fa-times"></i></button>
+                                                                        </form>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                                                    <p class="mb-0"><label class="price-label">$ @c.Price</label></p>
-                                                                </div>
-                                                                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                                                    <form asp-controller="Productos" asp-action="DeleteCart" method="get">
-                                                                        <input type="hidden" name="idinter" value="@p.ID" />
-                                                                        <button type="submit" class="text-muted"><i class="fas fa-times"></i></button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
+                                                            }
                                                         }
                                                     }
                                                 }
                                             }
                                         }
-                                    }
 
-                                    <hr class="my-4">
+                                        <hr class="my-4">
 
-                                    <div class="pt-5">
-                                        <h6 class="mb-0">
-                                            <a href="#!" class="text-body">
-                                                <i class="fas fa-long-arrow-alt-left me-2"></i>Back to shop
-                                            </a>
-                                        </h6>
+                                        <div class="pt-5">
+                                            <h6 class="mb-0">
+                                                <a asp-action="Products" asp-controller="Productos" class="text-body">
+                                                    <i class="fas fa-long-arrow-alt-left me-2"></i>Volver a la tienda
+                                                </a>
+                                            </h6>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4 bg-grey">
-                                <div class="p-5">
-                                    <h1 class="fw-bold mb-5 mt-2 pt-1">Resumen</h1>
-                                    <hr class="my-4">
+                                <div class="col-lg-4 bg-grey">
+                                    <div class="p-5">
+                                        <h1 class="fw-bold mb-5 mt-2 pt-1">Resumen</h1>
+                                        <hr class="my-4">
 
-                                    <div class="d-flex justify-content-between mb-4">
-                                        <h5 class="text-uppercase">Artículos <span id="item-count-value">@totalItems</span></h5>
-                                        <h5 id="total-price">$ @totalPrice mxn</h5>
+                                        <div class="d-flex justify-content-between mb-4">
+                                            <h5 class="text-uppercase">Artículos <span id="item-count-value">@totalItems</span></h5>
+                                            <h5 id="total-price">$ @totalPrice mxn</h5>
+                                        </div>
+
+                                        <h5 class="text-uppercase mb-3">Precio de envío</h5>
+
+                                        <div class="mb-4 pb-2">
+                                            Precio de envío: $500
+                                        </div>
+
+                                        <div class="d-flex justify-content-between mb-4">
+                                            <h5 class="text-uppercase">Total a pagar</h5>
+                                            <h5 id="total-to-pay">$ @totalPrice mxn</h5>
+                                        </div>
+
+                                        @{
+                                            var i = 0;
+                                            foreach (var c in Model.Cart)
+                                            {
+                                                if (c.idUser == ViewBag.ID && c.SwitchCartBuy == 1)
+                                                {
+                                                    i++;
+                                                }
+                                            }
+
+                                            if (i > 0)
+                                            {
+                                                <form method="get">
+                                                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark" asp-action="Checkout" asp-controller="Boughts">
+                                                        Pasar al checkout
+                                                    </button>
+                                                </form>
+                                            }
+                                            else
+                                            {
+                                                <div class="card-body">
+                                                    <div class="autenticado">
+                                                        <p>Agregue un Producto al carrito para pasar al Checkout</p>
+                                                    </div>
+                                                </div>
+                                            }
+                                        }
                                     </div>
-
-                                    <h5 class="text-uppercase mb-3">Precio de envío</h5>
-
-                                    <div class="mb-4 pb-2">
-                                        Precio de envío: $500
-                                    </div>
-
-                                    <div class="d-flex justify-content-between mb-4">
-                                        <h5 class="text-uppercase">Total a pagar</h5>
-                                        <h5 id="total-to-pay">$ @totalToPay mxn</h5>
-                                    </div>
-
-                                    <form method="get">
-                                        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark" asp-action="Checkout" asp-controller="Boughts">
-                                            Pasar al checkout
-                                        </button>
-                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -129,5 +253,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</body>

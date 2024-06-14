@@ -4,13 +4,25 @@
     Layout = "_LayoutAdmin2";
 }
 
+<style>
+    .autenticado {
+        text-align: center;
+        padding: 20px;
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+</style>
+
 <body>
     <main class="container">
         <div class="my-3 p-3 bg-light rounded shadow-sm">
             <form class="row g-3 needs-validation" novalidate method="post" enctype="multipart/form-data">
                 <div class="col-md-4">
                     <label asp-for="@Model.pinter.idColors" for="inputState" class="form-label">Colores</label>
-                    <select asp-for="@Model.pinter.idColors" name="idColors" id="inputState" class="form-select">
+                    <select asp-for="@Model.pinter.idColors" name="idColors" id="inputState" class="form-select form-control-plaintext list-group-item active" disabled>
                         <option>Colores...</option>
                         @{
                             int i = 0;
@@ -26,7 +38,7 @@
                 </div>
                 <div class="col-md-4">
                     <label asp-for="@Model.pinter.idMaterials" for="inputState" class="form-label">Materiales</label>
-                    <select asp-for="@Model.pinter.idMaterials" name="idMaterials" id="inputState" class="form-select">
+                    <select asp-for="@Model.pinter.idMaterials" name="idMaterials" id="inputState" class="form-select form-control-plaintext" disabled>
                         <option>Materiales...</option>
                         @{
                             int j = 0;
@@ -42,11 +54,11 @@
                 </div>
                 <div class="col-md-4">
                     <label asp-for="@Model.pinter.SalePrice" for="inputAddress2" class="form-label">Precio de Venta</label>
-                    <input asp-for="@Model.pinter.SalePrice" name="SalePrice" type="number" class="form-control" id="inputAddress2">
+                    <input asp-for="@Model.pinter.SalePrice" name="SalePrice" type="number" class="form-control" id="inputAddress2" readonly>
                 </div>
                 <div class="col-md-4">
                     <label asp-for="@Model.pinter.Stock" for="inputAddress2" class="form-label">Stock</label>
-                    <input asp-for="@Model.pinter.Stock" name="Stock" type="number" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                    <input asp-for="@Model.pinter.Stock" name="Stock" type="number" class="form-control" id="inputAddress2" readonly>
                 </div>
                 <div class="col-md-4">
                     <div class="col-auto">
@@ -54,8 +66,17 @@
                         <input name="Image" class="form-control" type="file" id="formFileMultiple" multiple>
                     </div>
                 </div>
-                <button asp-action="EditFeatures" asp-controller="Admin" formmethod="post" class="w-100 btn btn-primary btn-lg">Crear Producto</button>
-                <h1>@ViewBag.Mensaje</h1>
+
+                @if (ViewBag.Mensaje != null)
+                {
+                    <div class="card-body">
+                        <div class="autenticado">
+                            <p>@ViewBag.Mensaje</p>
+                        </div>
+                    </div>
+                }
+
+                <button asp-action="EditFeatures" asp-controller="Admin" formmethod="post" class="w-100 btn btn-danger btn-lg">Eliminar Producto</button>
             </form>
         </div>
     </main>

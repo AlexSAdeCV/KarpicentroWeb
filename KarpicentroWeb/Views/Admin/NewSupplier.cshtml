@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "_LayoutAdmin2";
+}
+
+<body>
+    <main class="container">
+        <div class="my-3 p-3 bg-light rounded shadow-sm">
+            <form class="row g-3 needs-validation" novalidate method="post" enctype="multipart/form-data">
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Nombre del Proveedor</label>
+                    <input name="NameSupplier" type="text" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Nombre de la persona de contacto</label>
+                    <input name="NameContact" type="text" class="form-control" id="inputPassword4">
+                </div>
+                <div class="col-12">
+                    <label for="inputAddress" class="form-label">E-mail</label>
+                    <input name="Email" type="email" class="form-control" id="inputAddress"></input>
+                </div>
+                <div class="col-12">
+                    <button asp-action="NewSupplier" asp-controller="Admin">Crear Proveedor</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>

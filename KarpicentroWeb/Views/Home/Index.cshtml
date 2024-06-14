@@ -27,29 +27,43 @@
             <div class="card-wrapper container-sm d-flex  justify-content-around">
                 @{
                     int i = 0;
-                    foreach (var p in Model.Products)
+                    foreach (var f in Model.Inter)
                     {
-                        foreach (var f in Model.Inter)
+                        foreach (var p in Model.Products)
                         {
-                            if (p.ID == f.idProducts)
+                            if (f.idProducts == p.ID)
                             {
                                 <div class="card" style="width: 18rem;">
                                     <img src="@f.Image" alt="Mueble 1">
                                     <div class="info">
                                         <h2>@p.Name</h2>
                                         <p>Precio: $@f.SalePrice mxn</p>
+                                        @foreach (var c in Model.Color)
+                                        {
+                                            if (f.idColors == c.ID)
+                                            {
+                                                <p>Color: @c.Name</p>
+                                            }
+                                        }
+                                        @foreach (var c in Model.Material)
+                                        {
+                                            if (f.idMaterials == c.ID)
+                                            {
+                                                <p>Material: @c.Name</p>
+                                            }
+                                        }
                                         <input name="Existencia" type="hidden" value="@f.Stock">
-                                        <a style="background-color: white;" href="@Url.Action("ProductDetails", "Productos", new { Existencia = f.Stock })"></a>
+                                        <a style="background-color: }white;" href="@Url.Action("ProductDetails", "Productos", new { Existencia = f.Stock })"></a>
                                         <a href="@Url.Action("ProductDetails", "Productos", new { valor = p.ID })" class="btn-mas-info">Más Info</a>
                                     </div>
                                 </div>
                                 i++;
-                            }
-                        }
 
-                        if (i == 3)
-                        {
-                            break;
+                                if (i == 2)
+                                {
+                                    break;
+                                }
+                            }
                         }
                     }
                 }

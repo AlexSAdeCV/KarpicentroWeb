@@ -64,11 +64,8 @@
             }
             <hr class="my-4">
             <br />
+            <p>Se envio un correo con la confirmacion de la compra</p>
             <h1>@ViewBag.Mensaje</h1>
-            <form asp-action="GeneratePdf" method="post">
-                <button type="submit" name="action" value="download" class="btn btn-primary">Descargar PDF</button>
-                <button type="submit" name="action" value="email" class="btn btn-secondary">Enviar por correo</button>
-            </form>
         </div>
     </div>
 </body>

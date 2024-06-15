@@ -10,7 +10,7 @@
             <form class="row g-3 needs-validation" novalidate method="post" enctype="multipart/form-data">
                 <div class="col-md-4">
                     <label asp-for="@Model.pinter.idColors" for="inputState" class="form-label">Colores</label>
-                    <select asp-for="@Model.pinter.idColors" name="idColors" id="inputState" class="form-select">
+                    <select asp-for="@Model.pinter.idColors" name="idColors" id="inputState" class="form-select" disabled>
                         <option>Colores...</option>
                         @{
                             int i = 0;
@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-md-4">
                     <label asp-for="@Model.pinter.idMaterials" for="inputState" class="form-label">Materiales</label>
-                    <select asp-for="@Model.pinter.idMaterials" name="idMaterials" id="inputState" class="form-select">
+                    <select asp-for="@Model.pinter.idMaterials" name="idMaterials" id="inputState" class="form-select" disabled>
                         <option>Materiales...</option>
                         @{
                             int j = 0;
@@ -55,7 +55,7 @@
                     </div>
                 </div>
 
-                <button asp-action="DeleteFeatures" asp-controller="Admin" formmethod="post" class="w-100 btn btn-primary btn-lg">Modificar Producto</button>
+                <button asp-action="DeleteFeatures" asp-controller="Admin" formmethod="post" class="w-100 btn btn-danger btn-lg">Eliminar Producto</button>
             </form>
         </div>
     </main>

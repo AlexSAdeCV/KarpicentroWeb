@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADqe74vhaeEG0Q0MClbPtXQAAAAACAAAAAAAQZgAAAAEAACAAAABW6XHeAqUUuDhIOXQozFL21UZoGm/u9dP2X7S+zS/AKwAAAAAOgAAAAAIAACAAAAC0IfJrrLOqsyFjF2fgCe5aIGsOkJhAf5A7zm1pIF/5sCAAAABYofbCsLpzrr4HOIW+c0NbC267K7Oy3VfyVGV0fzscPUAAAADRjf91H/RNXgkSR6hWDzaCmwZm8h/ukNhF+V+borjpndZ5l7UsluyfXyL96KmVaFu/YRdplfXc1TMWSxtSqVMW</EncryptedPassword>
+    <History>False|2024-06-15T16:54:48.9094877Z;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="ConexionSql">
+      <Value>Server=tcp:karpi.database.windows.net,1433%3bInitial Catalog=KarpiDb%3bPersist Security Info=False%3bUser ID=karpi%3bPassword=Central777%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

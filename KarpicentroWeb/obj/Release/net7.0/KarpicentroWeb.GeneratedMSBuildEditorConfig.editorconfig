@@ -1,0 +1,199 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = KarpicentroWeb
+build_property.RootNamespace = KarpicentroWeb
+build_property.ProjectDir = C:\Github\Kapicentro\KarpicentroWeb\KarpicentroWeb\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Github\Kapicentro\KarpicentroWeb\KarpicentroWeb
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Admin/AddFeatures.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkRmVhdHVyZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Admin/Boughts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQm91Z2h0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Admin/Charts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2hhcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Admin/DeleteFeatures.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGVsZXRlRmVhdHVyZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Admin/EditFeatures.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdEZlYXR1cmVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Admin/Features.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRmVhdHVyZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Admin/NewColor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTmV3Q29sb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Admin/NewMaterial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTmV3TWF0ZXJpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Admin/NewProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTmV3UHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Admin/NewSupplier.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTmV3U3VwcGxpZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Admin/Sales.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2FsZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Admin/ShippingDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2hpcHBpbmdEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Admin/UserDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlckRlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Admin/UserEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlckVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Admin/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Admin/Warehouse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cV2FyZWhvdXNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Admin/Welcome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cV2VsY29tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Boughts/AgregarDireccion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm91Z2h0c1xBZ3JlZ2FyRGlyZWNjaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Boughts/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm91Z2h0c1xDaGVja291dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Boughts/Sale.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm91Z2h0c1xTYWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Home/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Home/Presentacion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcmVzZW50YWNpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Home/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Productos/Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXENhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Productos/ProductDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXFByb2R1Y3REZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Productos/ProductList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXFByb2R1Y3RMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Productos/Products.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXFByb2R1Y3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Shared/_LayoutAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Shared/_LayoutAdmin2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbjIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Shared/_LayoutUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRVc2Vycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Shared/_LayoutUsers2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRVc2VyczIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/User/Boughts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxCb3VnaHRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/User/DeleteDirections.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZWxldGVEaXJlY3Rpb25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/User/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/User/Directions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEaXJlY3Rpb25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/User/EditDirections.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFZGl0RGlyZWN0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/User/NewDirections.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxOZXdEaXJlY3Rpb25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/User/Welcome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxXZWxjb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github/Kapicentro/KarpicentroWeb/KarpicentroWeb/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-5ieji4fpin

@@ -1,0 +1,56 @@
+﻿h1 {
+    font-size: 1.5em;
+}
+
+h2 {
+    font-size: 1,5em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+
+
+
+#catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 70px;
+}
+
+.producto {
+    width: 250px;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10pX;
+    box-shadow: #525151;
+}
+
+    .producto img {
+        max-width: 206px;
+        height: 199px;
+        border-radius: 20px;
+    }
+
+.btn-mas-info {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
